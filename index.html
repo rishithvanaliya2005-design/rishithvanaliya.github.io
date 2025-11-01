@@ -8,56 +8,98 @@
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       margin: 0;
-      padding: 0;
       line-height: 1.6;
       background-color: #f9fafb;
       color: #333;
+      scroll-behavior: smooth; /* enables smooth scroll */
     }
-    header {
+
+    /* ---------- NAVBAR ---------- */
+    nav {
       background: #0a192f;
       color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
     }
-    header p {
-      font-size: 1rem;
+
+    nav a:hover {
+      color: #64ffda;
     }
+
+    /* ---------- SECTIONS ---------- */
     section {
       max-width: 850px;
-      margin: 2rem auto;
+      margin: 3rem auto;
       padding: 0 1rem;
     }
+
+    h1, h2, h3 {
+      color: #0a192f;
+    }
+
     h2 {
       border-bottom: 2px solid #0a192f;
       padding-bottom: 0.3rem;
     }
-    a {
-      color: #0078d7;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+
     .project {
       margin-bottom: 1.5rem;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
       color: #666;
+      font-size: 0.9rem;
     }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #e6f1ff;
+    }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0.3rem;
+    }
+
+    a {
+      color: #0078d7;
+    }
+
   </style>
 </head>
 
 <body>
+  <!-- ---------- NAVIGATION ---------- -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ---------- HEADER ---------- -->
   <header>
     <h1>Rishith Kirankumar Vanaliya</h1>
-    <p>B.Tech Mechanical Engineering (Minor: Data Science), Nirma University</p>
+    <p>B.Tech Mechanical Engineering (Minor: Data Science)</p>
     <p>
       <a href="mailto:22bme130@nirmauni.ac.in">Email</a> |
       <a href="https://www.linkedin.com/in/rishith-vanaliya-238b2625a" target="_blank">LinkedIn</a> |
@@ -66,72 +108,78 @@
     </p>
   </header>
 
+  <!-- ---------- ABOUT SECTION ---------- -->
   <section id="about">
     <h2>About</h2>
     <p>
-      I am an undergraduate mechanical engineering student passionate about CFD, machine learning,
-      and Physics-Informed Neural Networks (PINNs). My interests lie at the intersection of simulation,
-      AI-driven modeling, and UAV design.
+      I am a mechanical engineering student at Nirma University with a minor in Data Science.
+      My interests include Computational Fluid Dynamics (CFD), Physics-Informed Neural Networks (PINNs),
+      and UAV design. I aim to bridge physics-based modeling with machine learning for efficient simulation and optimization.
     </p>
   </section>
 
+  <!-- ---------- PROJECTS SECTION ---------- -->
   <section id="projects">
     <h2>Projects</h2>
-
     <div class="project">
       <h3>Physics-Informed Neural Network Simulation of Breast Cancer Treatment via RFA</h3>
       <p>
-        Integrating PINNs with OpenFOAM to simulate tumor response under Radiofrequency Ablation (RFA),
-        optimizing thermal parameters for effective tissue destruction and predictive modeling.
+        Integrating PINNs with OpenFOAM to model tumor response under thermal exposure
+        during Radiofrequency Ablation (RFA) and optimize parameters for effective treatment.
       </p>
     </div>
 
     <div class="project">
       <h3>Automated CFD Simulation Platform using Flask & OpenFOAM</h3>
       <p>
-        Developed a web-based platform automating OpenFOAM CFD workflows with Python–Bash integration,
-        enabling real-time solver execution and visualization.
+        Developed a web-based platform that automates OpenFOAM simulations using Python–Bash integration,
+        enabling solver execution and post-processing through a browser.
       </p>
     </div>
 
     <div class="project">
       <h3>Design & Analysis of Micro-Class Aircraft – SAE Aero Design West 2025</h3>
       <p>
-        Designed and fabricated a 1.6 kg micro-class UAV achieving a 0.5+ payload fraction and 5-minute
-        endurance under a 450 W power limit.
-      </p>
-    </div>
-
-    <div class="project">
-      <h3>Design of Micro-Class Fixed-Wing UAV – Drone Design Challenge 2024</h3>
-      <p>
-        Fabricated a 700 g UAV with a 0.72 payload fraction and foldable structure for compact transport.
+        Designed and fabricated a 1.6 kg UAV with 0.5+ payload fraction and 5-minute endurance under 450 W power limit.
       </p>
     </div>
   </section>
 
+  <!-- ---------- RESEARCH SECTION ---------- -->
   <section id="research">
     <h2>Research</h2>
     <p>
-      <strong>“Physics-Informed Neural Networks for Solving Fluid Flow Problems”</strong> — Paper accepted at the
-      12th International and 52nd National Conference on Fluid Mechanics and Fluid Power (FMFP–2025),
-      Nirma University. Demonstrated superior accuracy of Fourier-based PINNs in modeling laminar
-      lid-driven cavity flows using NVIDIA PhysicsNeMo.
+      <strong>“Physics-Informed Neural Networks (PINNs) for Solving Fluid Flow Problems”</strong><br>
+      Paper accepted at the 12th International and 52nd National Conference on Fluid Mechanics and Fluid Power (FMFP–2025), Nirma University.
+      Demonstrated the superior accuracy of Fourier-based PINNs in modeling laminar lid-driven cavity flows using NVIDIA PhysicsNeMo.
     </p>
   </section>
 
+  <!-- ---------- AWARDS SECTION ---------- -->
   <section id="awards">
     <h2>Honors & Awards</h2>
     <ul>
       <li>11th Overall & 5th in Mission Score – SAE Aero Design West 2025, Van Nuys, USA</li>
-      <li>3rd Position (Micro Class) – SAEISS Drone Design Challenge 2025, Chennai, India</li>
+      <li>3rd Position (Micro Class) – SAEISS Drone Design Challenge 2025, Chennai</li>
       <li>2nd Overall & Best Technical Presentation – SAEISS DDC 2024</li>
       <li>2nd Overall & Best Design Report – SAEISS DDC 2024</li>
     </ul>
   </section>
 
+  <!-- ---------- CONTACT SECTION ---------- -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      📧 <a href="mailto:22bme130@nirmauni.ac.in">22bme130@nirmauni.ac.in</a><br>
+      🌐 <a href="https://www.linkedin.com/in/rishith-vanaliya-238b2625a" target="_blank">LinkedIn</a><br>
+      💻 <a href="https://github.com/rishithvanaliya" target="_blank">GitHub</a>
+    </p>
+  </section>
+
+  <!-- ---------- FOOTER ---------- -->
   <footer>
-    © 2025 Rishith Vanaliya | Hosted on GitHub Pages
+    © 2025 Rishith Vanaliya | Built with HTML & CSS | Hosted on GitHub Pages
   </footer>
 </body>
 </html>
+
