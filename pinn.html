@@ -15,25 +15,26 @@
     <a href="contact.html">Contact</a>
   </nav>
 <section>
-  <h2>Physics-Informed Neural Networks for Fluid Flow Simulation</h2>
+  <h2>Research Paper – Physics-Informed Neural Networks for Lid-Driven Cavity Flow</h2>
   <p>
-    <strong>Computational Fluid Dynamics (CFD)</strong> has become indispensable in modern engineering, enabling accurate simulations of fluid flow and heat transfer across aerospace, automotive, and biomedical systems. However, traditional CFD approaches often require extensive meshing, involve high computational costs, and remain sensitive to grid quality and solver stability. These challenges have motivated the search for alternatives that reduce preprocessing effort while maintaining physical accuracy.
+    This study investigates the implementation of <strong>Physics-Informed Neural Networks (PINNs)</strong> using <strong>NVIDIA’s PhysicsNeMo</strong> framework for simulating two-dimensional lid-driven cavity flow. The problem was selected for its vortical complexity and availability of benchmark data, enabling rigorous validation of model performance. Neural architectures were evaluated for their ability to accurately reconstruct steady-state velocity and pressure fields while maintaining physical consistency.
   </p>
 
   <p>
-    <strong>Physics-Informed Neural Networks (PINNs)</strong> have emerged as a transformative approach that combines machine learning with the governing laws of physics to solve partial differential equations (PDEs). Unlike purely data-driven methods, PINNs embed fundamental equations such as the <em>Navier–Stokes</em> and energy conservation equations directly into their loss functions. This integration ensures physically consistent predictions even with limited or sparse data. PINNs are mesh-free, scalable across parameter ranges, and inherently suitable for both forward and inverse modeling tasks.
+    A comprehensive analysis was performed on how <strong>architecture type, network depth, optimizer selection, and training duration</strong> influence model accuracy and convergence stability. Among the tested models, the <strong>Modified FourierNet</strong> architecture consistently delivered the most accurate predictions, closely matching the reference results of <strong>Ghia & Ghia</strong>. An <strong>8-layer network</strong> achieved the best balance between precision and training stability, while extended training up to <strong>8000 steps</strong> improved accuracy without excessive computational cost. <strong>Adam</strong> and <strong>AdamW</strong> optimizers outperformed SGD and Ranger, proving well-suited for PINN training.
   </p>
 
   <p>
-    This research explores the implementation of PINNs for fluid dynamics using <strong>NVIDIA’s PhysicsNeMo</strong> framework. The classical <strong>lid-driven cavity flow</strong> problem was selected as a benchmark due to its complex vortical structures and availability of high-fidelity reference data. Multiple neural network architectures were evaluated in terms of accuracy, stability, and computational efficiency in reproducing benchmark velocity and pressure fields.
+    The results demonstrate that <strong>Fourier-enhanced PINNs</strong> can serve as reliable, mesh-free surrogates for classical CFD solvers, offering data-efficient modeling of laminar flow dynamics with strong physical adherence. The work provides practical insights into optimizing network design and training strategies for physics-constrained learning.
   </p>
 
   <p>
-    The study systematically analyzes how <strong>architecture depth, optimizer selection, and time-stepping strategies</strong> influence the performance of PhysicsNeMo-Sym models on the lid-driven cavity flow, benchmarked against the <strong>Ghia & Ghia dataset</strong>. The findings offer practical and reproducible insights into how neural architectures interact with embedded physical constraints, demonstrating the potential of <strong>Fourier-enhanced PINNs</strong> as efficient, mesh-free surrogates for classical CFD solvers.
+    A <strong>comprehensive research paper</strong> based on this study was <strong>accepted for presentation at the 12th International and 52nd National Conference on Fluid Mechanics and Fluid Power (FMFP–2025)</strong>, organized by the <strong>Institute of Technology, Nirma University, Ahmedabad</strong>. The paper highlights the superior performance of <strong>Fourier-based PINNs</strong> over conventional fully connected networks in modeling laminar lid-driven cavity flows, establishing their potential as efficient alternatives to computationally intensive CFD simulations.
   </p>
 
   <img src="images/pinn_simulation.jpg" alt="Physics-Informed Neural Network Simulation">
 </section>
+
 
 
   <footer>© 2025 Rishith Vanaliya</footer>
