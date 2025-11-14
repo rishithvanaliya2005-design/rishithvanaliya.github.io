@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<!-- SIDEBAR -->
 <aside class="sidebar" aria-label="Main navigation">
   <div class="brand">
     <div class="logo">RV</div>
@@ -53,10 +55,28 @@
   </div>
 </aside>
 
-  <main class="main">
+<!-- MAIN CONTENT -->
+<main class="main">
 <section class="page">
+
   <h2>Drone Design Challenge (DDC)</h2>
-  <p>Overview of DDC Micro entries across years. Click a year to view details.</p>
+
+  <p>
+    The SAE <strong>Drone Development Challenge (DDC)</strong> is a national-level UAV competition that 
+    challenges students to design, build, and demonstrate highly efficient unmanned aerial vehicles 
+    under strict dimensional and weight constraints.  
+  </p>
+
+  <p>
+    The <strong>Micro Class</strong> focuses on maximizing payload fraction through lightweight 
+    structures, aerodynamic efficiency, and compact configurations. It encourages innovation in wing 
+    design, propulsion sizing, structural optimization, avionics integration, and mission reliability.
+    DDC provides a hands-on platform for applying fluid dynamics, stability and control, structural 
+    mechanics, and systems engineering principles to build functional UAVs validated through real 
+    competition missions.
+  </p>
+
+  <p>Below are the UAV entries developed across three years of participation:</p>
 
   <ul>
     <li><a href="ddc23.html">DDC Micro — 2023</a></li>
@@ -64,16 +84,31 @@
     <li><a href="ddc25.html">DDC Micro — 2025</a></li>
   </ul>
 
-  <h3 style="margin-top:1rem">DDC 2024 — quick summary</h3>
-  <p>Design lead: trailing-edge tapered wing, optimized mass, reliable mission completion at events.</p>
+  <h3 style="margin-top:1rem">DDC 2024 — Quick Summary</h3>
+  <p>
+    Designed with a trailing-edge tapered wing, optimized structural mass, and a high reliability 
+    mission profile. Demonstrated consistent takeoff, flight stability, and payload delivery during 
+    competition flights.
+  </p>
 
   <div class="gallery">
-    <figure><img src="images/ddc2024_uav.jpeg" alt="DDC 2024 UAV"><figcaption>DDC 2024 — flight-ready aircraft</figcaption></figure>
-    <figure><video controls muted><source src="videos/ddc2024_highlights.mp4" type="video/mp4"></source></video><figcaption>DDC 2024 highlights</figcaption></figure>
-  </div>
-</section>
+    <figure>
+      <img src="images/ddc2024_uav.jpeg" alt="DDC 2024 UAV">
+      <figcaption>DDC 2024 — Flight-ready UAV</figcaption>
+    </figure>
 
-  </main>
+    <figure>
+      <video controls muted>
+        <source src="videos/ddc2024_highlights.mp4" type="video/mp4">
+      </video>
+      <figcaption>DDC 2024 Highlights</figcaption>
+    </figure>
+  </div>
+
+</section>
+</main>
+
+<!-- JS FOR DROPDOWNS -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = [
@@ -88,24 +123,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!wrap || !toggle || !menu) return;
 
-    // open/close on header click only
     toggle.addEventListener('click', (e) => {
-      e.preventDefault(); // header controls dropdown, not navigation
+      e.preventDefault();
       const opening = !wrap.classList.contains('open');
-      // close any other open dropdowns
+
       document.querySelectorAll('.dropdown.open').forEach(d => {
         if (d !== wrap) d.classList.remove('open');
       });
+
       wrap.classList.toggle('open', opening);
       toggle.setAttribute('aria-expanded', String(opening));
     });
 
-    // Allow middle-click on header to open page in new tab
     toggle.addEventListener('auxclick', (e) => {
       if (e.button === 1) window.open(toggle.href, '_blank');
     });
 
-    // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
       if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
         wrap.classList.remove('open');
@@ -113,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Keyboard: toggle with Enter/Space when focused
     toggle.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
