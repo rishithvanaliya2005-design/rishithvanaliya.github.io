@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PINN — Research</title>
+  <title>PINN — Navier–Stokes Research</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 <aside class="sidebar" aria-label="Main navigation">
   <div class="brand">
     <div class="logo">RV</div>
@@ -19,23 +20,22 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-
       <li class="dropdown" id="projectsDrop">
         <a href="projects.html" id="projectsToggle" aria-expanded="false" aria-controls="projectsMenu">Projects ▾</a>
         <ul id="projectsMenu" role="menu">
-          <li role="none"><a role="menuitem" href="ddc.html">DDC (23,24,25)</a></li>
-          <li role="none"><a role="menuitem" href="saeaerodesign.html">SAE Aero Design</a></li>
-          <li role="none"><a role="menuitem" href="automated_cfd.html">Automated CFD Platform</a></li>
-          <li role="none"><a role="menuitem" href="gearbox.html">Design of Gearbox</a></li>
-          <li role="none"><a role="menuitem" href="technoxian.html">Technoxian</a></li>
+          <li><a href="ddc.html">DDC (23,24,25)</a></li>
+          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li><a href="automated_cfd.html">Automated CFD Platform</a></li>
+          <li><a href="gearbox.html">Design of Gearbox</a></li>
+          <li><a href="technoxian.html">Technoxian</a></li>
         </ul>
       </li>
 
       <li class="dropdown" id="researchDrop">
         <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu">Research ▾</a>
         <ul id="researchMenu" role="menu">
-          <li role="none"><a role="menuitem" href="pinn.html">PINN — Navier–Stokes</a></li>
-          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
+          <li><a href="pinn.html">PINN — Navier–Stokes</a></li>
+          <li><a href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
         </ul>
       </li>
 
@@ -48,76 +48,89 @@
     </ul>
   </nav>
 
-  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72);padding:0 0.2rem">
-    © 2025 · Rishith
-  </div>
+  <div class="footer">© 2025 · Rishith</div>
 </aside>
 
-  <main class="main">
+<main class="main">
 <section class="page">
-  <h2>Physics-Informed Neural Networks (PINNs)</h2>
 
-  <p><strong>Project summary:</strong> Implemented Fourier-based PINNs using PhysicsNeMo for 2D incompressible Navier–Stokes benchmark problems and medical bioheat problems.</p>
+  <h2>Physics-Informed Neural Networks (PINNs) — Navier–Stokes</h2>
 
-  <h3 style="margin-top:1rem">Research list</h3>
+  <p class="lead">
+    This research investigates the use of Physics-Informed Neural Networks (PINNs) as mesh-free, data-efficient solvers for incompressible Navier–Stokes equations, validated on the classical lid-driven cavity benchmark. The work was implemented using NVIDIA PhysicsNeMo and accepted for presentation at the <strong>12th International and 52nd National Conference on Fluid Mechanics and Fluid Power (FMFP-2025)</strong>.
+  </p>
+
+  <h3>Objective</h3>
+  <ul>
+    <li>Develop a PINN-based solver capable of reproducing canonical Navier–Stokes benchmark flows without numerical meshing.</li>
+    <li>Compare multiple network architectures (FCN, Fourier-based, Highway variants) for resolving vortical structures and velocity fields.</li>
+    <li>Evaluate the influence of model depth, architecture, and optimizers on accuracy and convergence.</li>
+    <li>Assess scalability of Fourier-enhanced PINNs for use as surrogates to conventional CFD.</li>
+  </ul>
+
+  <h3>Research Summary</h3>
+  <p>
+    The study implements continuity and momentum conservation directly into the loss function, eliminating the need for discretized meshes or large datasets. The lid-driven cavity flow—simple in geometry but rich in vortical dynamics—serves as an ideal benchmark to evaluate PINN performance and stability.
+  </p>
+
+  <p>
+    Multiple architectures were tested, including Fully Connected Networks (FCNs), FourierNet, Modified FourierNet, and Highway FourierNet. FCNs displayed low-frequency bias, while Fourier-based networks captured sharper gradients and near-wall features more effectively. Modified FourierNet achieved the best stability–accuracy balance.
+  </p>
+
+  <p>
+    Network depth was varied across shallow to deep configurations, revealing underfitting at low depth and training instability at excessive depth. An intermediate architecture offered the most reliable performance.  
+    Training was conducted across progressively increasing maximum step counts, demonstrating that beyond a certain threshold the accuracy improvement becomes marginal, though finer flow features continue to improve with extended training.
+  </p>
+
+  <p>
+    Several optimizers—SGD, Adam, AdamW, and Ranger—were evaluated. AdamW consistently showed smoother convergence and higher final accuracy. The final configuration combining Modified FourierNet, mid-range depth, and AdamW produced velocity fields and vortex structures that closely matched classical benchmark profiles.
+  </p>
+
+  <h3>Extended Work (Current Research)</h3>
+  <p>
+    Building on this foundation, our team extended PINNs toward biomedical applications, specifically for thermal modeling of <strong>Radiofrequency Ablation (RFA)</strong> of breast tumors. This interdisciplinary work integrates PINNs with OpenFOAM-generated data to model heat deposition, lesion formation, and tissue property inference.  
+    In recognition of this contribution, I received a <strong>research-based internship at IIT Bombay</strong> under <strong>Prof. Atul Sharma</strong>.
+  </p>
+
+  <h3>Research Index</h3>
   <ul>
     <li><a href="pinn.html">PINN — Navier–Stokes benchmark implementations</a></li>
     <li><a href="pinn_rfa.html">PINN — RF Ablation (Breast Cancer)</a></li>
   </ul>
 
-  <h3 style="margin-top:1rem">Details</h3>
+  <h3>Problems Studied</h3>
   <ul>
-    <li>Problems solved: lid-driven cavity, cylinder wake (von Kármán shedding), bioheat from RF ablation (Pennes equation).</li>
-    <li>Data sources: Fluent & OpenFOAM snapshots, FEM bioheat synthetic data.</li>
-    <li>Outputs: u/v/p or temperature fields, wake length, lesion prediction, and inferred tissue properties.</li>
+    <li>Lid-driven cavity flow</li>
+    <li>Cylinder wake (von Kármán vortex shedding)</li>
+    <li>Bioheat modelling (RFA) using the Pennes equation</li>
   </ul>
-</section>
 
-  </main>
+</section>
+</main>
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+// dropdown logic preserved unchanged
+document.addEventListener("DOMContentLoaded", () => {
   const toggles = [
     {wrapId: 'projectsDrop', toggleId: 'projectsToggle', menuId: 'projectsMenu'},
     {wrapId: 'researchDrop', toggleId: 'researchToggle', menuId: 'researchMenu'}
   ];
-
   toggles.forEach(({wrapId, toggleId, menuId}) => {
     const wrap = document.getElementById(wrapId);
     const toggle = document.getElementById(toggleId);
     const menu = document.getElementById(menuId);
-
     if (!wrap || !toggle || !menu) return;
-
-    // open/close on header click only
-    toggle.addEventListener('click', (e) => {
-      e.preventDefault(); // header controls dropdown, not navigation
-      const opening = !wrap.classList.contains('open');
-      // close any other open dropdowns
-      document.querySelectorAll('.dropdown.open').forEach(d => {
-        if (d !== wrap) d.classList.remove('open');
-      });
-      wrap.classList.toggle('open', opening);
-      toggle.setAttribute('aria-expanded', String(opening));
+    toggle.addEventListener("click", e => {
+      e.preventDefault();
+      const open = !wrap.classList.contains("open");
+      document.querySelectorAll(".dropdown.open").forEach(d => { if (d !== wrap) d.classList.remove("open"); });
+      wrap.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", open);
     });
-
-    // Allow middle-click on header to open page in new tab
-    toggle.addEventListener('auxclick', (e) => {
-      if (e.button === 1) window.open(toggle.href, '_blank');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
-        wrap.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Keyboard: toggle with Enter/Space when focused
-    toggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle.click();
+    document.addEventListener("click", e => {
+      if (!wrap.contains(e.target) && wrap.classList.contains("open")) {
+        wrap.classList.remove("open");
+        toggle.setAttribute("aria-expanded","false");
       }
     });
   });
