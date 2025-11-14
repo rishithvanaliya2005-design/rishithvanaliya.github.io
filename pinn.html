@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PINN Research | Rishith Vanaliya</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PINN Research — Rishith Vanaliya</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" aria-label="Open menu"
+    onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+
   <!-- SIDEBAR NAV -->
   <aside class="sidebar" aria-label="Main navigation">
     <div class="brand">
@@ -18,7 +23,8 @@
     </div>
 
     <ul class="nav-list">
-      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
+
       <li>
         <div class="dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">
           <a class="nav-link">Projects</a>
@@ -30,38 +36,94 @@
           <li><a href="#">Technoxian (UAV Challenges)</a></li>
         </ul>
       </li>
-      <li><a href="pinn.html">Research — PINN</a></li>
+
+      <li><a class="active" href="pinn.html">Research — PINN</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
     <div class="sidebar-footer">
       © 2025 Rishith Vanaliya<br>
-      <div class="small">Built with HTML & CSS — Hosted on GitHub Pages</div>
+      <div class="small">Built with HTML & CSS — GitHub Pages</div>
     </div>
   </aside>
 
-  <h2>Research Paper – Physics-Informed Neural Networks for Lid-Driven Cavity Flow</h2>
-  <p>
-    This study investigates the implementation of <strong>Physics-Informed Neural Networks (PINNs)</strong> using <strong>NVIDIA’s PhysicsNeMo</strong> framework for simulating two-dimensional lid-driven cavity flow. The problem was selected for its vortical complexity and availability of benchmark data, enabling rigorous validation of model performance. Neural architectures were evaluated for their ability to accurately reconstruct steady-state velocity and pressure fields while maintaining physical consistency.
-  </p>
+  <!-- MAIN CONTENT -->
+  <main class="content">
 
-  <p>
-    A comprehensive analysis was performed on how <strong>architecture type, network depth, optimizer selection, and training duration</strong> influence model accuracy and convergence stability. Among the tested models, the <strong>Modified FourierNet</strong> architecture consistently delivered the most accurate predictions, closely matching the reference results of <strong>Ghia & Ghia</strong>. An <strong>8-layer network</strong> achieved the best balance between precision and training stability, while extended training up to <strong>8000 steps</strong> improved accuracy without excessive computational cost. <strong>Adam</strong> and <strong>AdamW</strong> optimizers outperformed SGD and Ranger, proving well-suited for PINN training.
-  </p>
+    <section class="card hero" aria-labelledby="pinn-title">
+      <div class="profile-pic"><img src="images/profile.jpg" alt="Rishith Vanaliya"></div>
+      <div>
+        <h1 id="pinn-title">Physics-Informed Neural Networks (PINNs)</h1>
+        <p class="lead">Using Fourier-enhanced PINNs (PhysicsNeMo style) to model 2D incompressible flows — lid-driven cavity and cylinder wake — combining limited simulation data with physical constraints to reconstruct u, v, p fields and extract wake statistics.</p>
 
-  <p>
-    The results demonstrate that <strong>Fourier-enhanced PINNs</strong> can serve as reliable, mesh-free surrogates for classical CFD solvers, offering data-efficient modeling of laminar flow dynamics with strong physical adherence. The work provides practical insights into optimizing network design and training strategies for physics-constrained learning.
-  </p>
+        <div class="cta-row">
+          <a class="btn" href="#results">Figures & Results</a>
+          <a class="btn" href="#methods">Methods & Configs</a>
+          <a class="btn secondary" href="contact.html">Request Code / Data</a>
+        </div>
 
-  <p>
-    A <strong>comprehensive research paper</strong> based on this study was <strong>accepted for presentation at the 12th International and 52nd National Conference on Fluid Mechanics and Fluid Power (FMFP–2025)</strong>, organized by the <strong>Institute of Technology, Nirma University, Ahmedabad</strong>. The paper highlights the superior performance of <strong>Fourier-based PINNs</strong> over conventional fully connected networks in modeling laminar lid-driven cavity flows, establishing their potential as efficient alternatives to computationally intensive CFD simulations.
-  </p>
+        <p class="small" style="margin-top:0.5rem">Selected highlight: Accepted paper & presentation at FMFP–2025 (Institute of Technology, Nirma University).</p>
+      </div>
+    </section>
 
-  <img src="images/pinn_simulation.jpg" alt="Physics-Informed Neural Network Simulation">
-</section>
+    <section class="card" id="summary">
+      <h2>Project Summary</h2>
+      <p class="small">This work evaluates architecture choices, optimizer behaviour, and training strategies for PINNs applied to laminar flows. A modified FourierNet (8 layers) delivered consistently better reconstruction fidelity vs standard fully-connected PINNs. Training up to ~8000 steps with Adam/AdamW yielded strong convergence without excessive compute.</p>
+    </section>
 
+    <section class="card" id="methods">
+      <h2>Methods & Experimental Setup</h2>
+      <ul>
+        <li><strong>Equations:</strong> 2D incompressible Navier–Stokes (u, v, p) with continuity & momentum residuals enforced in loss.</li>
+        <li><strong>Data:</strong> Reference CFD snapshots used as sparse supervision (lid-driven cavity / cylinder wake cases).</li>
+        <li><strong>Model:</strong> Fourier-enhanced MLP (Modified FourierNet), 8 hidden layers reported as best tradeoff in experiments.</li>
+        <li><strong>Training:</strong> Loss = data + PDE residual + BC loss. Optimizers: Adam & AdamW performed best. Typical training length: up to 8000 steps for convergence.</li>
+        <li><strong>Validation:</strong> L2 error vs benchmark (Ghia & Ghia for lid-driven cavity), plus qualitative field comparisons and frequency/wake metrics for cylinder wake.</li>
+      </ul>
+    </section>
 
+    <section class="card" id="results">
+      <h2>Figures & Selected Results</h2>
+      <p class="small">Replace the filenames below with your final plots (images in `/images/`). Click to open full resolution.</p>
 
-  <footer>© 2025 Rishith Vanaliya</footer>
+      <div class="gallery" role="list">
+        <img src="images/pinn_u_field.jpg" alt="Reconstructed u-field (PINN)">
+        <img src="images/pinn_v_field.jpg" alt="Reconstructed v-field (PINN)">
+        <img src="images/pinn_pressure.jpg" alt="Reconstructed pressure (PINN)">
+        <img src="images/pinn_freq_plot.png" alt="Vortex shedding frequency extraction">
+      </div>
+
+      <p class="small" style="margin-top:0.6rem">I can add interactive plots or downloadable CSV outputs for frequency/wake-length calculations if you want.</p>
+    </section>
+
+    <section class="card" id="paper">
+      <h2>Paper & Presentation</h2>
+      <p class="small">Title: <em>Physics-Informed Neural Networks with Fourier Features for Laminar Flow Reconstruction</em> — Presented at FMFP–2025. (Add DOI or link to preprint here.)</p>
+      <p class="small">If you'd like, I can add a downloadable PDF of the paper and slides here.</p>
+    </section>
+
+    <section class="card" id="code">
+      <h2>Code & Reproducibility</h2>
+      <p class="small">Repository contains training configs, data loaders for CSV/OpenFOAM outputs, and postprocessing scripts to compute metrics (vortex frequency, wake length). Contact me for access or add a public GitHub link below.</p>
+      <ul>
+        <li><a href="#">GitHub — PINN experiments (placeholder)</a></li>
+        <li><a href="#">Training configs & example notebooks</a></li>
+      </ul>
+    </section>
+
+    <div class="site-footer">© 2025 Rishith Vanaliya</div>
+  </main>
+
+  <script>
+    // Close sidebar on outside click (mobile)
+    document.addEventListener('click', e => {
+      const sidebar = document.querySelector('.sidebar');
+      if (!sidebar) return;
+      if (window.innerWidth <= 900) {
+        const inside = sidebar.contains(e.target) || e.target.classList.contains('menu-toggle');
+        if (!inside) sidebar.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
