@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DDC 2023</title>
+  <title>DDC 2023 — Drone Design Challenge</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -53,23 +53,72 @@
   </div>
 </aside>
 
-  <main class="main">
-<section class="page">
-  <h2>DDC Micro — 2023</h2>
-  <p>Short summary of the 2023 design, lessons learned, and test campaign notes.</p>
+<main class="main">
+  <section class="page">
+    <h2>DDC Micro — 2023</h2>
 
-  <h3>Key points</h3>
-  <ul>
-    <li>Primary focus: baseline airframe, motor-prop selection and stability testing.</li>
-    <li>Learned about material choices for lightweight ribs and control surface hinging.</li>
-  </ul>
+    <p class="lead">
+      The 2023 UAV focused on achieving high stability and efficient structural performance, with a strong emphasis on flight control and durability.
+    </p>
 
-  <div class="gallery">
-    <figure><img src="images/ddc2023_photo1.jpg" alt="DDC23"><figcaption>Assembly — DDC 2023</figcaption></figure>
-  </div>
-</section>
+    <article class="project-overview">
+      <h3>Design highlights</h3>
+      <p>
+        The aircraft featured a <strong>cranked dihedral wing planform</strong>, which substantially improved roll stability and made the UAV easier to handle during turns and maneuvers.
+        A <strong>squared semi-monocoque fuselage</strong> offered a lightweight yet impact-resistant structure, providing ample internal space for electronics and payload integration.
+        To improve belly-landing resilience, <strong>XPS foam</strong> was added to the underside to absorb shocks and protect critical components.
+      </p>
 
-  </main>
+      <h3>Achievements</h3>
+      <ul>
+        <li><strong>Overall 2nd Place</strong> – DDC Micro Class 2023</li>
+        <li><strong>Best Design Report</strong> Award</li>
+      </ul>
+
+      <h3>Optimization & flight performance</h3>
+      <p>
+        Throughout the 2023 development phase, the team continuously refined the UAV through experimentation and testing.
+        The wing mounting system evolved from a slotted lock to a more reliable wing-nut assembly, improving pre-flight efficiency and robustness.
+        The replacement of aluminum rods with <strong>aeroply shear webs</strong> reduced overall weight while maintaining structural integrity.
+        By optimizing aerodynamics and streamlining assembly, the team achieved measurable gains in stability, performance, and operational reliability — improvements that informed the lightweight strategies used in the 2024 design.
+      </p>
+
+      <h3>My role</h3>
+      <p>
+        <strong>Design Engineer</strong> — Responsible for airframe layout, structural sizing, material selection, and wing/fuselage interface design. (Highlighted role for portfolio)
+      </p>
+    </article>
+
+    <h3>Key points & lessons learned</h3>
+    <ul class="key-points">
+      <li>Validated cranked dihedral as an effective passive roll-stability mechanism for small UAVs.</li>
+      <li>Semi-monocoque construction delivered high stiffness-to-weight while simplifying payload access.</li>
+      <li>Field testing emphasised the importance of easy-to-change wing attachment for rapid turnarounds.</li>
+    </ul>
+
+    <div class="gallery">
+      <figure>
+        <img src="images/ddc2023_photo1.jpg" alt="DDC 2023 — assembly and test">
+        <figcaption>Assembly & test setup — DDC 2023</figcaption>
+      </figure>
+
+      <!-- Add more figures as needed -->
+    </div>
+
+    <section class="specs" aria-labelledby="specs-heading">
+      <h3 id="specs-heading">Quick spec (typical)</h3>
+      <ul>
+        <li>Class: DDC Micro</li>
+        <li>Airframe: Squared semi-monocoque fuselage</li>
+        <li>Wing: Cranked dihedral planform</li>
+        <li>Landing protection: XPS foam belly panels</li>
+        <li>Primary materials: Aeroply, balsa, carbon reinforcements, foam</li>
+      </ul>
+    </section>
+
+  </section>
+</main>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = [
