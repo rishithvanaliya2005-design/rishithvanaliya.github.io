@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Technoxian — Rishith</title><link rel="stylesheet" href="style.css" /></head>
+<body>
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand"><div class="logo">RV</div><div><h1>Rishith</h1><p>Technoxian</p></div></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown" id="projectsDrop"><a href="projects.html">Projects ▾</a>
+          <ul><li><a href="ddc.html">DDC (23,24,25)</a></li><li><a href="saeaerodesign.html">SAE Aero</a></li></ul>
+        </li>
+        <li><a href="pinn.html">PINN</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72);padding:0 0.2rem">© 2025 · Rishith</div>
+  </aside>
+
+  <main class="main">
+    <section class="page">
+      <h2>Technoxian UAV Challenge</h2>
+      <p>Participation as Team Arrow — fixed-wing UAV design and autonomous mission runs. Responsible for airframe, autopilot tuning, and payload integration.</p>
+
+      <div class="gallery">
+        <figure><img src="images/technoxian_team.jpg" alt="Technoxian team"><figcaption>Technoxian — Team Arrow</figcaption></figure>
+        <figure><video controls muted><source src="videos/technoxian_flight.mp4" type="video/mp4"></source></video><figcaption>Technoxian flight</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <script>document.addEventListener('DOMContentLoaded', ()=> {const dd = document.getElementById('projectsDrop'); if(dd) dd.addEventListener('click', (e)=>{e.preventDefault(); dd.classList.toggle('open');});});</script>
+</body>
+</html>

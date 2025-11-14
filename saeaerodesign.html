@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAE Aero Design — Rishith Vanaliya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR (same as other pages) -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand"><div class="logo">RV</div><div><h1>Rishith Vanaliya</h1><p>B.Tech ME</p></div></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown" id="projectsDrop"><a href="projects.html">Projects ▾</a>
+          <ul>
+            <li><a href="ddc.html">DDC (23,24,25)</a></li>
+            <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+            <li><a href="technoxian.html">Technoxian</a></li>
+          </ul>
+        </li>
+        <li><a href="pinn.html">PINN</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-section">Quick</li>
+        <li><a href="Resume1%20(2).pdf" target="_blank">Resume (PDF)</a></li>
+      </ul>
+    </nav>
+    <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72);padding:0 0.2rem">© 2025 · Rishith</div>
+  </aside>
+
+  <main class="main">
+    <section class="page">
+      <h2>SAE Aero Design West 2025 — Micro Class</h2>
+
+      <p><strong>Role:</strong> Team Captain (Team Arrow). Responsible for overall design, mission planning, and testing.</p>
+      <p><strong>Summary:</strong> Designed a micro-class fixed-wing UAV focusing on lightweight structure, optimized wing geometry, and reliable autonomous mission execution. Competition result: <em>11th overall, 5th mission score</em>.</p>
+
+      <h3 style="margin-top:1rem">Key features</h3>
+      <ul>
+        <li>Tapered wing with composite skin and balsa internal ribs</li>
+        <li>Custom autopilot integration and telemetry</li>
+        <li>Optimized payload bay and landing gear for quick mission turnaround</li>
+      </ul>
+
+      <h3 style="margin-top:1rem">Media & test flights</h3>
+      <div class="gallery">
+        <figure>
+          <img src="images/aero_team.jpeg" alt="Team Arrow">
+          <figcaption>Team Arrow — SAE ADW 2025</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/aero_uav.jpeg" alt="UAV">
+          <figcaption>Micro-class UAV (assembly)</figcaption>
+        </figure>
+
+        <figure>
+          <video controls muted>
+            <source src="videos/aero_flight.mp4" type="video/mp4">
+          </video>
+          <figcaption>Flight test — Mission run</figcaption>
+        </figure>
+      </div>
+
+      <p style="margin-top:1rem;color:var(--muted)">For full technical details (CAD, BOM, test logs), contact via the Contact page or download the Resume PDF.</p>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const dd = document.getElementById('projectsDrop');
+      if(dd) dd.addEventListener('click', (e)=>{e.preventDefault();dd.classList.toggle('open');});
+    });
+  </script>
+</body>
+</html>
