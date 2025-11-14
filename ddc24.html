@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DDC 2024</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<aside class="sidebar" aria-label="Main navigation">
+  <div class="brand">
+    <div class="logo">RV</div>
+    <div>
+      <h1>Rishith Vanaliya</h1>
+      <p>B.Tech Mechanical · Minor: Data Science</p>
+    </div>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown" id="projectsDrop">
+        <a href="projects.html" id="projectsToggle" aria-expanded="false" aria-controls="projectsMenu">Projects ▾</a>
+        <ul id="projectsMenu" role="menu">
+          <li role="none"><a role="menuitem" href="ddc.html">DDC (23,24,25)</a></li>
+          <li role="none"><a role="menuitem" href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li role="none"><a role="menuitem" href="automated_cfd.html">Automated CFD Platform</a></li>
+          <li role="none"><a role="menuitem" href="gearbox.html">Design of Gearbox</a></li>
+          <li role="none"><a role="menuitem" href="technoxian.html">Technoxian</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown" id="researchDrop">
+        <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu">Research ▾</a>
+        <ul id="researchMenu" role="menu">
+          <li role="none"><a role="menuitem" href="pinn.html">PINN — Navier–Stokes</a></li>
+          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
+        </ul>
+      </li>
+
+      <li><a href="contact.html">Contact</a></li>
+
+      <li class="nav-section">Quick</li>
+      <li><a href="Resume1%20(2).pdf" target="_blank">Resume (PDF)</a></li>
+      <li><a href="#" target="_blank">GitHub</a></li>
+      <li><a href="#" target="_blank">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72);padding:0 0.2rem">
+    © 2025 · Rishith
+  </div>
+</aside>
+
+  <main class="main">
+<section class="page">
+  <h2>DDC Micro — 2024</h2>
+  <p><strong>Role:</strong> Design Lead — improved wing planform, optimized mass, reliable mission completion at events.</p>
+
+  <h3>Achievements</h3>
+  <ul>
+    <li>2nd overall (technical categories) — improved mission reliability.</li>
+    <li>Refined structural layout to reduce weight by ~12% vs 2023 baseline.</li>
+  </ul>
+
+  <div class="gallery">
+    <figure><img src="images/ddc2024_uav.jpeg" alt="DDC 2024"><figcaption>DDC 2024 — vehicle</figcaption></figure>
+    <figure><video controls muted><source src="videos/ddc2024_highlights.mp4" type="video/mp4"></source></video><figcaption>Test flights</figcaption></figure>
+  </div>
+</section>
+
+  </main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = [
+    {wrapId: 'projectsDrop', toggleId: 'projectsToggle', menuId: 'projectsMenu'},
+    {wrapId: 'researchDrop', toggleId: 'researchToggle', menuId: 'researchMenu'}
+  ];
+
+  toggles.forEach(({wrapId, toggleId, menuId}) => {
+    const wrap = document.getElementById(wrapId);
+    const toggle = document.getElementById(toggleId);
+    const menu = document.getElementById(menuId);
+
+    if (!wrap || !toggle || !menu) return;
+
+    // open/close on header click only
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault(); // header controls dropdown, not navigation
+      const opening = !wrap.classList.contains('open');
+      // close any other open dropdowns
+      document.querySelectorAll('.dropdown.open').forEach(d => {
+        if (d !== wrap) d.classList.remove('open');
+      });
+      wrap.classList.toggle('open', opening);
+      toggle.setAttribute('aria-expanded', String(opening));
+    });
+
+    // Allow middle-click on header to open page in new tab
+    toggle.addEventListener('auxclick', (e) => {
+      if (e.button === 1) window.open(toggle.href, '_blank');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
+        wrap.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Keyboard: toggle with Enter/Space when focused
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>

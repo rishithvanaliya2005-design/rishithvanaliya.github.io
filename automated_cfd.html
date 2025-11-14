@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Automated CFD Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<aside class="sidebar" aria-label="Main navigation">
+  <div class="brand">
+    <div class="logo">RV</div>
+    <div>
+      <h1>Rishith Vanaliya</h1>
+      <p>B.Tech Mechanical · Minor: Data Science</p>
+    </div>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown" id="projectsDrop">
+        <a href="projects.html" id="projectsToggle" aria-expanded="false" aria-controls="projectsMenu">Projects ▾</a>
+        <ul id="projectsMenu" role="menu">
+          <li role="none"><a role="menuitem" href="ddc.html">DDC (23,24,25)</a></li>
+          <li role="none"><a role="menuitem" href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li role="none"><a role="menuitem" href="automated_cfd.html">Automated CFD Platform</a></li>
+          <li role="none"><a role="menuitem" href="gearbox.html">Design of Gearbox</a></li>
+          <li role="none"><a role="menuitem" href="technoxian.html">Technoxian</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown" id="researchDrop">
+        <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu">Research ▾</a>
+        <ul id="researchMenu" role="menu">
+          <li role="none"><a role="menuitem" href="pinn.html">PINN — Navier–Stokes</a></li>
+          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
+        </ul>
+      </li>
+
+      <li><a href="contact.html">Contact</a></li>
+
+      <li class="nav-section">Quick</li>
+      <li><a href="Resume1%20(2).pdf" target="_blank">Resume (PDF)</a></li>
+      <li><a href="#" target="_blank">GitHub</a></li>
+      <li><a href="#" target="_blank">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72);padding:0 0.2rem">
+    © 2025 · Rishith
+  </div>
+</aside>
+
+  <main class="main">
+    <section class="page">
+      <h2>Automated CFD Simulation Platform (Flask + OpenFOAM)</h2>
+
+      <p><strong>Role:</strong> (e.g., Full-stack dev / CFD integrator)</p>
+      <p><strong>Year:</strong> (e.g., 2024)</p>
+
+      <h3>Elevator pitch</h3>
+      <p><!-- 1-2 lines: what the platform does and for whom --></p>
+
+      <h3>Goals</h3>
+      <ul>
+        <li>Provide a web UI to configure geometry, meshing, boundary conditions, and run OpenFOAM cases.</li>
+        <li>Automate queueing, postprocessing (plots, slices), and result download.</li>
+      </ul>
+
+      <h3>Architecture</h3>
+      <ul>
+        <li>Frontend: (HTML/JS/CSS) — UI pages and file upload</li>
+        <li>Backend: Flask app — endpoints to create case, trigger meshing, run solver, postprocess</li>
+        <li>CFD engine: OpenFOAM — template cases + parameter substitution</li>
+        <li>Job management: Celery / systemd / simple subprocess queue (describe what you used)</li>
+        <li>Storage: case directory layout, results retention</li>
+      </ul>
+
+      <h3>Usage</h3>
+      <ol>
+        <li>Upload geometry (STL) or choose parametric shape</li>
+        <li>Specify BCs (inlet velocity, outlet, walls)</li>
+        <li>Choose simulator (simpleFoam, pisoFoam) and mesh parameters</li>
+        <li>Run and wait — status visible on UI; download logs & result archives.</li>
+      </ol>
+
+      <h3>Repro & code</h3>
+      <p>Repo: <a href="#" target="_blank">link</a>. Brief run commands:</p>
+      <pre style="background:#f4f7f8;padding:0.6rem;border-radius:6px">git clone ... 
+cd platform
+pip install -r requirements.txt
+sudo systemctl start cfd-job-runner
+</pre>
+
+      <h3>Media</h3>
+      <div class="gallery">
+        <figure><img src="images/automated_cfd_ui.png" alt="CFD UI"><figcaption>Web UI — case setup</figcaption></figure>
+        <figure><img src="images/automated_cfd_results.png" alt="CFD results"><figcaption>Postprocessing snapshot</figcaption></figure>
+      </div>
+
+      <h3>Notes / limitations</h3>
+      <p><!-- e.g., security, multi-user, resource limits, cluster integration --></p>
+    </section>
+
+  </main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = [
+    {wrapId: 'projectsDrop', toggleId: 'projectsToggle', menuId: 'projectsMenu'},
+    {wrapId: 'researchDrop', toggleId: 'researchToggle', menuId: 'researchMenu'}
+  ];
+
+  toggles.forEach(({wrapId, toggleId, menuId}) => {
+    const wrap = document.getElementById(wrapId);
+    const toggle = document.getElementById(toggleId);
+    const menu = document.getElementById(menuId);
+
+    if (!wrap || !toggle || !menu) return;
+
+    // open/close on header click only
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault(); // header controls dropdown, not navigation
+      const opening = !wrap.classList.contains('open');
+      // close any other open dropdowns
+      document.querySelectorAll('.dropdown.open').forEach(d => {
+        if (d !== wrap) d.classList.remove('open');
+      });
+      wrap.classList.toggle('open', opening);
+      toggle.setAttribute('aria-expanded', String(opening));
+    });
+
+    // Allow middle-click on header to open page in new tab
+    toggle.addEventListener('auxclick', (e) => {
+      if (e.button === 1) window.open(toggle.href, '_blank');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
+        wrap.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Keyboard: toggle with Enter/Space when focused
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
