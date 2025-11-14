@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAE Aero Design | Rishith Vanaliya</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAE Aero Design — Rishith Vanaliya</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" aria-label="Open menu"
+    onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+
   <!-- SIDEBAR NAV -->
   <aside class="sidebar" aria-label="Main navigation">
     <div class="brand">
@@ -18,7 +23,8 @@
     </div>
 
     <ul class="nav-list">
-      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
+
       <li>
         <div class="dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">
           <a class="nav-link">Projects</a>
@@ -26,49 +32,112 @@
         </div>
         <ul class="submenu">
           <li><a href="ddc.html">DDC — Micro Class (2023,2024,2025)</a></li>
-          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li><a class="active" href="saeaerodesign.html">SAE Aero Design</a></li>
           <li><a href="#">Technoxian (UAV Challenges)</a></li>
         </ul>
       </li>
+
       <li><a href="pinn.html">Research — PINN</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
     <div class="sidebar-footer">
       © 2025 Rishith Vanaliya<br>
-      <div class="small">Built with HTML & CSS — Hosted on GitHub Pages</div>
+      <div class="small">Built with HTML & CSS — GitHub Pages</div>
     </div>
   </aside>
 
+  <!-- MAIN CONTENT -->
+  <main class="content">
 
-  <section>
-  <h2>SAE Aero Design West 2025 – Micro Class</h2>
-  <p>
-    <strong>SAE Aero Design West</strong> is an international competition organized by <strong>SAE International</strong>, featuring three categories – Micro, Regular, and Advanced. The <strong>Micro Class</strong> challenges teams to design, build, and fly an unmanned aerial vehicle (UAV) capable of maximizing payload capacity while minimizing overall weight and wingspan. The payload, consisting of liquid water, tests both the structural efficiency and flight performance of the UAV. Over <strong>70 teams</strong> from universities across the globe participated in the 2025 edition.
-  </p>
+    <section class="card hero" aria-labelledby="aero-title">
+      <div class="profile-pic"><img src="images/aero_team.jpeg" alt="Aero Team"></div>
+      <div>
+        <h1 id="aero-title">SAE Aero Design West 2025 — Team Arrow</h1>
+        <p class="lead">Team Captain for SAE Aero Design West 2025 (Micro Class). Led design, fabrication, integration and testing of an autonomous competition UAV focusing on payload fraction, rapid assembly, and reliable flight performance.</p>
 
-  <img src="images/aero_team.jpeg" alt="SAE Aero Design West Team">
-  <p>
-    As the <strong>Team Captain</strong>, I led a group of <strong>30+ students</strong> through the complete design and fabrication cycle of our UAV. I managed project timelines, coordinated subsystem teams, and oversaw the integration of aerodynamics, propulsion, and structural systems to ensure cohesive performance under competition constraints.
-  </p>
-  <video controls muted>
-    <source src="videos/aero_flight.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+        <div class="cta-row">
+          <a class="btn" href="#summary">Project Summary</a>
+          <a class="btn" href="#media">Media & Flights</a>
+          <a class="btn secondary" href="contact.html">Collaborate / Sponsor</a>
+        </div>
 
-  <p>
-    Our UAV was designed for <strong>autonomous flight</strong> with a <strong>takeoff distance under 10 ft</strong> and operated within a strict <strong>450 W power limit</strong>. With a total empty weight of <strong>1.6 kg</strong>, the aircraft successfully carried a <strong>2 L liquid payload</strong>, achieving a payload fraction exceeding <strong>0.5</strong>. The optimized structural design ensured strength, safety, and quick assembly, while rigorous testing validated its aerodynamic efficiency and flight endurance of over <strong>5 minutes</strong>.
-  </p>
-  <img src="images/aero_uav.jpeg" alt="SAE Aero Design UAV">
-  <p>
-    The project combined advanced simulation, iterative prototyping, and data-driven testing to enhance flight stability and control. These efforts paid off as the team secured an impressive <strong>11th overall rank</strong> and <strong>5th place in mission score</strong> among more than seventy international competitors.
-  </p>
+        <p class="small" style="margin-top:0.5rem">Highlights: 11th overall (70+ teams) • 5th in mission score • lightweight composite wing • autonomous flight with <10 ft takeoff.</p>
+      </div>
+    </section>
 
+    <section class="card" id="summary">
+      <h2>Project Summary</h2>
+      <p class="small">SAE Aero Design West is an international competition testing airframe design, payload handling and mission capability. Our Micro Class entry prioritised a high payload fraction and quick assembly under strict power/weight limits.</p>
 
+      <ul>
+        <li><strong>Role:</strong> Team Captain — project management, design reviews, flight test sign-off.</li>
+        <li><strong>Team:</strong> 30+ members across structures, avionics, propulsion and flight-test.</li>
+        <li><strong>Key metrics:</strong> empty weight ≈ 1.6 kg, 2 L liquid payload, flight endurance &gt; 5 min, takeoff &lt; 10 ft, power limit 450 W.</li>
+      </ul>
+    </section>
 
-</section>
+    <section class="card" id="design">
+      <h2>Design & Engineering Notes</h2>
+      <ul>
+        <li><strong>Airframe:</strong> lightweight composite/wood hybrid wings with optimized taper for efficient lift distribution.</li>
+        <li><strong>Structure:</strong> quick-assembly spars and alignment features for reliable pre-flight checks.</li>
+        <li><strong>Propulsion:</strong> powertrain tuned to stay within a 450 W limit while providing necessary climb and cruise margins.</li>
+        <li><strong>Autonomy:</strong> waypoint-based missions with redundant sensors and pre-flight validation routines.</li>
+        <li><strong>Testing:</strong> iterative flight tests + instrumented logging for control tuning and mission reliability.</li>
+      </ul>
+    </section>
 
+    <section class="card" id="media">
+      <h2>Media & Flight Highlights</h2>
+      <p class="small">Flight video and gallery below — videos are muted by default.</p>
 
-  <footer>© 2025 Rishith Vanaliya</footer>
+      <div class="gallery" role="list">
+        <video controls muted playsinline>
+          <source src="videos/aero_flight.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <img src="images/aero_uav.jpeg" alt="SAE Aero Design UAV">
+        <img src="images/aero_wing.jpg" alt="Wing layup and spar">
+        <img src="images/aero_control.jpg" alt="Control surfaces & avionics">
+      </div>
+
+      <p class="small" style="margin-top:0.6rem">Tip: replace placeholder filenames with final high-res assets for GitHub Pages hosting.</p>
+    </section>
+
+    <section class="card" id="results">
+      <h2>Competition Results</h2>
+      <p class="small">From over 70 teams: <strong>11th overall</strong> and <strong>5th in mission score</strong>. The ranking reflects robust mission execution, documentation, and flight performance under contest constraints.</p>
+
+      <ul>
+        <li>Static evaluation: design report, manufacturability & safety checks.</li>
+        <li>Dynamic evaluation: takeoff, payload delivery, stability and mission repeatability.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="downloads">
+      <h2>Artifacts & Downloads</h2>
+      <p class="small">Available on request: CAD files, build drawings, flight logs and the technical report.</p>
+      <ul>
+        <li><a href="files/aero_report_2025.pdf">Technical report — SAE Aero Design 2025 (PDF)</a></li>
+        <li><a href="files/aero_buildfiles.zip">CAD & build files (ZIP)</a></li>
+      </ul>
+    </section>
+
+    <div class="site-footer">© 2025 Rishith Vanaliya</div>
+  </main>
+
+  <script>
+    // Close sidebar on outside click (mobile)
+    document.addEventListener('click', e => {
+      const sidebar = document.querySelector('.sidebar');
+      if (!sidebar) return;
+      if (window.innerWidth <= 900) {
+        const inside = sidebar.contains(e.target) || e.target.classList.contains('menu-toggle');
+        if (!inside) sidebar.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
