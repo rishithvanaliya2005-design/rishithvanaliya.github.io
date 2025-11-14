@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 <aside class="sidebar" aria-label="Main navigation">
   <div class="brand">
     <div class="logo">RV</div>
@@ -21,21 +22,21 @@
       <li><a href="index.html">Home</a></li>
 
       <li class="dropdown" id="projectsDrop">
-        <a href="projects.html" id="projectsToggle" aria-expanded="false" aria-controls="projectsMenu">Projects ▾</a>
-        <ul id="projectsMenu" role="menu">
-          <li role="none"><a role="menuitem" href="ddc.html">DDC (23,24,25)</a></li>
-          <li role="none"><a role="menuitem" href="saeaerodesign.html">SAE Aero Design</a></li>
-          <li role="none"><a role="menuitem" href="automated_cfd.html">Automated CFD Platform</a></li>
-          <li role="none"><a role="menuitem" href="gearbox.html">Design of Gearbox</a></li>
-          <li role="none"><a role="menuitem" href="technoxian.html">Technoxian</a></li>
+        <a href="projects.html" id="projectsToggle">Projects ▾</a>
+        <ul id="projectsMenu">
+          <li><a href="ddc.html">DDC (23,24,25)</a></li>
+          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li><a href="automated_cfd.html">Automated CFD Platform</a></li>
+          <li><a href="gearbox.html">Design of Gearbox</a></li>
+          <li><a href="technoxian.html">Technoxian</a></li>
         </ul>
       </li>
 
       <li class="dropdown" id="researchDrop">
-        <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu">Research ▾</a>
-        <ul id="researchMenu" role="menu">
-          <li role="none"><a role="menuitem" href="pinn.html">PINN — Navier–Stokes</a></li>
-          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
+        <a href="pinn.html" id="researchToggle">Research ▾</a>
+        <ul id="researchMenu">
+          <li><a href="pinn.html">PINN — Navier–Stokes</a></li>
+          <li><a href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
         </ul>
       </li>
 
@@ -53,89 +54,73 @@
   </div>
 </aside>
 
-  <main class="main">
+<main class="main">
 <section class="page">
+
   <h2>SAE Aero Design West 2025 — Micro Class</h2>
 
-  <p><strong>Role:</strong> Team Captain (Team Arrow). Responsible for overall design, mission planning, and testing.</p>
-  <p><strong>Summary:</strong> Designed a micro-class fixed-wing UAV focusing on lightweight structure, optimized wing geometry, and reliable autonomous mission execution. Competition result: <em>11th overall, 5th mission score</em>.</p>
+  <p><strong>Role:</strong> Team Captain — led a 30+ member student team through complete UAV design, fabrication, testing, and competition execution.</p>
 
-  <h3 style="margin-top:1rem">Key features</h3>
-  <ul>
-    <li>Tapered wing with composite skin and balsa internal ribs</li>
-    <li>Custom autopilot integration and telemetry</li>
-    <li>Optimized payload bay and landing gear for quick mission turnaround</li>
-  </ul>
+  <h3>Overview</h3>
+  <p>
+    SAE Aero Design West is an international engineering competition organized by SAE International, featuring Micro, Regular, and Advanced classes. The Micro Class emphasizes maximizing payload capacity while minimizing weight and wingspan, using liquid payload to test structural efficiency and flight performance. Over 70 global university teams participated in the 2025 edition.
+  </p>
 
-  <h3 style="margin-top:1rem">Media & test flights</h3>
+  <h3>My contribution</h3>
+  <p>
+    As Team Captain, I managed subsystem coordination, scheduling, structural–aerodynamic integration, and mission preparation. I oversaw the full development cycle—from conceptual design and simulations to fabrication, ground testing, and flight operations under competition constraints.
+  </p>
+
+  <h3>Aircraft & performance</h3>
+  <p>
+    Our UAV was engineered for autonomous flight with a takeoff distance under 10 ft and a strict 450 W power limit. With an empty weight of 1.6 kg, the aircraft successfully carried a 2 L liquid payload, achieving a payload fraction above 0.5. The structural layout enabled strength, safety, and rapid assembly, while aerodynamic refinement and field-testing delivered stable performance and over 5 minutes of endurance.
+  </p>
+
+  <h3>Result</h3>
+  <p>
+    Through simulation-driven design, iterative prototyping, and extensive testing, the team secured <strong>11th place overall</strong> and <strong>5th place in mission score</strong> among more than seventy international teams.
+  </p>
+
+  <h3>Media</h3>
   <div class="gallery">
     <figure>
       <img src="images/aero_team.jpeg" alt="Team Arrow">
-      <figcaption>Team Arrow — SAE ADW 2025</figcaption>
+      <figcaption>Team Arrow — SAE Aero Design West 2025</figcaption>
     </figure>
 
     <figure>
       <img src="images/aero_uav.jpeg" alt="UAV">
-      <figcaption>Micro-class UAV (assembly)</figcaption>
+      <figcaption>Micro-Class UAV — Final Configuration</figcaption>
     </figure>
 
     <figure>
       <video controls muted>
         <source src="videos/aero_flight.mp4" type="video/mp4">
       </video>
-      <figcaption>Flight test — Mission run</figcaption>
+      <figcaption>Flight Testing — Mission Run</figcaption>
     </figure>
   </div>
 
-  <p style="margin-top:1rem;color:var(--muted)">For full technical details (CAD, BOM, test logs), contact via the Contact page or download the Resume PDF.</p>
 </section>
+</main>
 
-  </main>
 <script>
+// minimal dropdown logic
 document.addEventListener('DOMContentLoaded', () => {
-  const toggles = [
-    {wrapId: 'projectsDrop', toggleId: 'projectsToggle', menuId: 'projectsMenu'},
-    {wrapId: 'researchDrop', toggleId: 'researchToggle', menuId: 'researchMenu'}
+  const sets = [
+    ['projectsDrop', 'projectsToggle'],
+    ['researchDrop', 'researchToggle']
   ];
-
-  toggles.forEach(({wrapId, toggleId, menuId}) => {
+  sets.forEach(([wrapId, toggleId]) => {
     const wrap = document.getElementById(wrapId);
     const toggle = document.getElementById(toggleId);
-    const menu = document.getElementById(menuId);
-
-    if (!wrap || !toggle || !menu) return;
-
-    // open/close on header click only
+    if (!wrap || !toggle) return;
     toggle.addEventListener('click', (e) => {
-      e.preventDefault(); // header controls dropdown, not navigation
-      const opening = !wrap.classList.contains('open');
-      // close any other open dropdowns
-      document.querySelectorAll('.dropdown.open').forEach(d => {
-        if (d !== wrap) d.classList.remove('open');
-      });
-      wrap.classList.toggle('open', opening);
-      toggle.setAttribute('aria-expanded', String(opening));
+      e.preventDefault();
+      wrap.classList.toggle('open');
     });
-
-    // Allow middle-click on header to open page in new tab
-    toggle.addEventListener('auxclick', (e) => {
-      if (e.button === 1) window.open(toggle.href, '_blank');
-    });
-
-    // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
-      if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
-        wrap.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Keyboard: toggle with Enter/Space when focused
-    toggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle.click();
-      }
+      if (!wrap.contains(e.target)) wrap.classList.remove('open');
     });
   });
 });
