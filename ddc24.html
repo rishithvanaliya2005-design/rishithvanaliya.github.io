@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DDC 2024</title>
+  <title>DDC 2024 — Drone Design Challenge</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -53,24 +53,75 @@
   </div>
 </aside>
 
-  <main class="main">
-<section class="page">
-  <h2>DDC Micro — 2024</h2>
-  <p><strong>Role:</strong> Design Lead — improved wing planform, optimized mass, reliable mission completion at events.</p>
+<main class="main">
+  <section class="page">
+    <h2>DDC Micro — 2024</h2>
 
-  <h3>Achievements</h3>
-  <ul>
-    <li>2nd overall (technical categories) — improved mission reliability.</li>
-    <li>Refined structural layout to reduce weight by ~12% vs 2023 baseline.</li>
-  </ul>
+    <p class="lead">
+      In the 2024 edition, Team Arrow focused on developing a high payload-fraction UAV that balanced lightweight construction with structural strength and aerodynamic efficiency. As the <strong>Design Lead</strong>, I guided the team to maximize lift and stability while minimizing empty weight.
+    </p>
 
-  <div class="gallery">
-    <figure><img src="images/ddc2024_uav.jpeg" alt="DDC 2024"><figcaption>DDC 2024 — vehicle</figcaption></figure>
-    <figure><video controls muted><source src="videos/ddc2024_highlights.mp4" type="video/mp4"></source></video><figcaption>Test flights</figcaption></figure>
-  </div>
-</section>
+    <article class="project-overview">
+      <h3>Design highlights</h3>
+      <p>
+        The aircraft adopted a <strong>trailing-edge tapered wing</strong> with a 1-meter span, which reduced balsa usage and improved aerodynamic smoothness. A simplified <strong>three-walled fuselage</strong> constructed from aeroply and flite board delivered an excellent strength-to-weight ratio, enhancing impact resistance and durability during repeated operations.
+        The fuselage and wing geometry were optimized for payload fraction and manufacturing efficiency, allowing rapid repairs and quick turnarounds between flights.
+      </p>
 
-  </main>
+      <h3>Achievements</h3>
+      <ul>
+        <li><strong>Overall 2nd Place</strong> – DDC Micro Class 2024</li>
+        <li><strong>Best Technical Presentation</strong> Award</li>
+      </ul>
+
+      <h3>Optimization & flight performance</h3>
+      <p>
+        Through iterative testing and disciplined refinement, the UAV’s empty weight was reduced from ~1000 g to under 700 g, achieving a payload fraction of <strong>0.72</strong>. The simplified fuselage made the aircraft easier to manufacture, repair, and optimize between flights, which nearly doubled the number of successful test sorties.
+        Aerodynamic tuning and structural light-weighting produced measurable gains in stability and mission reliability. A dedicated pilot training program further improved consistency during trials and competition flights.
+      </p>
+
+      <h3>My role</h3>
+      <p>
+        <strong>Design Lead</strong> — Led airframe and wing planform design, mass optimization, materials selection, and verification testing. (Role highlighted for portfolio)
+      </p>
+    </article>
+
+    <h3>Key points & lessons learned</h3>
+    <ul class="key-points">
+      <li>Trailing-edge taper and optimized span reduced structural weight while preserving lift.</li>
+      <li>Three-walled aeroply + flite board fuselage provided a robust, repairable structure with low empty weight.</li>
+      <li>Process improvements (manufacturing and pilot training) increased successful flight attempts and data collection cadence.</li>
+    </ul>
+
+    <div class="gallery">
+      <figure>
+        <img src="images/ddc2024_uav.jpeg" alt="DDC 2024 — vehicle">
+        <figcaption>DDC 2024 — flight-ready vehicle</figcaption>
+      </figure>
+
+      <figure>
+        <video controls muted>
+          <source src="videos/ddc2024_highlights.mp4" type="video/mp4">
+        </video>
+        <figcaption>Test flights & highlights</figcaption>
+      </figure>
+    </div>
+
+    <section class="specs" aria-labelledby="specs-heading">
+      <h3 id="specs-heading">Quick spec (typical)</h3>
+      <ul>
+        <li>Class: DDC Micro</li>
+        <li>Wing: Trailing-edge tapered, 1 m span</li>
+        <li>Fuselage: Three-walled aeroply + flite board</li>
+        <li>Empty weight: &lt; 700 g (post-optimization)</li>
+        <li>Payload fraction: 0.72</li>
+        <li>Primary materials: Aeroply, flite board, balsa, carbon reinforcements</li>
+      </ul>
+    </section>
+
+  </section>
+</main>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = [
