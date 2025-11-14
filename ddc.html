@@ -7,13 +7,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="saeaerodesign.html">SAE Aero Design</a>
-    <a href="pinn.html">PINN</a>
-    <a href="ddc.html">DDC</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand">
+      <div class="profile-pic"><img src="images/profile.jpg" alt="Rishith Vanaliya"></div>
+      <div>
+        <h2>Rishith Vanaliya</h2>
+        <div class="small">Mechanical Engg. • UAV & CFD</div>
+      </div>
+    </div>
+
+    <ul class="nav-list">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li>
+        <div class="dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <a class="nav-link">Projects</a>
+          <span class="chev">›</span>
+        </div>
+        <ul class="submenu">
+          <li><a href="ddc.html">DDC — Micro Class (2023,2024,2025)</a></li>
+          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li><a href="#">Technoxian (UAV Challenges)</a></li>
+        </ul>
+      </li>
+      <li><a href="pinn.html">Research — PINN</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      © 2025 Rishith Vanaliya<br>
+      <div class="small">Built with HTML & CSS — Hosted on GitHub Pages</div>
+    </div>
+  </aside>
 
   <section>
     <section>
