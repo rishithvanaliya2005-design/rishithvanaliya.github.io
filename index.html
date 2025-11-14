@@ -125,5 +125,56 @@
       }
     });
   </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = [
+    {wrapId: 'projectsDrop', toggleId: 'projectsToggle', menuId: 'projectsMenu'},
+    {wrapId: 'researchDrop', toggleId: 'researchToggle', menuId: 'researchMenu'}
+  ];
+
+  toggles.forEach(({wrapId, toggleId, menuId}) => {
+    const wrap = document.getElementById(wrapId);
+    const toggle = document.getElementById(toggleId);
+    const menu = document.getElementById(menuId);
+
+    if (!wrap || !toggle || !menu) return;
+
+    // open/close on header click only
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault(); // header controls dropdown, not navigation
+      const opening = !wrap.classList.contains('open');
+      // close any other open dropdowns
+      document.querySelectorAll('.dropdown.open').forEach(d => {
+        if (d !== wrap) d.classList.remove('open');
+      });
+      wrap.classList.toggle('open', opening);
+      toggle.setAttribute('aria-expanded', String(opening));
+    });
+
+    // Allow middle-click on header to open projects page in new tab
+    toggle.addEventListener('auxclick', (e) => {
+      if (e.button === 1) window.open(toggle.href, '_blank');
+    });
+
+    // Let child links work normally — no handler needed here.
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
+        wrap.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Keyboard: toggle with Enter/Space when focused
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
+  });
+});
+</script>
+
 </body>
 </html>
