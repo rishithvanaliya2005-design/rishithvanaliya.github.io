@@ -1,34 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rishith Vanaliya | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="saeaerodesign.html">SAE Aero Design</a>
-    <a href="pinn.html">PINN</a>
-    <a href="ddc.html">DDC</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <section>
-    <h1>Rishith Kirankumar Vanaliya</h1>
-    <p>B.Tech in Mechanical Engineering (Minor: Data Science), Nirma University</p>
-    <p>Passionate about UAV Design and Automobile. This website showcases my major technical projects and achievements.</p>
+  <!-- mobile menu toggle -->
+  <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">
+    ☰
+  </button>
 
-    <h3>Quick Links</h3>
-    <ul>
-      <li><a href="saeaerodesign.html">SAE Aero Design Project</a></li>
-      <li><a href="pinn.html">PINN Research Work</a></li>
-      <li><a href="ddc.html">Drone Design Challenge (DDC)</a></li>
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand">
+      <div class="profile-pic"><img src="images/profile.jpg" alt="Rishith Vanaliya"></div>
+      <div>
+        <h2>Rishith Vanaliya</h2>
+        <div class="small">Mechanical Engg. • UAV & CFD</div>
+      </div>
+    </div>
+
+    <ul class="nav-list">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li>
+        <div class="dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">
+          <a class="nav-link">Projects</a>
+          <span class="chev">›</span>
+        </div>
+        <ul class="submenu">
+          <li><a href="ddc.html">DDC — Micro Class (2023,2024,2025)</a></li>
+          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li><a href="#">Technoxian (UAV Challenges)</a></li>
+        </ul>
+      </li>
+      <li><a href="pinn.html">Research — PINN</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-  </section>
 
-  <footer>© 2025 Rishith Vanaliya | Hosted on GitHub Pages</footer>
+    <div class="sidebar-footer">
+      © 2025 Rishith Vanaliya<br>
+      <div class="small">Built with HTML & CSS — Hosted on GitHub Pages</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <section class="card hero" aria-labelledby="intro-title">
+      <div class="profile-pic"><img src="images/profile.jpg" alt="Rishith Vanaliya"></div>
+      <div>
+        <h1 id="intro-title">Rishith Kirankumar Vanaliya</h1>
+        <p class="lead">B.Tech (Mechanical Engg.) — Minor: Data Science. I design lightweight UAVs and apply physics-informed ML to fluid problems. I blend hands-on prototyping, instrumentation, and numerical modelling to deliver competition-grade aircraft and publishable CFD/ML results.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="saeaerodesign.html">See Aero Design</a>
+          <a class="btn" href="pinn.html">Read PINN Research</a>
+          <a class="btn secondary" href="contact.html">Contact / CV</a>
+        </div>
+
+        <p class="small" style="margin-top:0.6rem">Highlights: SAE Aero Design West '25 – Team Captain • DDC 2023–24 – Design Lead • Published at FMFP 2025</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0">Projects Gallery</h2>
+      <p class="small">Recent project images and flight test highlights.</p>
+
+      <div class="gallery" aria-hidden="false">
+        <img src="images/aero_team.jpeg" alt="Aero Team">
+        <img src="images/aero_uav.jpeg" alt="Aero UAV">
+        <img src="images/ddc2024_uav.jpeg" alt="DDC 2024 UAV">
+        <img src="images/ddc2023_uav.jpg" alt="DDC 2023 UAV">
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="saeaerodesign.html">SAE Aero Design — full project</a></li>
+        <li><a href="ddc.html">Drone Design Challenge — timeline & media</a></li>
+        <li><a href="pinn.html">Physics-Informed Neural Networks — paper & figures</a></li>
+      </ul>
+    </section>
+
+    <div class="site-footer">© 2025 Rishith Vanaliya</div>
+  </main>
+
+  <script>
+    // close sidebar on content click (mobile)
+    document.addEventListener('click', e => {
+      const sidebar = document.querySelector('.sidebar');
+      if (!sidebar) return;
+      if (window.innerWidth <= 900) {
+        const inside = sidebar.contains(e.target) || e.target.classList.contains('menu-toggle');
+        if (!inside) sidebar.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
-
