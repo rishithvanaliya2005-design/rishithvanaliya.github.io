@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DDC 2025</title>
+  <title>DDC 2025 — Drone Design Challenge</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 <aside class="sidebar" aria-label="Main navigation">
   <div class="brand">
     <div class="logo">RV</div>
@@ -53,17 +54,26 @@
   </div>
 </aside>
 
-  <main class="main">
-<section class="page">
-  <h2>DDC Micro — 2025</h2>
-  <p>2025 update — iterative improvements to avionics and autopilot logic. Focus on reliability under variable wind conditions.</p>
+<main class="main">
+  <section class="page">
+    <h2>DDC Micro — 2025</h2>
 
-  <div class="gallery">
-    <figure><img src="images/ddc2025_photo1.jpg" alt="DDC 2025"><figcaption>DDC 2025 test</figcaption></figure>
-  </div>
-</section>
+    <p><strong>Role:</strong> Mentor — guided the team through structural design choices, testing strategy, and performance optimization.</p>
 
-  </main>
+    <h3>Achievements</h3>
+    <ul>
+      <li><strong>3rd Overall</strong> — DDC Micro Class 2025</li>
+    </ul>
+
+    <div class="gallery">
+      <figure>
+        <img src="images/ddc2025_photo1.jpg" alt="DDC 2025">
+        <figcaption>DDC 2025 — test campaign</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = [
@@ -78,11 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!wrap || !toggle || !menu) return;
 
-    // open/close on header click only
     toggle.addEventListener('click', (e) => {
-      e.preventDefault(); // header controls dropdown, not navigation
+      e.preventDefault();
       const opening = !wrap.classList.contains('open');
-      // close any other open dropdowns
       document.querySelectorAll('.dropdown.open').forEach(d => {
         if (d !== wrap) d.classList.remove('open');
       });
@@ -90,12 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', String(opening));
     });
 
-    // Allow middle-click on header to open page in new tab
     toggle.addEventListener('auxclick', (e) => {
       if (e.button === 1) window.open(toggle.href, '_blank');
     });
 
-    // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
       if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
         wrap.classList.remove('open');
@@ -103,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Keyboard: toggle with Enter/Space when focused
     toggle.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
