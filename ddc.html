@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DDC Project | Rishith Vanaliya</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DDC — Drone Design Challenge | Rishith Vanaliya</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" aria-label="Open menu"
+    onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+
   <!-- SIDEBAR NAV -->
   <aside class="sidebar" aria-label="Main navigation">
     <div class="brand">
@@ -18,116 +23,112 @@
     </div>
 
     <ul class="nav-list">
-      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
+
       <li>
         <div class="dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">
           <a class="nav-link">Projects</a>
           <span class="chev">›</span>
         </div>
         <ul class="submenu">
-          <li><a href="ddc.html">DDC — Micro Class (2023,2024,2025)</a></li>
+          <li><a class="active" href="ddc.html">DDC — Micro Class (2023,2024,2025)</a></li>
           <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
           <li><a href="#">Technoxian (UAV Challenges)</a></li>
         </ul>
       </li>
+
       <li><a href="pinn.html">Research — PINN</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
     <div class="sidebar-footer">
       © 2025 Rishith Vanaliya<br>
-      <div class="small">Built with HTML & CSS — Hosted on GitHub Pages</div>
+      <div class="small">Built with HTML & CSS — GitHub Pages</div>
     </div>
   </aside>
 
-  <section>
-    <section>
-  <h2>Drone Design Challenge (DDC) Micro Class</h2>
-  <p>
-    The SAE Drone Development Challenge (DDC) is a national-level competition that challenges students to design, build, and demonstrate efficient unmanned aerial vehicles (UAVs) capable of carrying payloads within strict dimensional and weight constraints.
-    The <strong>Micro Class</strong> category emphasizes high payload fractions, compact design, and innovative engineering solutions. The event provides an excellent platform for students to apply aerodynamics, structural design, and systems engineering principles in a practical and competitive environment.
-  </p>
-</section>
+  <!-- MAIN CONTENT -->
+  <main class="content">
 
-<section>
-  <h3>DDC-Micro 2024 – Design Philosophy and Innovation</h3>
-  <p>
-    In the <strong>2024 edition</strong>, Team Arrow focused on developing a high payload fraction UAV that balanced lightweight construction with structural strength and aerodynamic efficiency.
-    As the <strong>Design Lead</strong>, I guided the design process toward achieving maximum lift and stability while minimizing the empty weight of the aircraft.
-    The team adopted a <strong>trailing edge tapered wing</strong> with a 1-meter span, reducing balsa usage and enhancing aerodynamic smoothness.
-    A three-walled fuselage made of <strong>aeroply</strong> and <strong>flite board</strong> provided exceptional strength-to-weight performance, ensuring impact resistance and durability during repeated flight operations.
-  </p>
+    <section class="card hero" aria-labelledby="ddc-title">
+      <div class="profile-pic"><img src="images/ddc2024_uav.jpeg" alt="DDC UAV"></div>
+      <div>
+        <h1 id="ddc-title">Drone Design Challenge — Micro Class</h1>
+        <p class="lead">Design lead for Team Arrow across DDC Micro Class entries (2023–2025). Focus: high payload fraction, lightweight structures, repeatable manufacturing and robust flight performance under competition constraints.</p>
+        <div class="cta-row">
+          <a class="btn" href="#years">Year Highlights</a>
+          <a class="btn" href="#media">Media & Flights</a>
+          <a class="btn secondary" href="contact.html">Request Build Files</a>
+        </div>
+      </div>
+    </section>
 
-  <h4>Achievements</h4>
-  <ul>
-    <li><strong>Overall 2nd Place</strong> – DDC Micro Class 2024</li>
-    <li><strong>Best Technical Presentation Award</strong></li>
-  </ul>
+    <section class="card" id="overview">
+      <h2>About DDC — Micro Class</h2>
+      <p class="small">The Drone Design Challenge (DDC) Micro Class emphasises compact, high-payload-fraction UAVs. Teams must design-to-weight and demonstrate mission capability within strict dimensional and mass limits — a great platform to apply aerodynamics, structures and systems engineering in a competition environment.</p>
+    </section>
 
-  <figure>
-    <video controls muted>
-      <source src="videos/ddc2024_highlights.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption>Flight test highlights – DDC-Micro 2024</figcaption>
-  </figure>
-  <figure>
-    <video controls muted>
-      <source src="videos/ddc2024_highlights_2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption>Flight test highlights – DDC-Micro 2024</figcaption>
-  </figure>
-  <figure>
-    <img src="images/ddc2024_uav.jpeg" alt="Team Arrow – DDC 2024">
-    <img src="images/ddc2024_uav2.jpeg" alt="DDC 2024 UAV Design">
-  </figure>
-  <h4>Optimization and Flight Performance</h4>
-  <p>
-    Through iterative testing and refinement, the UAV’s empty weight was reduced from <strong>1000 grams to under 700 grams</strong>, achieving a remarkable <strong>payload fraction of 0.72</strong>.
-    The simplified fuselage design made the UAV easier to manufacture, repair, and optimize between flights, nearly doubling the number of successful flight tests.
-    A dedicated pilot training program ensured precision control, enabling consistent performance throughout testing and competition.
-    The 2024 project reflected the team’s evolution toward a more data-driven, performance-oriented development cycle, marked by continuous improvement and engineering discipline.
-  </p>
-</section>
+    <section class="card" id="years">
+      <h2>Year-wise Highlights</h2>
 
-<section>
-  <h3>DDC-Micro 2023 – Stability and Structural Efficiency</h3>
-  <p>
-    The <strong>2023 UAV</strong> focused on achieving high stability and efficient structural performance, with a strong emphasis on flight control and durability.
-    The aircraft featured a <strong>cranked dihedral wing planform</strong>, which substantially improved roll stability and made the UAV easier to handle during turns and maneuvers.
-    A <strong>squared semi-monocoque fuselage</strong> offered a lightweight yet impact-resistant structure, providing ample internal space for electronics and payload integration.
-    To improve belly landing resilience, <strong>XPS foam</strong> was added to the underside, effectively absorbing shocks and protecting critical components.
-  </p>
+      <h3>2024 — Design Philosophy & Innovation</h3>
+      <p>
+        Team Arrow focused on a high-payload fraction design balancing lightweight construction and aerodynamic efficiency. Key choices included a trailing-edge tapered wing (~1 m span), and a three-walled fuselage built from aeroply and flite board for superior strength-to-weight and impact resistance.
+      </p>
 
-  <h4>Achievements</h4>
-  <ul>
-    <li><strong>Overall 2nd Place</strong> – DDC Micro Class 2023</li>
-    <li><strong>Best Design Report Award</strong></li>
-  </ul>
+      <h4>Achievements</h4>
+      <ul>
+        <li><strong>Overall 2nd Place</strong> — DDC Micro Class 2024</li>
+        <li><strong>Best Technical Presentation</strong></li>
+      </ul>
 
-  <figure>
-    <video controls muted>
-      <source src="videos/ddc2023_highlights.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption>Flight test highlights – DDC-Micro 2023</figcaption>
-  </figure>
-  <figure>
-    <img src="images/ddc2023_team.jpeg" alt="Team Arrow – Achievements">
-    <img src="images/ddc2023_uav.jpg" alt="DDC 2023 UAV Design">
-  </figure>
-  <h4>Optimization and Flight Performance</h4>
-  <p>
-    Throughout the 2023 development phase, the team continuously refined the UAV through experimentation and testing.
-    The <strong>wing mounting system</strong> evolved from a slotted lock to a more reliable <strong>wing nut assembly</strong>, improving pre-flight efficiency and robustness.
-    The use of <strong>aeroply shear webs</strong> in place of aluminum rods reduced overall weight while maintaining structural integrity.
-    By optimizing aerodynamics and streamlining assembly, the team achieved significant gains in stability, performance, and operational reliability.
-    These improvements laid the groundwork for the advanced lightweight strategies and design philosophies implemented in the 2024 UAV.
-  </p>
-</section>
-  </section>
+      <h4>Performance & Optimization</h4>
+      <p class="small">Through iterative testing we reduced empty weight from ~1000 g to &lt;700 g, achieving a payload fraction ≈ 0.72. A simplified fuselage improved manufacturability and repairability between flights, enabling more test iterations and a more data-driven tuning cycle.</p>
 
-  <footer>© 2025 Rishith Vanaliya</footer>
-</body>
-</html>
+      <hr>
+
+      <h3>2023 — Stability & Structural Efficiency</h3>
+      <p>
+        The 2023 entry emphasized stability and robustness. We used a cranked-dihedral wing planform for improved roll stability and a squared semi-monocoque fuselage for impact resistance. XPS foam under the belly increased survivability for rough landings.
+      </p>
+
+      <h4>Achievements</h4>
+      <ul>
+        <li><strong>Overall 2nd Place</strong> — DDC Micro Class 2023</li>
+        <li><strong>Best Design Report</strong></li>
+      </ul>
+
+      <h4>Design Improvements</h4>
+      <p class="small">Upgrades included moving from a slotted wing lock to a wing-nut assembly for quicker swaps and using aeroply shear webs to replace heavier aluminum rods, reducing weight while keeping stiffness.</p>
+    </section>
+
+    <section class="card" id="media">
+      <h2>Media & Flight Highlights</h2>
+      <p class="small">Below are flight highlights, test videos and gallery images. Videos are muted by default — unmute while playing if needed.</p>
+
+      <div class="gallery" role="list">
+        <!-- video cards — they sit nicely in the grid -->
+        <video controls muted playsinline>
+          <source src="videos/ddc2024_highlights.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <video controls muted playsinline>
+          <source src="videos/ddc2024_highlights_2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- images -->
+        <img src="images/ddc2024_uav.jpeg" alt="DDC 2024 UAV">
+        <img src="images/ddc2024_uav2.jpeg" alt="DDC 2024 UAV detail">
+        <img src="images/ddc2023_team.jpeg" alt="Team Arrow DDC 2023">
+        <img src="images/ddc2023_uav.jpg" alt="DDC 2023 UAV">
+      </div>
+
+      <p class="small" style="margin-top:0.6rem">Tip: swap the placeholder filenames for your final media files in `images/` and `videos/`.</p>
+    </section>
+
+    <section class="card" id="tech">
+      <h2>Design & Manufacturing Notes</h2>
+      <ul>
+        <li><strong>Wing:</strong> trailing-edge taper for efficient lift distribution and reduced balsa usage.</li
