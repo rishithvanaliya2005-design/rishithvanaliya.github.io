@@ -22,21 +22,21 @@
       <li><a href="index.html">Home</a></li>
 
       <li class="dropdown" id="projectsDrop">
-        <a href="projects.html" id="projectsToggle" aria-expanded="false" aria-controls="projectsMenu">Projects ▾</a>
-        <ul id="projectsMenu" role="menu">
-          <li role="none"><a role="menuitem" href="ddc.html">DDC (23,24,25)</a></li>
-          <li role="none"><a role="menuitem" href="saeaerodesign.html">SAE Aero Design</a></li>
-          <li role="none"><a role="menuitem" href="automated_cfd.html">Automated CFD Platform</a></li>
-          <li role="none"><a role="menuitem" href="gearbox.html">Design of Gearbox</a></li>
-          <li role="none"><a role="menuitem" href="technoxian.html">Technoxian</a></li>
+        <a href="projects.html" id="projectsToggle">Projects ▾</a>
+        <ul id="projectsMenu">
+          <li><a href="ddc.html">DDC (23,24,25)</a></li>
+          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li><a href="automated_cfd.html">Automated CFD Platform</a></li>
+          <li><a href="gearbox.html">Design of Gearbox</a></li>
+          <li><a href="technoxian.html">Technoxian</a></li>
         </ul>
       </li>
 
       <li class="dropdown" id="researchDrop">
-        <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu">Research ▾</a>
-        <ul id="researchMenu" role="menu">
-          <li role="none"><a role="menuitem" href="pinn.html">PINN — Navier–Stokes</a></li>
-          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
+        <a href="pinn.html" id="researchToggle">Research ▾</a>
+        <ul id="researchMenu">
+          <li><a href="pinn.html">PINN — Navier–Stokes</a></li>
+          <li><a href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
         </ul>
       </li>
 
@@ -55,89 +55,62 @@
 </aside>
 
 <main class="main">
-  <section class="page">
-    <h2>PINN — Radiofrequency (RF) Ablation for Breast Cancer</h2>
+<section class="page">
 
-    <p class="lead">
-      Building on our PINN foundations, this project applies Physics-Informed Neural Networks to model radiofrequency ablation (RFA) for breast cancer treatment by integrating PINNs with OpenFOAM simulations.
-    </p>
+  <h2>PINN — Radiofrequency (RF) Ablation for Breast Cancer</h2>
 
-    <h3>Objective</h3>
-    <ul>
-      <li>Model the thermal response of malignant breast tissue during radiofrequency ablation.</li>
-      <li>Predict tumor behavior (temperature evolution and lesion formation) under RFA exposure.</li>
-      <li>Optimize treatment parameters to improve efficacy while minimizing collateral damage.</li>
-    </ul>
+  <p class="lead">
+    This work extends our PINN research into a biomedical application: modelling breast cancer treatment using Physics-Informed Neural Networks combined with OpenFOAM-based thermal simulations.
+  </p>
 
-    <h3>Summary</h3>
-    <p>
-      This work integrates PINNs with OpenFOAM to simulate heat-induced tumor destruction in the context of RF ablation. By embedding the governing bioheat physics into a neural framework, the approach aims to predict spatiotemporal temperature fields and lesion growth without relying solely on mesh-based solvers, while enabling parameter inference from limited measurements.
-    </p>
+  <h3>Objective</h3>
+  <ul>
+    <li>Model the thermal response of malignant breast tissue during radiofrequency ablation.</li>
+    <li>Predict tumor behavior during RFA exposure.</li>
+    <li>Optimize treatment parameters for more effective and minimally invasive therapy.</li>
+  </ul>
 
-    <h3>Approach (high level)</h3>
-    <p>
-      The method couples physics-constrained learning with numerical simulation data to capture the thermal response of tissue during RF exposure. PINNs are used to enforce the relevant bioheat physics while leveraging OpenFOAM-generated data for guidance and validation. The ultimate goal is a model that can support faster-than-FEM predictions, inform electrode/power settings, and assist in treatment planning.
-    </p>
+  <h3>Summary</h3>
+  <p>
+    Building on the methodologies and insights gained from our PINN study on fluid flow benchmarks, this project applies physics-informed learning to the problem of RF ablation. By integrating PINNs with OpenFOAM simulations, the work aims to capture heat-induced tumor destruction while retaining the advantages of mesh-free learning. The approach leverages the capability of PINNs to embed governing physics directly into the model, improving interpretability and enabling accurate prediction of tissue behavior under thermal loading.
+  </p>
 
-    <h3>Intended outcomes</h3>
-    <ul>
-      <li>Accurate prediction of temperature fields and lesion formation during RFA.</li>
-      <li>Capability to infer tissue properties relevant to treatment response (e.g., effective conductivity, perfusion) from sparse data.</li>
-      <li>Tools to optimize electrode placement and power/time parameters to improve clinical outcomes.</li>
-    </ul>
+  <h3>Research significance</h3>
+  <p>
+    This project represents an interdisciplinary extension of our PINN research and demonstrates the adaptability of physics-constrained neural networks to biomedical heat-transfer problems. The potential impact of this work was recognized through a research-based internship offer at <strong>IIT Bombay</strong>, under the mentorship of <strong>Prof. Atul Sharma</strong>, to further develop the model within a specialized academic environment.
+  </p>
 
-    <h3>Impact & recognition</h3>
-    <p>
-      The interdisciplinary potential of this work led to a research-based internship offer at <strong>IIT Bombay</strong>, where the project will be advanced under the mentorship of <strong>Prof. Atul Sharma</strong>.
-    </p>
+  <div class="gallery">
+    <figure>
+      <img src="images/pinn_rfa_snapshot1.png" alt="PINN RFA snapshot">
+      <figcaption>Representative temperature prediction during RFA</figcaption>
+    </figure>
+    <figure>
+      <img src="images/pinn_rfa_comparison.png" alt="PINN vs OpenFOAM">
+      <figcaption>PINN vs simulation comparison</figcaption>
+    </figure>
+  </div>
 
-    <h3>Media & reproducibility</h3>
-    <p>
-      The project integrates PINNs with OpenFOAM-generated datasets (synthetic or experimental) to enable validation and reproducibility. Code, datasets, and reproduction instructions are organized in a project repository (link to be added).
-    </p>
-
-    <div class="gallery">
-      <figure>
-        <img src="images/pinn_rfa_snapshot1.png" alt="PINN RFA snapshot">
-        <figcaption>PINN — RFA predicted temperature snapshot (representative)</figcaption>
-      </figure>
-      <figure>
-        <img src="images/pinn_rfa_comparison.png" alt="PINN vs OpenFOAM">
-        <figcaption>Comparison: PINN prediction vs OpenFOAM (representative)</figcaption>
-      </figure>
-    </div>
-
-    <h3>Notes</h3>
-    <p>
-      This page summarizes the extended research work described in the project writeup. Detailed experimental settings, dataset descriptions, and code links will be provided in the repository and accompanying technical reports.
-    </p>
-  </section>
+</section>
 </main>
 
 <script>
+// Minimal dropdown logic
 document.addEventListener('DOMContentLoaded', () => {
-  const toggles = [
-    {wrapId: 'projectsDrop', toggleId: 'projectsToggle', menuId: 'projectsMenu'},
-    {wrapId: 'researchDrop', toggleId: 'researchToggle', menuId: 'researchMenu'}
+  const sets = [
+    ['projectsDrop', 'projectsToggle'],
+    ['researchDrop', 'researchToggle']
   ];
-
-  toggles.forEach(({wrapId, toggleId, menuId}) => {
+  sets.forEach(([wrapId, toggleId]) => {
     const wrap = document.getElementById(wrapId);
     const toggle = document.getElementById(toggleId);
-    const menu = document.getElementById(menuId);
-    if (!wrap || !toggle || !menu) return;
+    if (!wrap || !toggle) return;
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
-      const opening = !wrap.classList.contains('open');
-      document.querySelectorAll('.dropdown.open').forEach(d => { if (d !== wrap) d.classList.remove('open'); });
-      wrap.classList.toggle('open', opening);
-      toggle.setAttribute('aria-expanded', String(opening));
+      wrap.classList.toggle('open');
     });
     document.addEventListener('click', (e) => {
-      if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
-        wrap.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+      if (!wrap.contains(e.target)) wrap.classList.remove('open');
     });
   });
 });
