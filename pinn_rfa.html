@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PINN — RF Ablation</title>
+  <title>PINN — RF Ablation (Breast Cancer)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 <aside class="sidebar" aria-label="Main navigation">
   <div class="brand">
     <div class="logo">RV</div>
@@ -53,52 +54,66 @@
   </div>
 </aside>
 
-  <main class="main">
-<section class="page">
-  <h2>PINN for Radio Frequency (RF) Ablation — Breast Cancer</h2>
+<main class="main">
+  <section class="page">
+    <h2>PINN — Radiofrequency (RF) Ablation for Breast Cancer</h2>
 
-  <p><strong>Role:</strong> (e.g., Research Lead / Collaborator)</p>
-  <p><strong>Year:</strong> (e.g., 2025)</p>
-  <p><strong>Keywords:</strong> PINN, RF ablation, bioheat transfer, Pennes equation, inverse problems</p>
+    <p class="lead">
+      Building on our PINN foundations, this project applies Physics-Informed Neural Networks to model radiofrequency ablation (RFA) for breast cancer treatment by integrating PINNs with OpenFOAM simulations.
+    </p>
 
-  <h3>Short summary</h3>
-  <p><!-- one-paragraph summary: what, why, outcome --></p>
+    <h3>Objective</h3>
+    <ul>
+      <li>Model the thermal response of malignant breast tissue during radiofrequency ablation.</li>
+      <li>Predict tumor behavior (temperature evolution and lesion formation) under RFA exposure.</li>
+      <li>Optimize treatment parameters to improve efficacy while minimizing collateral damage.</li>
+    </ul>
 
-  <h3>Problem & objectives</h3>
-  <ul>
-    <li>Clinical problem: model heat deposition and lesion formation during RF ablation.</li>
-    <li>Objective 1: use PINNs to infer tissue properties (perfusion, conductivity) from sparse sensors.</li>
-    <li>Objective 2: produce faster predictions than full CFD/finite-element bioheat solvers.</li>
-  </ul>
+    <h3>Summary</h3>
+    <p>
+      This work integrates PINNs with OpenFOAM to simulate heat-induced tumor destruction in the context of RF ablation. By embedding the governing bioheat physics into a neural framework, the approach aims to predict spatiotemporal temperature fields and lesion growth without relying solely on mesh-based solvers, while enabling parameter inference from limited measurements.
+    </p>
 
-  <h3>Methods</h3>
-  <ul>
-    <li>Governing equations: Pennes bioheat equation + Joule heating term.</li>
-    <li>PINN architecture: (e.g., Fourier features, depth, loss weights).</li>
-    <li>Data: synthetic FEM data / experimental phantoms / clinical sensor traces.</li>
-    <li>Training details: optimizer, epochs, normalization, GPU used.</li>
-  </ul>
+    <h3>Approach (high level)</h3>
+    <p>
+      The method couples physics-constrained learning with numerical simulation data to capture the thermal response of tissue during RF exposure. PINNs are used to enforce the relevant bioheat physics while leveraging OpenFOAM-generated data for guidance and validation. The ultimate goal is a model that can support faster-than-FEM predictions, inform electrode/power settings, and assist in treatment planning.
+    </p>
 
-  <h3>Results (fill later)</h3>
-  <ul>
-    <li>Quantitative: RMSE on temperature fields, inferred conductivity error, time-to-prediction.</li>
-    <li>Qualitative: lesion shapes, comparison snapshots against ground truth.</li>
-  </ul>
+    <h3>Intended outcomes</h3>
+    <ul>
+      <li>Accurate prediction of temperature fields and lesion formation during RFA.</li>
+      <li>Capability to infer tissue properties relevant to treatment response (e.g., effective conductivity, perfusion) from sparse data.</li>
+      <li>Tools to optimize electrode placement and power/time parameters to improve clinical outcomes.</li>
+    </ul>
 
-  <h3>How to reproduce</h3>
-  <p>Repository: <a href="#" target="_blank">link to code</a> — describe dataset layout, training script, commands.</p>
+    <h3>Impact & recognition</h3>
+    <p>
+      The interdisciplinary potential of this work led to a research-based internship offer at <strong>IIT Bombay</strong>, where the project will be advanced under the mentorship of <strong>Prof. Atul Sharma</strong>.
+    </p>
 
-  <h3>Media & figures</h3>
-  <div class="gallery">
-    <figure><img src="images/pinn_rfa_snapshot1.png" alt="PINN RF snapshot"><figcaption>Predicted temperature snapshot</figcaption></figure>
-    <figure><img src="images/pinn_rfa_comparison.png" alt="Comparison"><figcaption>PINN vs FEM</figcaption></figure>
-  </div>
+    <h3>Media & reproducibility</h3>
+    <p>
+      The project integrates PINNs with OpenFOAM-generated datasets (synthetic or experimental) to enable validation and reproducibility. Code, datasets, and reproduction instructions are organized in a project repository (link to be added).
+    </p>
 
-  <h3>Notes</h3>
-  <p><!-- any clinical/ethical notes, collaborators, datasets restrictions --></p>
-</section>
+    <div class="gallery">
+      <figure>
+        <img src="images/pinn_rfa_snapshot1.png" alt="PINN RFA snapshot">
+        <figcaption>PINN — RFA predicted temperature snapshot (representative)</figcaption>
+      </figure>
+      <figure>
+        <img src="images/pinn_rfa_comparison.png" alt="PINN vs OpenFOAM">
+        <figcaption>Comparison: PINN prediction vs OpenFOAM (representative)</figcaption>
+      </figure>
+    </div>
 
-  </main>
+    <h3>Notes</h3>
+    <p>
+      This page summarizes the extended research work described in the project writeup. Detailed experimental settings, dataset descriptions, and code links will be provided in the repository and accompanying technical reports.
+    </p>
+  </section>
+</main>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = [
@@ -110,39 +125,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrap = document.getElementById(wrapId);
     const toggle = document.getElementById(toggleId);
     const menu = document.getElementById(menuId);
-
     if (!wrap || !toggle || !menu) return;
-
-    // open/close on header click only
     toggle.addEventListener('click', (e) => {
-      e.preventDefault(); // header controls dropdown, not navigation
+      e.preventDefault();
       const opening = !wrap.classList.contains('open');
-      // close any other open dropdowns
-      document.querySelectorAll('.dropdown.open').forEach(d => {
-        if (d !== wrap) d.classList.remove('open');
-      });
+      document.querySelectorAll('.dropdown.open').forEach(d => { if (d !== wrap) d.classList.remove('open'); });
       wrap.classList.toggle('open', opening);
       toggle.setAttribute('aria-expanded', String(opening));
     });
-
-    // Allow middle-click on header to open page in new tab
-    toggle.addEventListener('auxclick', (e) => {
-      if (e.button === 1) window.open(toggle.href, '_blank');
-    });
-
-    // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
       if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
         wrap.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Keyboard: toggle with Enter/Space when focused
-    toggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle.click();
       }
     });
   });
