@@ -57,23 +57,53 @@
 <section class="page">
   <h2>Design of Gearbox</h2>
 
-  <p><strong>Role:</strong> (e.g., Designer / Analysis)</p>
-  <p><strong>Context:</strong> (e.g., UAV actuator gearbox / industrial reducer / educational project)</p>
 
-  <h3>Design requirements</h3>
-  <ul>
-    <li>Input power / torque / rpm requirements</li>
-    <li>Output torque / speed target</li>
-    <li>Size, weight, efficiency constraints</li>
-  </ul>
+<h3>Design Requirements</h3>
+<ul>
+  <li>Gear type: Helical</li>
+  <li>Input power: 8 kW</li>
+  <li>Input speed: 750 RPM</li>
+  <li>Required reduction ratio: 8</li>
+  <li>Number of stages: 2-stage reduction</li>
+  </li>
+</ul>
+<h3>Design Approach</h3>
+<ul>
+  <li>Design methodology:
+    <ul>
+      <li>Helical gears designed using <strong>beam strength theory</strong> (Lewis bending equation) as the primary criterion.</li>
+      <li>Design subsequently <strong>verified for wear strength</strong> to ensure resistance against pitting and surface fatigue.</li>
+    </ul>
+  </li>
 
-  <h3>Design approach</h3>
-  <ul>
-    <li>Type: helical</li>
-    <li>Gear ratio selection and stages</li>
-    <li>Material & heat treatment</li>
-    <li>Bearings, lubrication, housing design</li>
-  </ul>
+  <li>Gear material:
+    <ul>
+      <li>Surface hardened, Grade-1 Cast Steel.</li>
+      <li>Surface hardening used to increase wear resistance while maintaining core toughness.</li>
+    </ul>
+  </li>
+
+  <li>Two-stage reduction (overall ratio = 8):
+    <ul>
+      <li>Stage-wise PCD values:
+        <ul>
+          <li>P₁ = 108.63 mm</li>
+          <li>G₁ = 217.27 mm</li>
+          <li>P₂ = 108.63 mm</li>
+          <li>G₂ = 434.52 mm</li>
+        </ul>
+      </li>
+      <li>Module, face width, helix angle selected to satisfy both bending and wear criteria with adequate safety factors.</li>
+    </ul>
+  </li>
+
+  <li>Shaft design:
+    <ul>
+      <li>Shafts designed for <strong>combined bending and torsion</strong> due to transmitted torque and gear forces.</li>
+      <li>Checked for allowable shear stress, deflection limits, and key/hub fitment strength.</li>
+    </ul>
+  </li>
+</ul>
 
 
   <h3>Deliverables</h3>
