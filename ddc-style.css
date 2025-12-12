@@ -1,0 +1,255 @@
+/* ddc-style.css — DDC Project Page Styling */
+/* Import or include base style.css first, then add these overrides */
+
+/* ---------- DDC-SPECIFIC THEME ---------- */
+.page {
+  /* Add subtle engineering/technical feel */
+  position: relative;
+}
+
+/* Page header styling */
+.page h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+/* Enhanced paragraph styling for technical content */
+.page > p {
+  margin-bottom: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.page > p strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Year navigation list styling */
+.page > ul {
+  background: #f8fafb;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem 1.25rem 2.5rem;
+  margin: 1.5rem 0;
+}
+
+.page > ul li {
+  margin: 0.625rem 0;
+  font-size: 1rem;
+}
+
+.page > ul li a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page > ul li a::before {
+  content: "→";
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.page > ul li a:hover {
+  color: var(--accent-light);
+  transform: translateX(4px);
+}
+
+.page > ul li a:hover::before {
+  transform: translateX(4px);
+}
+
+/* Section divider */
+.page h3 {
+  font-size: 1.375rem;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.875rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-weight: 600;
+}
+
+/* Enhanced gallery for DDC */
+.gallery {
+  margin-top: 1.5rem;
+  gap: 1.25rem;
+}
+
+.gallery figure {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.gallery figure:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.gallery img,
+.gallery video {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.gallery figcaption {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding-top: 0.625rem;
+  text-align: center;
+}
+
+/* Video specific styling */
+.gallery video {
+  background: #000;
+}
+
+/* Info callout box (optional - can be added to HTML) */
+.info-box {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.info-box h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--accent);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.info-box p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Stats/specs grid (optional enhancement) */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.spec-card {
+  background: #f8fafb;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.spec-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.spec-card .label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.spec-card .value {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.spec-card .unit {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Breadcrumb (if you want to add navigation trail) */
+.breadcrumb {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-light);
+}
+
+.breadcrumb span {
+  color: var(--text-muted);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page h2 {
+    font-size: 1.625rem;
+  }
+
+  .page h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .gallery {
+    gap: 1rem;
+  }
+
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .page > ul {
+    padding: 1rem 1rem 1rem 2rem;
+  }
+}
+
+/* Print styles for documentation */
+@media print {
+  .sidebar,
+  .gallery video {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .page {
+    box-shadow: none;
+    border: none;
+  }
+}
