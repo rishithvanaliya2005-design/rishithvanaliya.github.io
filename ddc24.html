@@ -3,161 +3,330 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DDC 2024 — Drone Design Challenge — Condensed Portfolio Page</title>
+  <title>DDC 2024 - Drone Design Challenge - Detailed Report</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Small helpers */
-    body{font-family:system-ui,Segoe UI,Roboto,Arial;background:#fff;color:#111}
+    /* Small inline helpers (matches DDC23 page) */
+    .report-actions {display:flex;gap:0.5rem;align-items:center;margin:0.5rem 0}
+    .placeholder{background:rgba(0,0,0,0.03);padding:0.75rem;border-radius:6px;border:1px dashed rgba(0,0,0,0.06)}
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:1rem}
+    .spec-table{width:100%;border-collapse:collapse}
+    .spec-table th,.spec-table td{padding:0.4rem;border-bottom:1px solid #eee;text-align:left}
+    .gallery img, .gallery video{max-width:100%;height:auto;border-radius:6px}
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;background:#fff;color:#111;margin:0}
+    .sidebar{width:260px;position:fixed;left:0;top:0;bottom:0;background:#0b1220;color:#fff;padding:1rem}
     .main{margin-left:260px;padding:2rem}
-    .sidebar{width:240px;position:fixed;left:0;top:0;bottom:0;background:#0b1220;color:#fff;padding:1rem}
     h2,h3,h4{margin:.35rem 0}
     .lead{margin-bottom:1rem}
     ul{margin:0.25rem 0 1rem 1.1rem}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem;margin:1rem 0}
     .fig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem;margin:0.5rem 0}
     figure{margin:0}
-    img,video{width:100%;height:auto;border-radius:6px}
-    .spec-table{border-collapse:collapse;width:100%;max-width:520px}
-    .spec-table th,.spec-table td{padding:0.3rem;border-bottom:1px solid #eee;text-align:left}
-    .note{font-size:0.9rem;color:#333}
+    img,video{width:100%;height:auto;border-radius:6px;display:block}
+    .note{font-size:0.95rem;color:#333}
+    .cite{font-size:0.9rem;color:#666}
   </style>
 </head>
 <body>
 <aside class="sidebar" aria-label="Main navigation">
-  <div class="brand">
-    <div class="logo">RV</div>
+  <div class="brand" style="display:flex;gap:0.6rem;align-items:center;margin-bottom:1rem">
+    <div class="logo" style="width:48px;height:48px;border-radius:8px;background:#fff;color:#0b1220;display:flex;align-items:center;justify-content:center;font-weight:700">RV</div>
     <div>
-      <h1>Rishith Vanaliya</h1>
-      <p>B.Tech Mechanical - Minor: Data Science</p>
+      <h1 style="font-size:1.05rem;margin:0">Rishith Vanaliya</h1>
+      <p style="margin:0;font-size:0.9rem">B.Tech Mechanical · Minor: Data Science</p>
     </div>
   </div>
+
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="ddc.html">DDC (23,24,25)</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <ul style="list-style:none;padding:0;margin:0">
+      <li style="margin:0.35rem 0"><a href="index.html" style="color:inherit;text-decoration:none">Home</a></li>
+
+      <li class="dropdown open" id="projectsDrop" style="margin:0.35rem 0">
+        <a href="projects.html" id="projectsToggle" aria-expanded="true" aria-controls="projectsMenu" style="color:inherit;text-decoration:none">Projects ▾</a>
+        <ul id="projectsMenu" role="menu" style="margin:0.25rem 0 0 0;padding-left:0;list-style:none">
+          <li role="none"><a role="menuitem" href="ddc.html" style="color:inherit;text-decoration:none">DDC (23,24,25)</a></li>
+          <li role="none"><a role="menuitem" href="saeaerodesign.html" style="color:inherit;text-decoration:none">SAE Aero Design</a></li>
+          <li role="none"><a role="menuitem" href="automated_cfd.html" style="color:inherit;text-decoration:none">Automated CFD Platform</a></li>
+          <li role="none"><a role="menuitem" href="gearbox.html" style="color:inherit;text-decoration:none">Design of Gearbox</a></li>
+          <li role="none"><a role="menuitem" href="technoxian.html" style="color:inherit;text-decoration:none">Technoxian</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown" id="researchDrop" style="margin:0.35rem 0">
+        <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu" style="color:inherit;text-decoration:none">Research ▾</a>
+        <ul id="researchMenu" role="menu" style="margin:0.25rem 0 0 0;padding-left:0;list-style:none">
+          <li role="none"><a role="menuitem" href="pinn.html" style="color:inherit;text-decoration:none">PINN - Navier–Stokes</a></li>
+          <li role="none"><a role="menuitem" href="pinn_rfa.html" style="color:inherit;text-decoration:none">PINN - RF Ablation (RFA)</a></li>
+        </ul>
+      </li>
+
+      <li style="margin:0.35rem 0"><a href="contact.html" style="color:inherit;text-decoration:none">Contact</a></li>
+
+      <li class="nav-section" style="margin-top:1rem;font-size:0.85rem;color:rgba(255,255,255,0.9)">Quick</li>
+      <li style="margin:0.2rem 0"><a href="Resume1%20(2).pdf" target="_blank" style="color:inherit;text-decoration:none">Resume (PDF)</a></li>
+      <li style="margin:0.2rem 0"><a href="#" target="_blank" style="color:inherit;text-decoration:none">GitHub</a></li>
+      <li style="margin:0.2rem 0"><a href="#" target="_blank" style="color:inherit;text-decoration:none">LinkedIn</a></li>
     </ul>
   </nav>
-  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72)">© 2025 · Rishith</div>
+
+  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72);padding:0 0.2rem">
+    © 2025 · Rishith
+  </div>
 </aside>
 
 <main class="main">
   <section class="page">
-    <h2>DDC Micro — 2024</h2>
+    <h2>DDC Micro - 2024</h2>
 
-    <p class="lead">
-      Team Arrow designed a high payload-fraction micro-UAV balancing lightweight construction and structural robustness. As <strong>Design Lead</strong>, I focused on fuselage design, structural reinforcement, and verification testing.
-    </p>
-
+    <!-- MIT-style: Short, skimmable project header -->
     <section class="project-header">
-      <h3>Snapshot</h3>
+      <h3>Objective</h3>
       <ul>
-        <li>Category: DDC Micro 2024.</li>
-        <li>Role: Design Lead - fuselage design, structural analysis, manufacturing guidance.</li>
-        <li>Result highlights: payload fraction 0.635; lift 22.9 N; thrust 15.07 N; empty weight 0.772 kg. (Report summary). </li>
-        <li>Tools: SolidWorks, ANSYS (CFD & FEA), XFLR5, Fusion360 topology module.</li>
+        <li>Design a manufacturable, repairable micro-UAV with high payload-fraction for DDC Micro 2024.</li>
+        <li>Maximise payload fraction while ensuring structural robustness, short assembly time and reliable belly-landing performance.</li>
+        <li>Meet DDC rules for hand-launch and compact packaging.</li>
+      </ul>
+
+      <h3>My Role - Design Lead</h3>
+      <ul>
+        <li>Fuselage design, structural reinforcement, and manufacturing guidance.</li>
+        <li>Topology optimisation for ribs and mounting plates, FEA validation and test planning.</li>
+        <li>Oversaw CFD trade studies and wind-tunnel comparisons for airfoil/fuselage selection.</li>
       </ul>
 
       <h3>Outcome</h3>
       <ul>
-        <li>Overall 2nd Place — DDC Micro 2024.</li>
-        <li>Best Technical Presentation.</li>
-        <li>Manufacturable, repairable fuselage using fliteboard + aeroply; assembly time ~30-40 s.</li>
+        <li><strong>2nd Place Overall</strong> - DDC Micro 2024</li>
+        <li><strong>Best Technical Presentation</strong></li>
+        <li>Payload fraction: <strong>0.635</strong>; Empty weight: <strong>0.772 kg</strong>; practical thrust measured: <strong>15.07 N</strong>.</li>
       </ul>
     </section>
 
+    <!-- Design highlights rewritten concisely -->
     <section class="project-overview">
-      <h3>Key design decisions</h3>
+      <h3>Design Highlights</h3>
       <ul>
-        <li>Airfoil: S1223, thickened to 120% for higher lift while accepting modest Cd increase.</li>
-        <li>Wing: Trailing-edge tapered, span 1.0 m, area 0.17 m², aspect ratio 5.71.</li>
-        <li>Fuselage: Cockpit-type fliteboard with aeroply reinforcement for impact resilience and internal volume.</li>
-        <li>Structure: Aluminum rod spars + aeroply reinforcements; topology optimisation on ribs and plates to reduce mass.</li>
+        <li>Airfoil S1223 thickened to 120% for increased Cl at low Reynolds numbers.</li>
+        <li>Cockpit-type fliteboard fuselage with aeroply reinforcement for impact resilience and easy packing.</li>
+        <li>Laser-cut wing skeleton with aluminium rod spars and topology-optimised ribs.</li>
+        <li>Robust wing-mount and shear-web placement to improve FOS for competition loads.</li>
       </ul>
 
-      <h3>Performance summary</h3>
-      <table class="spec-table">
-        <tbody>
-          <tr><th>Empty weight</th><td>0.772 kg</td></tr>
-          <tr><th>Total weight (with payload)</th><td>2.122 kg</td></tr>
-          <tr><th>Payload fraction</th><td>0.635</td></tr>
-          <tr><th>Lift (CFD)</th><td>22.90 N</td></tr>
-          <tr><th>Thrust (bench)</th><td>15.07 N</td></tr>
-          <tr><th>Wing area</th><td>0.17 m²</td></tr>
-          <tr><th>Aspect ratio</th><td>5.71</td></tr>
-          <tr><th>Static margin</th><td>24.08%</td></tr>
-        </tbody>
-      </table>
+      <h3>Optimisation & Flight Performance</h3>
+      <ul>
+        <li>CFD lift ≈ 22.90 N; bench thrust measured 15.07 N; payload fraction 0.635 (report summary).</li>
+        <li>Topology optimisation reduced rib mass by ~20% while preserving stiffness in key load-paths.</li>
+        <li>Manufacturing: laser-cut aeroply, fliteboard panels, fast glue joints for ~30–40 s assembly.</li>
+      </ul>
     </section>
 
-    <h3>Design summary (point-wise)</h3>
-    <ul>
-      <li>Airfoil thickened to 120% to increase Cl while trading off some Cd; validated with wind-tunnel Cp vs chord tests.</li>
-      <li>Wing skeleton laser-cut; two 9x0.5 mm aluminum rods and strategic aeroply plates for strength.</li>
-      <li>Topology optimisation reduced rib mass by ~20% and aeroply plates underwent topology refinement for motor and wing mounts.</li>
-      <li>CFD (Spalart-Allmaras) used for wing and fuselage; mesh convergence ensured at 2 mm element size for fuselage and 1.5 mm for wing.</li>
-      <li>FEA static and explicit-dynamic tests on wing mount and fuselage to check stresses and landing survivability.</li>
-      <li>Propulsion: AT2317 T-motor 1400kv, prop 10x8 inch, battery 3S LiPo 850 mAh - endurance 1.8 min (practical bench results match E-calc).</li>
+    <h3>Key Points & Lessons Learned</h3>
+    <ul class="key-points">
+      <li>S1223 thickening was an efficient trade for lift at micro-scale Reynolds numbers.</li>
+      <li>Topology optimisation + conventional reinforcements provided a strong, lightweight skeleton.</li>
+      <li>Designing for quick field assembly and easy repair improved the team’s test throughput.</li>
     </ul>
 
+    <!-- Gallery preserved (small team/gallery) -->
     <div class="gallery">
       <figure>
-        <img src="images/ddc2024_uav.jpeg" alt="DDC 2024 flight vehicle">
+        <img src="images/ddc2024_uav.jpeg" alt="DDC 2024 UAV">
         <figcaption>DDC 2024 - Flight-ready vehicle</figcaption>
       </figure>
       <figure>
-        <img src="images/ddc24_wing_skeleton.png" alt="Wing skeleton and ribs">
-        <figcaption>Wing skeleton - laser-cut ribs, aluminium rod spars.</figcaption>
+        <img src="images/ddc2024_team.jpeg" alt="DDC 2024 Team">
+        <figcaption>Team Arrow - 2024</figcaption>
       </figure>
       <figure>
-        <img src="images/ddc24_fuselage_cfd.png" alt="Fuselage CFD comparison">
-        <figcaption>Fuselage CFD - cockpit-type chosen for balance of drag and packaging.</figcaption>
+        <video controls muted>
+          <source src="videos/ddc2024_highlights.mp4" type="video/mp4">
+        </video>
+        <figcaption>Flight Tests & Highlights</figcaption>
       </figure>
     </div>
 
-    <section id="detailed-report" class="detailed-report">
-      <h3>Condensed technical report</h3>
-
-      <h4>Airfoil & wing</h4>
+    <!-- Specs rewritten concisely -->
+    <section class="specs" aria-labelledby="specs-heading">
+      <h3 id="specs-heading">Quick Specifications</h3>
       <ul>
-        <li>S1223 selected for high Cl/Cd; thickness increase to 120% chosen after parametric study (see report tables and fig. 2.4).</li>
-        <li>Wing sizing: span 1000 mm, root chord 200 mm, MAC 176.19 mm, taper ratio 0.75.</li>
-        <li>Aileron: span 213 mm, chord 42 mm; aileron moment calculated via XFLR5.</li>
-        <li>FEA of wing: tested to 30 N lift; von Mises max 74.11 MPa and max deflection 12.77 mm for the wing structure model used in ANSYS static analysis (wing mount FOS 3.23).</li>
+        <li>Wing area: 0.17 m²</li>
+        <li>Aspect ratio: 5.71</li>
+        <li>Take-off weight: 2.122 kg (with payload)</li>
+        <li>Payload: 1.35 kg</li>
+        <li>Wing configuration: trailing-edge tapered</li>
+        <li>Primary materials: fliteboard, aeroply, aluminium spars</li>
+      </ul>
+    </section>
+
+    <!-- Design Report Integration (kept short + pointwise) -->
+    <section id="detailed-report" class="detailed-report">
+      <h3>Design Report - Condensed Summary</h3>
+
+      <h4>Aerodynamics (Airfoil & wing)</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc24_wing_cfd.png" alt="Wing CFD pressure contour">
+          <figcaption>Wing CFD pressure contour — validates S1223 (120%) choice and pressure distribution.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc24_cp_plot.png" alt="Cp vs chord length plot">
+          <figcaption>Cp vs chord — wind-tunnel vs CFD comparison (report p.12).</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc24_wing_fea.png" alt="Wing FEA stress and deformation">
+          <figcaption>Wing FEA — von Mises stress & deflection under 30 N (ANSYS static results).</figcaption>
+        </figure>
+      </div>
+      <ul>
+        <li>S1223 (120%) chosen after parametric CFD & wind-tunnel correlation.</li>
+        <li>Span: 1000 mm; root chord: 200 mm; MAC ≈ 176.19 mm. Aileron sizing validated in XFLR5.</li>
+      </ul>
+
+      <h4>Structures</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc24_topopt.png" alt="Topology optimisation">
+          <figcaption>Topology optimisation result — ~20% mass reduction in ribs and plates (report p.11).</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc24_wing_skeleton.png" alt="Wing CAD with shear webs">
+          <figcaption>Wing skeleton — laser-cut ribs & aluminium rod spars; dual shear-web concept applied.</figcaption>
+        </figure>
+      </div>
+      <ul>
+        <li>Topology-optimised ribs, laser-cut skeleton, and aeroply plates for mounting produced consistent, lightweight builds.</li>
       </ul>
 
       <h4>Fuselage</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc24_fuselage_cmp.png" alt="Fuselage shape comparison">
+          <figcaption>Fuselage comparison — cockpit-type selected for packaging & impact-area trade-offs.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc24_fuselage_cfd.png" alt="Fuselage velocity/pressure contour ">
+          <figcaption>Fuselage CFD — velocity/pressure contours used to refine fineness ratio and minimize separation.</figcaption>
+        </figure>
+      </div>
       <ul>
-        <li>Length 768 mm, maximum equivalent diameter 115 mm, fineness ratio 6.67.</li>
-        <li>Cockpit-style cross-section chosen over circular and square after CFD trade study due to manufacturing, packing, and impact-area considerations (see table of fuselage drag values).</li>
-        <li>Static FEA: fuselage wing mount subjected to 30 N gave max von Mises 4.108 MPa and max deflection 0.0146 mm; explicit-dynamic study confirmed no critical-component failure on belly landing.</li>
+        <li>Length 768 mm; max equivalent diameter 115 mm; fineness ratio ≈ 6.67.</li>
+        <li>Static FEA confirmed critical mounts withstand competition loads with comfortable margins.</li>
       </ul>
 
-      <h4>Stability & control</h4>
+      <h4>Stability</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc24_stability.png" alt="Stability plots">
+          <figcaption>Stability plots — XFLR5 root-locus and mode analysis for longitudinal and lateral modes.</figcaption>
+        </figure>
+      </div>
       <ul>
-        <li>Static margin computed as 24.08% (Xcg 62.85 mm; Xnp 105.29 mm; MAC 176.19 mm).</li>
-        <li>XFLR5 root-locus and mode analysis show stable longitudinal and lateral modes; one spiral mode slightly right of origin but considered acceptable.</li>
+        <li>Static margin ≈ 24.08% (within design target).</li>
+        <li>Longitudinal and most lateral modes stable; spiral mode slightly right of origin but acceptable for this package.</li>
       </ul>
 
-      <h4>Propulsion & power</h4>
+      <h4>Testing & Validation</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc24_explicit_dyn.png" alt="Explicit dynamic landing simulation">
+          <figcaption>Explicit dynamic simulation — belly-landing transient response & reinforcement validation.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc24_thrustbench.png" alt="Thrust bench">
+          <figcaption>Thrust bench — measured thrust and efficiency curves used to confirm motor/prop choice.</figcaption>
+        </figure>
+      </div>
       <ul>
-        <li>Thrust requirement 16.72 N derived from W=2.2 kg and T/W target 0.76. Practical thrust bench results gave 15.07 N measured for chosen configuration.</li>
-        <li>Motor: AT2317 1400kv. Prop: 10x8 or 10x7 depending on availability. Battery: LiPo 850 mAh 3S.</li>
+        <li>Wind-tunnel Cp measurements matched CFD trends; tuft testing confirmed stall locations.</li>
+        <li>Thrust bench measured 15.07 N for the selected motor/prop configuration (report p.27).</li>
       </ul>
 
-      <h4>Weight & manufacturing</h4>
-      <ul>
-        <li>Weight build-up table totals 2122 g (payload 1350 g included). Empty weight listed as 772 g.</li>
-        <li>Manufacturing approach: laser-cut aeroply and fliteboard panels, hot-wire for foam, glue & Bondtite joints for critical mounts.</li>
-      </ul>
+      <h4>Final Drawing & Appendices</h4>
+      <figure>
+        <img src="images/ddc24_3view.png" alt="3-view drawing">
+        <figcaption>Final 3-view drawing and mass moments — manufacturing & CG verification.</figcaption>
+      </figure>
 
-      <p class="note">For full technical figures, plots and tables see the design report. Upload the following images into your site images/ folder for full display: <br>
-      ddс24_wing_cfd.png, ddс24_cp_plot.png, ddс24_topopt.png, ddс24_wing_skeleton.png, ddс24_wing_fea.png, ddс24_fuselage_cmp.png, ddс24_fuselage_cfd.png, ddс24_explicit_dyn.png, ddс24_stability.png, ddс24_thrustbench.png, ddс24_3view.png</p>
-
+      <p class="note">Upload the images listed in the src attributes into your `images/` folder to display the figures. If filenames differ, change the `src` to match your files. Figures and numbers are taken from the Team Arrow DDC 2024 design report. :contentReference[oaicite:1]{index=1}</p>
     </section>
 
   </section>
 </main>
+
+<script>
+// Retain the original dropdown behaviour but simplified for this page
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.dropdown .open').forEach(d => d.classList.add('open'));
+
+  // Upload PDF: attach link and read filename (not parsing PDF client-side here)
+  const upload = document.getElementById('reportUpload');
+  const reportPdfLink = document.getElementById('reportPdfLink');
+  if (upload && reportPdfLink) {
+    upload.addEventListener('change', (e) => {
+      const f = e.target.files[0];
+      if (!f) return;
+      const url = URL.createObjectURL(f);
+      reportPdfLink.href = url;
+      reportPdfLink.textContent = f.name + ' (uploaded)';
+    });
+  }
+
+  // Paste report text flow (if present on page)
+  const pasteBtn = document.getElementById('pasteBtn');
+  const autofillBtn = document.getElementById('autofillBtn');
+  if (pasteBtn) {
+    pasteBtn.addEventListener('click', () => {
+      const t = prompt('Paste the design report text or a short executive summary here:');
+      if (!t) return;
+      autofillFromText(t);
+    });
+  }
+  if (autofillBtn) {
+    autofillBtn.addEventListener('click', () => {
+      const sample = `EXECUTIVE SUMMARY:\nThe DDC 2024 vehicle was designed to...\n\nAERODYNAMICS:\nWing uses S1223 thickened to 120%...\n\nSTRUCTURE:\nSemi-monocoque fuselage using fliteboard...\n\nTESTS:\nEmpty weight: 0.772 kg\nMTOW: 2.122 kg\nEndurance: 1.8 min`;
+      autofillFromText(sample);
+      alert('Auto-filled sample content - replace with the actual report by uploading or pasting the real text.');
+    });
+  }
+
+  function autofillFromText(text){
+    // Very small heuristic parser to fill sections. Replace with server-side parsing for more reliability.
+    const up = text.toUpperCase();
+    function capture(keyword){
+      const i = up.indexOf(keyword);
+      if (i === -1) return null;
+      const rest = text.slice(i + keyword.length);
+      const nextMatch = rest.search(/\n[A-Z ]{3,}:|\n\n/);
+      return nextMatch === -1 ? rest.trim() : rest.slice(0,nextMatch).trim();
+    }
+    const exec = capture('EXECUTIVE SUMMARY:') || capture('EXECUTIVE SUMMARY') || capture('SUMMARY:') || text.slice(0,800);
+    if (exec) {
+      let el = document.getElementById('execSummaryContent');
+      if (el) el.textContent = exec;
+    }
+    const aero = capture('AERODYNAMICS:') || capture('AERODYNAMIC:');
+    if (aero) { let el = document.getElementById('aero'); if (el) el.textContent = aero; }
+    const structure = capture('STRUCTURE:') || capture('MATERIAL:') || capture('MATERIALS:') || capture('STRUCTURE');
+    if (structure) { let el = document.getElementById('structure'); if (el) el.textContent = structure; }
+    const avionics = capture('AVIONICS:') || capture('CONTROLS:') || capture('FLIGHT CONTROL:');
+    if (avionics) { let el = document.getElementById('avionics'); if (el) el.textContent = avionics; }
+
+    const wMatch = text.match(/Empty weight[:\s]+([0-9\.]+)\s?(kg)?/i);
+    if (wMatch) { let e = document.getElementById('emptyWeight'); if (e) e.textContent = wMatch[1] + (wMatch[2] ? ' kg' : ''); }
+    const mMatch = text.match(/MTOW[:\s]+([0-9\.]+)\s?(kg)?/i);
+    if (mMatch) { let e = document.getElementById('mtow'); if (e) e.textContent = mMatch[1] + (mMatch[2] ? ' kg' : ''); }
+    const eMatch = text.match(/Endurance[:\s]+([0-9\.]+)\s?(min|minutes|hr|hours)?/i);
+    if (eMatch) { let e = document.getElementById('endurance'); if (e) e.textContent = eMatch[1] + (eMatch[2] ? ' ' + eMatch[2] : ''); }
+
+    const wingMatch = text.match(/Wing area[:\s]+([0-9\.]+)\s?(m2|m\^2|m²|cm2)?/i);
+    if (wingMatch) { let e = document.getElementById('wingArea'); if (e) e.textContent = wingMatch[1] + (wingMatch[2] ? ' ' + wingMatch[2] : ''); }
+    const arMatch = text.match(/Aspect ratio[:\s]+([0-9\.]+)/i);
+    if (arMatch) { let e = document.getElementById('aspectRatio'); if (e) e.textContent = arMatch[1]; }
+
+    const lessons = capture('LESSONS:') || capture('LESSON:') || capture('CONCLUSION:');
+    if (lessons) { let e = document.getElementById('lessonsContent'); if (e) e.textContent = lessons; }
+  }
+});
+</script>
 
 </body>
 </html>
