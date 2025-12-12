@@ -161,7 +161,7 @@
     <section id="detailed-report" class="detailed-report">
       <h3>Design Report - Condensed Summary</h3>
 
-      <h4>Aerodynamics (Airfoil & wing)</h4>
+      <h4>Wing</h4>
       <div class="fig-grid">
         <figure>
           <img src="images/ddc24_wing_cfd.png" alt="Wing CFD pressure contour">
@@ -175,15 +175,7 @@
           <img src="images/ddc24_wing_fea.png" alt="Wing FEA stress and deformation">
           <figcaption>Wing FEA — von Mises stress & deflection under 30 N (ANSYS static results).</figcaption>
         </figure>
-      </div>
-      <ul>
-        <li>S1223 (120%) chosen after parametric CFD & wind-tunnel correlation.</li>
-        <li>Span: 1000 mm; root chord: 200 mm; MAC ≈ 176.19 mm. Aileron sizing validated in XFLR5.</li>
-      </ul>
-
-      <h4>Structures</h4>
-      <div class="fig-grid">
-        <figure>
+                <figure>
           <img src="images/ddc24_topopt.png" alt="Topology optimisation">
           <figcaption>Topology optimisation result — ~20% mass reduction in ribs and plates (report p.11).</figcaption>
         </figure>
@@ -193,7 +185,22 @@
         </figure>
       </div>
       <ul>
+        <li>S1223 (120%) chosen after parametric CFD & wind-tunnel correlation.</li>
+        <li>Span: 1000 mm; root chord: 200 mm; MAC ≈ 176.19 mm. Aileron sizing validated in XFLR5.</li>
         <li>Topology-optimised ribs, laser-cut skeleton, and aeroply plates for mounting produced consistent, lightweight builds.</li>
+      </ul>
+
+      <h4>UAV</h4>
+      <div class="fig-grid">
+            <figure>
+          <img src="images/ddc22_fullbody.png" alt="Cp vs chord length plot">
+          <figcaption>Localised Pressure Countours - shows pressure distribution across the UAV considering the effects of propwash</figcaption>
+        </figure>
+
+
+      </div>
+      <ul>
+        <li>Full body CFD with propeller to understand the UAV aerodynamics as a whole.</li>
       </ul>
 
       <h4>Fuselage</h4>
