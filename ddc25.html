@@ -5,6 +5,89 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DDC 2025 — Drone Design Challenge</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="universal-enhancements.css" />
+  <style>
+    .fig-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .fig-grid figure {
+      margin: 0;
+      background: var(--bg-primary, #fff);
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 8px;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .fig-grid figure:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .fig-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+    .fig-grid figcaption {
+      font-size: 0.875rem;
+      color: var(--text-secondary, #475569);
+      padding-top: 0.75rem;
+      line-height: 1.5;
+    }
+    .note {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem 1.25rem;
+      border-radius: 6px;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .key-points {
+      background: var(--bg-secondary, #f8f9fa);
+      padding: 1.5rem 2rem 1.5rem 3rem;
+      border-left: 4px solid var(--accent, #0ea5e9);
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .key-points li {
+      margin: 0.75rem 0;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .gallery figure {
+      margin: 0;
+      background: var(--bg-primary, #fff);
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 8px;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .gallery figure:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+    .gallery figcaption {
+      font-size: 0.875rem;
+      color: var(--text-secondary, #475569);
+      padding-top: 0.75rem;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
 
@@ -21,42 +104,53 @@
     <ul>
       <li><a href="index.html">Home</a></li>
 
-      <li class="dropdown" id="projectsDrop">
-        <a href="projects.html" id="projectsToggle" aria-expanded="false" aria-controls="projectsMenu">Projects ▾</a>
+      <li class="dropdown open" id="projectsDrop">
+        <a href="projects.html" id="projectsToggle" aria-expanded="true">Projects ▾</a>
         <ul id="projectsMenu" role="menu">
-          <li role="none"><a role="menuitem" href="ddc.html">DDC (23,24,25)</a></li>
-          <li role="none"><a role="menuitem" href="saeaerodesign.html">SAE Aero Design</a></li>
-          <li role="none"><a role="menuitem" href="automated_cfd.html">Automated CFD Platform</a></li>
-          <li role="none"><a role="menuitem" href="gearbox.html">Design of Gearbox</a></li>
-          <li role="none"><a role="menuitem" href="technoxian.html">Technoxian</a></li>
+          <li><a href="ddc.html">DDC (23,24,25)</a></li>
+          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li><a href="automated_cfd.html">Automated CFD Platform</a></li>
+          <li><a href="gearbox.html">Design of Gearbox</a></li>
+          <li><a href="technoxian.html">Technoxian</a></li>
         </ul>
       </li>
 
       <li class="dropdown" id="researchDrop">
-        <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu">Research ▾</a>
+        <a href="pinn.html" id="researchToggle" aria-expanded="false">Research ▾</a>
         <ul id="researchMenu" role="menu">
-          <li role="none"><a role="menuitem" href="pinn.html">PINN — Navier–Stokes</a></li>
-          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
+          <li><a href="pinn.html">PINN — Navier–Stokes</a></li>
+          <li><a href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
         </ul>
       </li>
 
       <li><a href="contact.html">Contact</a></li>
 
-      <li class="nav-section">Quick</li>
+      <li class="nav-section">Quick Links</li>
       <li><a href="Resume1%20(2).pdf" target="_blank">Resume (PDF)</a></li>
-      <li><a href="#" target="_blank">GitHub</a></li>
-      <li><a href="#" target="_blank">LinkedIn</a></li>
+     <li><a href="https://github.com/rishithvanaliya2005-design" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/rishith-vanaliya-238b2625a" target="_blank">LinkedIn</a></li>
     </ul>
   </nav>
 
-  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72);padding:0 0.2rem">
+  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.5);text-align:center;">
     © 2025 · Rishith
   </div>
 </aside>
 
 <main class="main">
+
+  <!-- Hero Section -->
+  <div class="header-card">
+    <div class="intro">
+      <h1>DDC Micro — 2025</h1>
+      <p>3rd Overall · Mentor Role</p>
+    </div>
+  </div>
+
+  <!-- Content Section -->
   <section class="page">
-    <h2>DDC Micro — 2025</h2>
+    
+    <h2>Project Overview</h2>
 
     <p><strong>Role:</strong> Mentor - guided the team through structural design choices, testing strategy, and performance optimization.</p>
 
@@ -65,15 +159,24 @@
       <li><strong>3rd Overall</strong> - DDC Micro Class 2025</li>
     </ul>
 
+    <h3>Gallery</h3>
     <div class="gallery">
       <figure>
         <img src="images/ddc2025_photo1.jpeg" alt="DDC 2025">
         <figcaption>DDC 2025 - test campaign</figcaption>
       </figure>
     </div>
+
   </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Rishith Vanaliya</p>
+  </footer>
+
 </main>
 
+<!-- Scripts -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = [
@@ -118,6 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
+<script src="universal-enhancements.js"></script>
 
 </body>
 </html>
