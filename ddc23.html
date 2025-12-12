@@ -3,19 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DDC 2023 - Drone Design Challenge - Detailed Report</title>
+  <title>DDC 2023 — Drone Design Challenge</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="universal-enhancements.css" />
   <style>
-    /* Small inline helpers to avoid breaking if style.css isn't present */
-    .report-actions {display:flex;gap:0.5rem;align-items:center;margin:0.5rem 0}
-    .placeholder{background:rgba(0,0,0,0.03);padding:0.75rem;border-radius:6px;border:1px dashed rgba(0,0,0,0.06)}
-    .two-col{display:grid;grid-template-columns:1fr 320px;gap:1rem}
-    .spec-table{width:100%;border-collapse:collapse}
-    .spec-table th,.spec-table td{padding:0.4rem;border-bottom:1px solid #eee;text-align:left}
-    .gallery img, .gallery video{max-width:100%;height:auto;border-radius:6px}
+    .fig-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .fig-grid figure {
+      margin: 0;
+      background: var(--bg-primary, #fff);
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 8px;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .fig-grid figure:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .fig-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+    .fig-grid figcaption {
+      font-size: 0.875rem;
+      color: var(--text-secondary, #475569);
+      padding-top: 0.75rem;
+      line-height: 1.5;
+    }
+    .note {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem 1.25rem;
+      border-radius: 6px;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .key-points {
+      background: var(--bg-secondary, #f8f9fa);
+      padding: 1.5rem 2rem 1.5rem 3rem;
+      border-left: 4px solid var(--accent, #0ea5e9);
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .key-points li {
+      margin: 0.75rem 0;
+    }
   </style>
 </head>
 <body>
+
 <aside class="sidebar" aria-label="Main navigation">
   <div class="brand">
     <div class="logo">RV</div>
@@ -30,103 +74,118 @@
       <li><a href="index.html">Home</a></li>
 
       <li class="dropdown open" id="projectsDrop">
-        <a href="projects.html" id="projectsToggle" aria-expanded="true" aria-controls="projectsMenu">Projects ▾</a>
+        <a href="projects.html" id="projectsToggle" aria-expanded="true">Projects ▾</a>
         <ul id="projectsMenu" role="menu">
-          <li role="none"><a role="menuitem" href="ddc.html">DDC (23,24,25)</a></li>
-          <li role="none"><a role="menuitem" href="saeaerodesign.html">SAE Aero Design</a></li>
-          <li role="none"><a role="menuitem" href="automated_cfd.html">Automated CFD Platform</a></li>
-          <li role="none"><a role="menuitem" href="gearbox.html">Design of Gearbox</a></li>
-          <li role="none"><a role="menuitem" href="technoxian.html">Technoxian</a></li>
+          <li><a href="ddc.html">DDC (23,24,25)</a></li>
+          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li><a href="automated_cfd.html">Automated CFD Platform</a></li>
+          <li><a href="gearbox.html">Design of Gearbox</a></li>
+          <li><a href="technoxian.html">Technoxian</a></li>
         </ul>
       </li>
 
       <li class="dropdown" id="researchDrop">
-        <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu">Research ▾</a>
+        <a href="pinn.html" id="researchToggle" aria-expanded="false">Research ▾</a>
         <ul id="researchMenu" role="menu">
-          <li role="none"><a role="menuitem" href="pinn.html">PINN - Navier–Stokes</a></li>
-          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN - RF Ablation (RFA)</a></li>
+          <li><a href="pinn.html">PINN — Navier–Stokes</a></li>
+          <li><a href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
         </ul>
       </li>
 
       <li><a href="contact.html">Contact</a></li>
 
-      <li class="nav-section">Quick</li>
+      <li class="nav-section">Quick Links</li>
       <li><a href="Resume1%20(2).pdf" target="_blank">Resume (PDF)</a></li>
-      <li><a href="#" target="_blank">GitHub</a></li>
-      <li><a href="#" target="_blank">LinkedIn</a></li>
+     <li><a href="https://github.com/rishithvanaliya2005-design" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/rishith-vanaliya-238b2625a" target="_blank">LinkedIn</a></li>
     </ul>
   </nav>
 
-  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72);padding:0 0.2rem">
+  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.5);text-align:center;">
     © 2025 · Rishith
   </div>
 </aside>
 
 <main class="main">
+
+  <!-- Hero Section -->
+  <div class="header-card">
+    <div class="intro">
+      <h1>DDC Micro — 2023</h1>
+      <p>2nd Place Overall · Best Design Report Award</p>
+    </div>
+  </div>
+
+  <!-- Content Section -->
   <section class="page">
-    <h2>DDC Micro - 2023</h2>
+    
+    <h2>Project Overview</h2>
 
-    <!-- MIT‑style: Short, skimmable project header -->
-    <section class="project-header">
-      <h3>Objective</h3>
-      <ul>
-        <li>Design a lightweight, belly‑landing fixed‑wing UAV for DDC Micro Class.</li>
-        <li>Maximise payload fraction while ensuring structural robustness and stable flight.</li>
-        <li>Meet DDC rules for hand‑launch, compact packaging, and short‑duration mission profile.</li>
-      </ul>
+    <h3>Objective</h3>
+    <ul>
+      <li>Design a lightweight, belly-landing fixed-wing UAV for DDC Micro Class.</li>
+      <li>Maximise payload fraction while ensuring structural robustness and stable flight.</li>
+      <li>Meet DDC rules for hand-launch, compact packaging, and short-duration mission profile.</li>
+    </ul>
 
-      <h3>My Role - Design Engineer</h3>
-      <ul>
-        <li>Airframe layout, wing geometry selection, and structural sizing.</li>
-        <li>Material selection and weight‑build‑up optimisation.</li>
-        <li>Topology‑optimised wing structure and fuselage trade‑off study.</li>
-        <li>Contributed to aerodynamic decisions and stability validation using XFLR5.</li>
-      </ul>
+    <h3>My Role — Design Engineer</h3>
+    <ul>
+      <li>Airframe layout, wing geometry selection, and structural sizing.</li>
+      <li>Material selection and weight-build-up optimisation.</li>
+      <li>Topology-optimised wing structure and fuselage trade-off study.</li>
+      <li>Contributed to aerodynamic decisions and stability validation using XFLR5.</li>
+    </ul>
 
-      <h3>Outcome</h3>
-      <ul>
-        <li><strong>2nd Place Overall</strong> - DDC Micro 2023</li>
-        <li><strong>Best Design Report Award</strong></li>
-        <li>Validated stable flight, high lift‑to‑drag performance, and robust belly‑landing behaviour.</li>
-      </ul>
-    </section>
+    <h3>Outcome</h3>
+    <ul>
+      <li><strong>2nd Place Overall</strong> — DDC Micro 2023</li>
+      <li><strong>Best Design Report Award</strong></li>
+      <li>Validated stable flight, high lift-to-drag performance, and robust belly-landing behaviour.</li>
+    </ul>
 
-    <!-- Design highlights rewritten concisely -->
-    <section class="project-overview">
-      <h3>Design Highlights</h3>
-      <ul>
-        <li>Cranked dihedral wing → passive roll stability with lower drag than conventional dihedral.</li>
-        <li>Tapered planform → reduced tip stall tendency.</li>
-        <li>Semi‑monocoque fuselage → strong, lightweight, easy to manufacture; foam belly for impact protection.</li>
-        <li>Structural optimisation → 40% weight reduction in wing ribs via topology optimisation.</li>
-      </ul>
+    <h3>Design Highlights</h3>
+    <ul>
+      <li>Cranked dihedral wing → passive roll stability with lower drag than conventional dihedral.</li>
+      <li>Tapered planform → reduced tip stall tendency.</li>
+      <li>Semi-monocoque fuselage → strong, lightweight, easy to manufacture; foam belly for impact protection.</li>
+      <li>Structural optimisation → 40% weight reduction in wing ribs via topology optimisation.</li>
+    </ul>
 
-      <h3>Optimisation & Flight Performance</h3>
-      <ul>
-        <li>CFD‑based airfoil comparison → CH10 (root) + S1223 (mid) + AH79 (tip).</li>
-        <li>CFD results: Lift ≈ 31 N, Drag ≈ 1.88 N → <strong>L/D ≈ 16.4</strong>.</li>
-        <li>Wind‑tunnel CP measurement matched XFLR5 predictions.<span class="cite"> (See full report)</span></li>
-        <li>Wing‑loading test: 1.9 kg load caused only ~4.5 mm deflection.</li>
-      </ul>
-    </section>
+    <h3>Optimisation & Flight Performance</h3>
+    <ul>
+      <li>CFD-based airfoil comparison → CH10 (root) + S1223 (mid) + AH79 (tip).</li>
+      <li>CFD results: Lift ≈ 31 N, Drag ≈ 1.88 N → <strong>L/D ≈ 16.4</strong>.</li>
+      <li>Wind-tunnel CP measurement matched XFLR5 predictions.</li>
+      <li>Wing-loading test: 1.9 kg load caused only ~4.5 mm deflection.</li>
+    </ul>
 
-    <h3>Key Points & Lessons Learned</h3>
+    <h3>Quick Specifications</h3>
+    <ul>
+      <li>Wing area: 0.296 m²</li>
+      <li>Aspect ratio: 6.4</li>
+      <li>Take-off weight: 2.74 kg</li>
+      <li>Payload: 1.7 kg</li>
+      <li>Wing configuration: Cranked dihedral, tapered</li>
+      <li>Primary materials: Aeroply, balsa, XPS foam</li>
+    </ul>
+
+    <h3>Key Lessons Learned</h3>
     <ul class="key-points">
       <li>Cranked dihedral proved ideal for stability with minimal aerodynamic penalty.</li>
-      <li>Semi‑monocoque fuselage with XPS belly increased impact resilience.</li>
-      <li>Rigid wing‑mount design improved assembly speed and repeatability in field tests.</li>
+      <li>Semi-monocoque fuselage with XPS belly increased impact resilience.</li>
+      <li>Rigid wing-mount design improved assembly speed and repeatability in field tests.</li>
       <li>Topology optimisation offered major weight savings without compromising FOS.</li>
     </ul>
 
-    <!-- Gallery preserved -->
+    <h3>Gallery</h3>
     <div class="gallery">
       <figure>
         <img src="images/ddc2023_uav.jpg" alt="DDC 2023 UAV">
-        <figcaption>DDC 2023 - Flight‑ready UAV</figcaption>
+        <figcaption>DDC 2023 — Flight-ready UAV</figcaption>
       </figure>
       <figure>
         <img src="images/ddc2023_team.jpeg" alt="DDC 2023 Team">
-        <figcaption>Team Arrow - 2023</figcaption>
+        <figcaption>Team Arrow — 2023</figcaption>
       </figure>
       <figure>
         <video controls muted>
@@ -136,213 +195,175 @@
       </figure>
     </div>
 
-    <!-- Specs rewritten concisely -->
-    <section class="specs" aria-labelledby="specs-heading">
-      <h3 id="specs-heading">Quick Specifications</h3>
-      <ul>
-        <li>Wing area: 0.296 m²</li>
-        <li>Aspect ratio: 6.4</li>
-        <li>Take‑off weight: 2.74 kg</li>
-        <li>Payload: 1.7 kg</li>
-        <li>Wing configuration: Cranked dihedral, tapered</li>
-        <li>Primary materials: Aeroply, balsa, XPS foam</li>
-      </ul>
-    </section>
+  </section>
 
-    <!-- Design Report Integration (kept short + pointwise) -->
-    <section id="detailed-report" class="detailed-report">
-      <h3>Design Report - Condensed Summary</h3>
+  <!-- Detailed Technical Report -->
+  <section class="page">
+    <h2>Detailed Design Report</h2>
 
-      <h4>Aerodynamics</h4>
-      <div class="fig-grid">
-        <figure>
-          <img src="images/ddc23_wing_cfd.png" alt="Wing CFD pressure contour">
-          <figcaption>Wing CFD pressure contour - validates airfoil choices and pressure distribution.</figcaption>
-        </figure>
-        <figure>
-                <figure>
-          <img src="images/ddc23_fullbody_1.png" alt="Cp vs chord length plot">
-          <figcaption>Localised Pressure Countours - shows pressure distribution across the UAV considering the effects of propwash</figcaption>
-        </figure>
-                <figure>
-          <img src="images/ddc23_fullbody_2.png" alt="Cp vs chord length plot">
-          <figcaption>3D Speed variable streamlines - shows velocity streamlines.</figcaption>
-        </figure>
-      </div>
-      <ul>
-        <li>Airfoil combination chosen through CFD: CH10 (root), S1223 (mid), AH79 (tip).</li>
-        <li>Shoulder-mounted wing for better stability and protection during belly landings.</li>
-        <li>CFD validated pressure distribution and favorable Cp profile (see figures above).</li>
-      </ul>
-
-      <h4>Structures</h4>
-      <div class="fig-grid">
-        <figure>
-          <img src="images/ddc23_topopt.png" alt="Topology optimisation">
-          <figcaption>Topology optimisation result - ~40% mass reduction in wing ribs.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/ddc23_wing_cad.png" alt="Wing CAD with shear webs">
-          <figcaption>Wing CAD showing dual shear webs at 25% & 60% MAC.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/ddc23_fea.png" alt="FEA stress and deformation">
-          <figcaption>FEA results - max von Mises ≈ 21 MPa; max deflection ≈ 9.2 mm; FOS ≈ 1.8.</figcaption>
-        </figure>
-      </div>
-      <ul>
-        <li>Wing: balsa + aeroply ribs, dual shear webs; shear web placement tuned for load paths.</li>
-        <li>Topology optimisation reduced mass by ~104 g while preserving strength.</li>
-      </ul>
-
-      <h4>Fuselage</h4>
-      <div class="fig-grid">
-        <figure>
-          <img src="images/ddc23_fuselage_cmp.png" alt="Fuselage shape comparison">
-          <figcaption>CFD comparison of fuselage shapes - square semi-monocoque chosen for packaging and lower effective drag.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/ddc23_fuselage_cfd.png" alt="Fuselage velocity/pressure contour ">
-          <figcaption>Fuselage velocity contour used to refine fineness ratio and minimize separation.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/ddc23_explicit_dyn.png" alt="Explicit dynamic landing simulation">
-          <figcaption>Explicit dynamic simulation of belly-landing - checks transient structural response.</figcaption>
-        </figure>
-      </div>
-      <ul>
-        <li>Square semi-monocoque selected for its ease of packaging and belly-landing resilience.</li>
-        <li>CFD and explicit-dynamic FEA informed shape and reinforcement placement.</li>
-      </ul>
-
-      <h4>Stability</h4>
-      <div class="fig-grid">
-        <figure>
-          <img src="images/ddc23_longitudinal.png" alt="Longitudinal stability plot">
-          <figcaption>Longitudinal stability analysis - short-period and phugoid behaviour examined in XFLR5.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/ddc23_lateral.png" alt="Lateral stability plots">
-          <figcaption>Lateral stability plots - roll, Dutch roll and spiral modes studied.</figcaption>
-        </figure>
-      </div>
-      <ul>
-        <li>Static margin ≈ 13.9% (within recommended 5-20%).</li>
-        <li>Longitudinal and most lateral modes stable; spiral mode slightly unstable but acceptable per report.</li>
-      </ul>
-
-      <h4>Testing & Validation</h4>
-      <div class="fig-grid">
-        <figure>
-          <img src="images/ddc23_windtunnel.png" alt="Wind tunnel setup ">
-          <figcaption>Wind tunnel pressure - used to validate Cp predictions.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/ddc23_wing_load.png" alt="Wing load test">
-          <figcaption>Wing loading test - 1.9 kg applied with ~4.5 mm free-end deflection (Report p.15).</figcaption>
-        </figure>
-      </div>
-      <ul>
-        <li>Wind-tunnel and tuft tests confirmed CFD predictions and stall characteristics.</li>
-        <li>Thrust bench verified propulsion sizing and current draw.</li>
-      </ul>
-
-      <h4>Propulsion</h4>
-      <div class="fig-grid">
-        <figure>
-          <img src="images/ddc23_thrustbench.png" alt="Thrust bench">
-          <figcaption>Thrust bench setup used to measure propulsive performance.</figcaption>
-        </figure>
-      </div>
-      <ul>
-        <li>Motor: T-Motor AS2317 1400KV; Propeller: 10.25 x 6 inch; Battery: 3S 1500 mAh Li-Po.</li>
-        <li>Performance validated with bench tests and dynamic thrust tables in the report.</li>
-      </ul>
-
-      <h4>Final Drawing & Appendices</h4>
+    <h3>Aerodynamics</h3>
+    <div class="gallery">
       <figure>
-        <img src="images/ddc23_3view.png" alt="3-view drawing">
-        <figcaption>Final 3-view drawing and mass moments  - useful for manufacturing and CG verification.</figcaption>
+        <img src="images/ddc23_wing_cfd.png" alt="Wing CFD pressure contour">
+        <figcaption>Wing CFD pressure contour — validates airfoil choices and pressure distribution.</figcaption>
       </figure>
+      <figure>
+        <img src="images/ddc23_fullbody_1.png" alt="Localized pressure contours">
+        <figcaption>Localised pressure contours — shows pressure distribution across the UAV considering propwash effects.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/ddc23_fullbody_2.png" alt="3D speed streamlines">
+        <figcaption>3D speed variable streamlines — shows velocity streamlines.</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Airfoil combination chosen through CFD: CH10 (root), S1223 (mid), AH79 (tip).</li>
+      <li>Shoulder-mounted wing for better stability and protection during belly landings.</li>
+      <li>CFD validated pressure distribution and favorable Cp profile.</li>
+    </ul>
 
-      <p class="note">Upload the images listed above using the filenames shown in the image src attributes. If you prefer different filenames, upload and tell me which file corresponds to each figure and I will update the srcs accordingly.</p>
-    </section>
+    <h3>Structures</h3>
+    <div class="gallery">
+      <figure>
+        <img src="images/ddc23_topopt.png" alt="Topology optimisation">
+        <figcaption>Topology optimisation result — ~40% mass reduction in wing ribs.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/ddc23_wing_cad.png" alt="Wing CAD with shear webs">
+        <figcaption>Wing CAD showing dual shear webs at 25% & 60% MAC.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/ddc23_fea.png" alt="FEA stress and deformation">
+        <figcaption>FEA results — max von Mises ≈ 21 MPa; max deflection ≈ 9.2 mm; FOS ≈ 1.8.</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Wing: balsa + aeroply ribs, dual shear webs; placement tuned for load paths.</li>
+      <li>Topology optimisation reduced mass by ~104 g while preserving strength.</li>
+    </ul>
+
+    <h3>Fuselage</h3>
+    <div class="gallery">
+      <figure>
+        <img src="images/ddc23_fuselage_cmp.png" alt="Fuselage shape comparison">
+        <figcaption>CFD comparison of fuselage shapes — square semi-monocoque chosen for packaging and lower effective drag.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/ddc23_fuselage_cfd.png" alt="Fuselage velocity contour">
+        <figcaption>Fuselage velocity contour used to refine fineness ratio and minimize separation.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/ddc23_explicit_dyn.png" alt="Explicit dynamic landing simulation">
+        <figcaption>Explicit dynamic simulation of belly-landing — checks transient structural response.</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Square semi-monocoque selected for ease of packaging and belly-landing resilience.</li>
+      <li>CFD and explicit-dynamic FEA informed shape and reinforcement placement.</li>
+    </ul>
+
+    <h3>Stability & Control</h3>
+    <div class="gallery">
+      <figure>
+        <img src="images/ddc23_longitudinal.png" alt="Longitudinal stability plot">
+        <figcaption>Longitudinal stability analysis — short-period and phugoid behaviour examined in XFLR5.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/ddc23_lateral.png" alt="Lateral stability plots">
+        <figcaption>Lateral stability plots — roll, Dutch roll and spiral modes studied.</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Static margin ≈ 13.9% (within recommended 5-20%).</li>
+      <li>Longitudinal and most lateral modes stable; spiral mode slightly unstable but acceptable.</li>
+    </ul>
+
+    <h3>Testing & Validation</h3>
+    <div class="gallery">
+      <figure>
+        <img src="images/ddc23_windtunnel.png" alt="Wind tunnel setup">
+        <figcaption>Wind tunnel pressure test — used to validate Cp predictions.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/ddc23_wing_load.png" alt="Wing load test">
+        <figcaption>Wing loading test — 1.9 kg applied with ~4.5 mm free-end deflection.</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Wind-tunnel and tuft tests confirmed CFD predictions and stall characteristics.</li>
+      <li>Thrust bench verified propulsion sizing and current draw.</li>
+    </ul>
+
+    <h3>Propulsion</h3>
+    <div class="gallery">
+      <figure>
+        <img src="images/ddc23_thrustbench.png" alt="Thrust bench">
+        <figcaption>Thrust bench setup used to measure propulsive performance.</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Motor: T-Motor AS2317 1400KV; Propeller: 10.25 x 6 inch; Battery: 3S 1500 mAh Li-Po.</li>
+      <li>Performance validated with bench tests and dynamic thrust tables.</li>
+    </ul>
+
+
 
   </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Rishith Vanaliya</p>
+  </footer>
+
 </main>
 
+<!-- Scripts -->
 <script>
-// Retain the original dropdown behaviour but simplified for this page
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.dropdown .open').forEach(d => d.classList.add('open'));
+  const toggles = [
+    {wrapId: 'projectsDrop', toggleId: 'projectsToggle', menuId: 'projectsMenu'},
+    {wrapId: 'researchDrop', toggleId: 'researchToggle', menuId: 'researchMenu'}
+  ];
 
-  // Upload PDF: attach link and read filename (not parsing PDF client-side here)
-  const upload = document.getElementById('reportUpload');
-  const reportPdfLink = document.getElementById('reportPdfLink');
-  upload.addEventListener('change', (e) => {
-    const f = e.target.files[0];
-    if (!f) return;
-    // create object URL so user can preview; server upload integration optional
-    const url = URL.createObjectURL(f);
-    reportPdfLink.href = url;
-    reportPdfLink.textContent = f.name + ' (uploaded)';
-    // hint: you can paste report text to auto-fill specific sections below
+  toggles.forEach(({wrapId, toggleId, menuId}) => {
+    const wrap = document.getElementById(wrapId);
+    const toggle = document.getElementById(toggleId);
+    const menu = document.getElementById(menuId);
+
+    if (!wrap || !toggle || !menu) return;
+
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const opening = !wrap.classList.contains('open');
+      document.querySelectorAll('.dropdown.open').forEach(d => {
+        if (d !== wrap) d.classList.remove('open');
+      });
+      wrap.classList.toggle('open', opening);
+      toggle.setAttribute('aria-expanded', String(opening));
+    });
+
+    toggle.addEventListener('auxclick', (e) => {
+      if (e.button === 1) window.open(toggle.href, '_blank');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
+        wrap.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
   });
-
-  // Paste report text flow
-  document.getElementById('pasteBtn').addEventListener('click', () => {
-    const t = prompt('Paste the design report text or a short executive summary here:');
-    if (!t) return;
-    autofillFromText(t);
-  });
-
-  // Autofill demo: will try to extract common headings from pasted text
-  document.getElementById('autofillBtn').addEventListener('click', () => {
-    const sample = `EXECUTIVE SUMMARY:\nThe DDC 2023 vehicle was designed to...\n\nAERODYNAMICS:\nWing uses cranked dihedral with spanwise washout...\n\nSTRUCTURE:\nSemi-monocoque fuselage using aeroply...\n\nTESTS:\nEmpty weight: 1.12 kg\nMTOW: 1.6 kg\nEndurance: 28 min`;
-    autofillFromText(sample);
-    alert('Auto-filled sample content - replace with the actual report by uploading or pasting the real text.');
-  });
-
-  function autofillFromText(text){
-    // Very small heuristic parser to fill sections. Replace with server-side parsing for more reliability.
-    const up = text.toUpperCase();
-    function capture(keyword){
-      const i = up.indexOf(keyword);
-      if (i === -1) return null;
-      // crude: capture until next all-caps heading or end
-      const rest = text.slice(i + keyword.length);
-      const nextMatch = rest.search(/\n[A-Z ]{3,}:|\n\n/);
-      return nextMatch === -1 ? rest.trim() : rest.slice(0,nextMatch).trim();
-    }
-    const exec = capture('EXECUTIVE SUMMARY:') || capture('EXECUTIVE SUMMARY') || capture('SUMMARY:') || text.slice(0,800);
-    if (exec) document.getElementById('execSummaryContent').textContent = exec;
-    const aero = capture('AERODYNAMICS:') || capture('AERODYNAMIC:');
-    if (aero) document.getElementById('aero').textContent = aero;
-    const structure = capture('STRUCTURE:') || capture('MATERIAL:') || capture('MATERIALS:') || capture('STRUCTURE');
-    if (structure) document.getElementById('structure').textContent = structure;
-    const avionics = capture('AVIONICS:') || capture('CONTROLS:') || capture('FLIGHT CONTROL:');
-    if (avionics) document.getElementById('avionics').textContent = avionics;
-
-    // small numeric capture
-    const wMatch = text.match(/Empty weight[:\s]+([0-9\.]+)\s?(kg)?/i);
-    if (wMatch) { document.getElementById('emptyWeight').textContent = wMatch[1] + (wMatch[2] ? ' kg' : ''); document.getElementById('asideEmptyWeight').textContent = wMatch[1] + (wMatch[2] ? ' kg' : ''); }
-    const mMatch = text.match(/MTOW[:\s]+([0-9\.]+)\s?(kg)?/i);
-    if (mMatch) { document.getElementById('mtow').textContent = mMatch[1] + (mMatch[2] ? ' kg' : ''); document.getElementById('asideMTOW').textContent = mMatch[1] + (mMatch[2] ? ' kg' : ''); }
-    const eMatch = text.match(/Endurance[:\s]+([0-9\.]+)\s?(min|minutes|hr|hours)?/i);
-    if (eMatch) document.getElementById('endurance').textContent = eMatch[1] + (eMatch[2] ? ' ' + eMatch[2] : '');
-
-    // wing geometry
-    const wingMatch = text.match(/Wing area[:\s]+([0-9\.]+)\s?(m2|m\^2|m²|cm2)?/i);
-    if (wingMatch) document.getElementById('wingArea').textContent = wingMatch[1] + (wingMatch[2] ? ' ' + wingMatch[2] : '');
-    const arMatch = text.match(/Aspect ratio[:\s]+([0-9\.]+)/i);
-    if (arMatch) document.getElementById('aspectRatio').textContent = arMatch[1];
-
-    // lessons
-    const lessons = capture('LESSONS:') || capture('LESSON:') || capture('CONCLUSION:');
-    if (lessons) document.getElementById('lessonsContent').textContent = lessons;
-  }
 });
 </script>
+
+<script src="universal-enhancements.js"></script>
 
 </body>
 </html>
