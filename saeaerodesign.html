@@ -5,20 +5,74 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SAE Aero Design West 2025 — Micro Class</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="universal-enhancements.css" />
   <style>
-    /* Minimal inline styles to keep layout sane if style.css missing */
-    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:0;color:#111}
-    .sidebar{width:240px;position:fixed;left:0;top:0;bottom:0;background:#0b1220;color:#fff;padding:1rem}
-    .main{margin-left:260px;padding:2rem}
-    h2,h3,h4{margin:.35rem 0}
-    .lead{margin-bottom:1rem}
-    ul{margin:0.25rem 0 1rem 1.1rem}
-    .gallery,.fig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem;margin:1rem 0}
-    figure{margin:0}
-    img,video{width:100%;height:auto;border-radius:6px}
-    .spec-table{border-collapse:collapse;width:100%;max-width:520px}
-    .spec-table th,.spec-table td{padding:0.3rem;border-bottom:1px solid #eee;text-align:left}
-    .caption{font-size:0.9rem;color:#333}
+    .fig-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .fig-grid figure {
+      margin: 0;
+      background: var(--bg-primary, #fff);
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 8px;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .fig-grid figure:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .fig-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+    .fig-grid figcaption {
+      font-size: 0.875rem;
+      color: var(--text-secondary, #475569);
+      padding-top: 0.75rem;
+      line-height: 1.5;
+    }
+    .note {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem 1.25rem;
+      border-radius: 6px;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .key-points {
+      background: var(--bg-secondary, #f8f9fa);
+      padding: 1.5rem 2rem 1.5rem 3rem;
+      border-left: 4px solid var(--accent, #0ea5e9);
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .key-points li {
+      margin: 0.75rem 0;
+    }
+    .spec-table {
+      width: 100%;
+      max-width: 600px;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .spec-table th,
+    .spec-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--border, #e2e8f0);
+      text-align: left;
+    }
+    .spec-table th {
+      font-weight: 600;
+      color: var(--text-primary, #1e293b);
+      background: var(--bg-secondary, #f8f9fa);
+    }
   </style>
 </head>
 <body>
@@ -28,130 +82,88 @@
     <div class="logo">RV</div>
     <div>
       <h1>Rishith Vanaliya</h1>
-      <p>B.Tech Mechanical - Minor: Data Science</p>
+      <p>B.Tech Mechanical · Minor: Data Science</p>
     </div>
   </div>
 
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="ddc.html">DDC (23,24,25)</a></li>
-      <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+
+      <li class="dropdown open" id="projectsDrop">
+        <a href="projects.html" id="projectsToggle" aria-expanded="true">Projects ▾</a>
+        <ul id="projectsMenu" role="menu">
+          <li><a href="ddc.html">DDC (23,24,25)</a></li>
+          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li><a href="automated_cfd.html">Automated CFD Platform</a></li>
+          <li><a href="gearbox.html">Design of Gearbox</a></li>
+          <li><a href="technoxian.html">Technoxian</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown" id="researchDrop">
+        <a href="pinn.html" id="researchToggle" aria-expanded="false">Research ▾</a>
+        <ul id="researchMenu" role="menu">
+          <li><a href="pinn.html">PINN — Navier–Stokes</a></li>
+          <li><a href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
+        </ul>
+      </li>
+
       <li><a href="contact.html">Contact</a></li>
+
+      <li class="nav-section">Quick Links</li>
+      <li><a href="Resume1%20(2).pdf" target="_blank">Resume (PDF)</a></li>
+     <li><a href="https://github.com/rishithvanaliya2005-design" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/rishith-vanaliya-238b2625a" target="_blank">LinkedIn</a></li>
     </ul>
   </nav>
 
-  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72)">© 2025 · Rishith</div>
+  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.5);text-align:center;">
+    © 2025 · Rishith
+  </div>
 </aside>
 
 <main class="main">
+
+  <!-- Hero Section -->
+  <div class="header-card">
+    <div class="intro">
+      <h1>SAE Aero Design West 2025 — Micro Class</h1>
+      <p>11th Overall · 5th Mission Score · Team Captain</p>
+    </div>
+  </div>
+
+  <!-- Content Section -->
   <section class="page">
-    <h2>SAE Aero Design West 2025 — Micro Class</h2>
+    
+    <h2>Project Overview</h2>
 
-    <p class="lead"><strong>Role:</strong> Team Captain - led design, verification, manufacturing and competition execution.</p>
+    <h3>Snapshot</h3>
+    <ul>
+      <li>Event: SAE Aero Design West 2025, Micro Class.</li>
+      <li>Team: Team Arrow, Institute of Technology Nirma University.</li>
+      <li>Result: 11th overall, 5th mission score.</li>
+      <li>Key metrics: payload 2 L; empty weight ~1.6 kg; takeoff roll within competition limits; thrust-to-weight target 0.65.</li>
+    </ul>
 
-    <section class="project-header">
-      <h3>Snapshot</h3>
-      <ul>
-        <li>Event: SAE Aero Design West 2025, Micro Class.</li>
-        <li>Team: Team Arrow, Institute of Technology Nirma University.</li>
-        <li>Result: 11th overall, 5th mission score.</li>
-        <li>Key metrics: payload 2 L; empty weight ~1.6 kg; takeoff roll within competition limits; thrust-to-weight target 0.65.</li>
-      </ul>
-    </section>
+    <h3>My Role — Team Captain</h3>
+    <ul>
+      <li>Led concept selection, weight budget, and structural layout of fuselage and wing.</li>
+      <li>Directed CFD validation, FEA checks, and wind tunnel Cp verification.</li>
+      <li>Managed manufacturing pipeline, test plan execution, and flight readiness reviews.</li>
+    </ul>
 
-    <section class="overview">
-      <h3>My role and technical contributions</h3>
-      <ul>
-        <li>Led concept selection, weight budget, and structural layout of fuselage and wing.</li>
-        <li>Directed CFD validation, FEA checks, and wind tunnel Cp verification.</li>
-        <li>Managed manufacturing pipeline, test plan execution, and flight readiness reviews.</li>
-      </ul>
+    <h3>Why This Project Matters</h3>
+    <ul>
+      <li>Demonstrates systems-level design under strict operational constraints.</li>
+      <li>Shows ability to validate designs with both simulation and hardware testing.</li>
+    </ul>
 
-      <h3>Why this project matters</h3>
-      <ul>
-        <li>Demonstrates systems-level design under strict operational constraints.</li>
-        <li>Shows ability to validate designs with both simulation and hardware testing.</li>
-      </ul>
-    </section>
-
-    <h3>Selected technical visuals</h3>
-
-    <h4>Aerodynamics</h4>
-    <div class="fig-grid">
-      <figure>
-        <img src="images/sae_wing_cfd_pressure.png" alt="Wing CFD pressure contour">
-        <figcaption class="caption">sae_wing_cfd_pressure.png - Wing CFD pressure contour used for Cl estimation and Cp checks.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/sae_cp_plot.png" alt="Cp vs chord plot">
-        <figcaption class="caption">sae_cp_plot.png - Cp vs chord validation comparing CFD and wind tunnel data.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/sae_lift_curve.png" alt="Lift curve">
-        <figcaption class="caption">sae_lift_curve.png - Cl vs alpha curve used for stall and control sizing.</figcaption>
-      </figure>
-    </div>
-
-    <h4>Structure</h4>
-    <div class="fig-grid">
-      <figure>
-        <img src="images/sae_wing_structure.png" alt="Wing rib layout and spar positioning">
-        <figcaption class="caption">sae_wing_structure.png - Wing skeleton, spars and rib layout for manufacturing.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/sae_wing_fea_stress.png" alt="Wing FEA stress plot">
-        <figcaption class="caption">sae_wing_fea_stress.png - FEA von Mises stress under gust-loading cases.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/sae_fuselage_layout.png" alt="Fuselage internal layout with payload tank">
-        <figcaption class="caption">sae_fuselage_layout.png - Fuselage internal layout showing payload tank mounting and CG considerations.</figcaption>
-      </figure>
-    </div>
-
-    <h4>Fuselage safety and testing</h4>
-    <div class="fig-grid">
-      <figure>
-        <img src="images/sae_fuselage_cfd.png" alt="Fuselage CFD contour">
-        <figcaption class="caption">sae_fuselage_cfd.png - Fuselage CFD used to compare drag and separation for different shapes.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/sae_explicit_landing.png" alt="Explicit landing simulation">
-        <figcaption class="caption">sae_explicit_landing.png - Explicit dynamic simulation of belly landing and energy absorption.</figcaption>
-      </figure>
-    </div>
-
-    <h4>Stability</h4>
-    <div class="fig-grid">
-      <figure>
-        <img src="images/sae_static_stability.png" alt="Static stability curve">
-        <figcaption class="caption">sae_static_stability.png - Static margin and Cm vs alpha, used to verify trim and CG range.</figcaption>
-      </figure>
-    </div>
-
-    <h4>Testing and propulsion</h4>
-    <div class="fig-grid">
-      <figure>
-        <img src="images/sae_thrustbench.png" alt="Thrust bench setup">
-        <figcaption class="caption">sae_thrustbench.png - Thrust bench and power measurement used to ensure 450 W compliance.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/sae_final_render.png" alt="Final CAD render or flight-ready image">
-        <figcaption class="caption">sae_final_render.png - Final CAD render or flight-ready photo used as the hero visual.</figcaption>
-      </figure>
-    </div>
-
-    <h3>Quick specs</h3>
+    <h3>Quick Specifications</h3>
     <table class="spec-table">
       <tbody>
         <tr><th>Wingspan</th><td>1.312 m</td></tr>
-        <tr><th>Wing area</th><td>0.29 m2</td></tr>
+        <tr><th>Wing area</th><td>0.29 m²</td></tr>
         <tr><th>Empty weight</th><td>~1.6 kg</td></tr>
         <tr><th>Payload</th><td>2 L (67 oz)</td></tr>
         <tr><th>Design lift</th><td>49.36 N (CFD)</td></tr>
@@ -159,9 +171,257 @@
       </tbody>
     </table>
 
+  </section>
+
+  <!-- Detailed Technical Report -->
+  <section class="page">
+    <h2>Technical Details</h2>
+<!-- SAE Aero Design West 2025 — Details section
+     Source: team design report (Team Arrow 325). Citation: :contentReference[oaicite:1]{index=1} -->
+<section id="sae-2025" class="project-section" aria-labelledby="sae-title" style="font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;max-width:1100px;margin:2rem auto;padding:1rem;line-height:1.45;color:#222">
+  <style>
+    /* scoped minimal styles for section */
+    #sae-2025 h2{font-size:1.6rem;margin:0 0 .6rem;color:#0b2b45}
+    #sae-2025 h3{font-size:1.1rem;margin:1.3rem 0 .4rem;color:#0b3b5a}
+    .fig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:.6rem 0 1rem}
+    .fig-grid figure{background:#fff;border-radius:8px;padding:.5rem;box-shadow:0 6px 18px rgba(12,40,60,0.06);display:flex;flex-direction:column;align-items:stretch}
+    .fig-grid img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+    .fig-grid figcaption{font-size:.87rem;color:#333;padding:.4rem 0 0}
+    ul.section-list{margin:.4rem 0 1rem;padding-left:1.1rem}
+    ul.section-list li{margin:.45rem 0}
+    .wide-figure{max-width:820px;margin:1.2rem auto;border-radius:8px;overflow:hidden;box-shadow:0 8px 20px rgba(10,30,50,0.06)}
+    .small-meta{font-size:.85rem;color:#556; margin-top:.4rem}
+    /* responsive tweaks */
+    @media (max-width:520px){ .fig-grid img{height:140px} #sae-2025 h2{font-size:1.35rem} }
+  </style>
+
+  <h2 id="sae-title">SAE Aero Design West 2025 — Technical Details (Team Arrow 325)</h2>
+  <p class="small-meta">Summary and validation highlights extracted from the team's official design report (CFD, FEA, wind tunnel, and test results). :contentReference[oaicite:2]{index=2}</p>
+
+  <!-- WING -->
+  <h3>Wing</h3>
+  <div class="gallery">
+    <figure>
+      <img src="images/sae25_airfoil_plot.png" alt="S1223 airfoil plot (120% thickened)">
+      <figcaption>S1223 (120%) — thickened for high lift and favourable stall behaviour (chosen after XFLR5/CfD comparison).</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_wing_structure.png" alt="Wing structure and ribs">
+      <figcaption>Wing skeleton — CFRP main spar, aeroply ribs and shear web for stiffness and lightweight build.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_bending_moment.png" alt="Bending moment / spar sizing">
+      <figcaption>Spar sizing from bending analysis — CFRP tube (Do ≈ 10 mm) selected to meet flexure requirements.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_cp_plot.png" alt="Wing Cp vs chord">
+      <figcaption>Cp distribution vs chord — used to ensure CG ahead of CP and favourable pitch-down tendency.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_wing_fea.png" alt="Wing FEA">
+      <figcaption>FEA of Wing structure — observed a maximum deflection of 10mm.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_wing_cfd.png" alt="Wing CFD">
+      <figcaption>Pressure distribution across wing chord.</figcaption>
+    </figure>
+  </div>
+  <ul class="section-list">
+    <li>Airfoil: S1223 (thickened to 120%) to boost low-Re lift performance. (Report: airfoil data and thickness study). </li>
+    <li>Geometry: span 1312 mm, wing area 0.29 m², MAC ≈ 220.6 mm, AR ≈ 5.96, taper ≈ 0.83.</li>
+    <li>Topology-optimised ribs → ~15% mass reduction per rib; spar + shear web deliver required bending stiffness.</li>
+    <li>FEA (gust + cruise): applied 60 N gust load → max deflection ≈ 9.84 mm and acceptable factors of safety. </li>
+  </ul>
+
+  <!-- FUSELAGE -->
+  <h3>Fuselage</h3>
+  <div class="gallery">
+    <figure>
+      <img src="images/sae25_loft.png" alt="Fuselage loft">
+      <figcaption>Teardrop-inspired loft — reduced separation and wetted area while meeting payload volume.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_monocoque.png" alt="Semi-monocoque fuselage">
+      <figcaption>Semi-monocoque layout — trusses + longerons with CFRP reinforcement at high load points.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_fuse_cfd.png" alt="Fuselage CFD pressure contours">
+      <figcaption>Fuselage CFD comparison: tear-drop shape gave the lowest drag (≈0.705 N) vs alternatives. </figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_fea_fuse.png" alt="Fuselage FEA results">
+      <figcaption>FEA verification — max von Mises ≈ 39.8 MPa on wing-mount pipes; motor-mount FOS ≈ 2.05.</figcaption>
+    </figure>
+  </div>
+  <ul class="section-list">
+    <li>Dimensions: length ≈ 860 mm, max diameter ≈ 174.6 mm, fineness ratio ≈ 4.9.</li>
+    <li>Semi-monocoque aeroply + balsa skin; high-stress areas reinforced with CFRP/aluminium.</li>
+  </ul>
+
+  <!-- EMPENNAGE -->
+  <h3>Empennage</h3>
+  <div class="gallery">
+    <figure>
+      <img src="images/sae25_empennage.png" alt="Empennage layout">
+      <figcaption>Conventional tail with small dorsal fin — trade-off: low weight and robust stability.</figcaption>
+    </figure>
+  </div>
+  <ul class="section-list">
+    <li>Conventional arrangement chosen for reliability; XPS foam used for tail panels to resist moisture and loading.</li>
+    <li>Dorsal fin area ≈ 10% of vertical stabilizer area for improved sideslip recovery.</li>
+    <li>Horizontal tail area S<sub>HT</sub> ≈ 0.08 m²; vertical tail S<sub>VT</sub> ≈ 0.03 m² (empirical sizing & moment arms used).</li>
+  </ul>
+
+  <!-- LANDING GEAR -->
+  <h3>Landing Gear</h3>
+  <div class="gallery">
+    <figure>
+      <img src="images/sae25_lg.png" alt="Landing gear layout">
+      <figcaption>Tricycle gear for ground stability and effective steering via high torque nose servo.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_lg_topopt.png" alt="Landing gear topology optimization">
+      <figcaption>Topology optimisation (Fusion 360) reduced landing-gear mass by ~20% while meeting loads. :contentReference[oaicite:7]{index=7}</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_lg_fea.png" alt="Landing gear FEA">
+      <figcaption>FEA: primary gear made of Al6061-T6, tested for landing load; deformation within design limits.</figcaption>
+    </figure>
+  </div>
+  <ul class="section-list">
+    <li>Main gear carries ≈85% weight; design loadcases include 3× vertical weight (AIAA guidance) and horizontal touchdown loads.</li>
+    <li>Al6061-T6, bend geometry and CNC clamp design to secure nose steering servo.</li>
+  </ul>
+
+  <!-- PROPULSION -->
+  <h3>Propulsion</h3>
+  <div class="gallery">
+    <figure>
+      <img src="images/sae25_motor.png" alt="Selected motor">
+      <figcaption>Power plant: Sunnysky X3520-560 kV motor selected to meet thrust & 450 W competition cap. :contentReference[oaicite:8]{index=8}</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_propcalc.png" alt="Propeller & thrust calculations">
+      <figcaption>Prop/Thrust: Gabriel Staples equation + E-calc used; prop chosen 16×10 after bench validation.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_thrustbench.png" alt="Thrust bench test">
+      <figcaption>Thrust bench measurements validated software predictions (thrust vs throttle & power curves).</figcaption>
+    </figure>
+  </div>
+  <ul class="section-list">
+    <li>Selected prop: 16×10; measured static thrust matches predicted values at test RPMs.</li>
+    <li>Battery: 1800 mAh 4S (35C) → ≈2.1 minutes endurance for competition profile; ESC: 50 A capable.</li>
+  </ul>
+
+  <!-- STABILITY -->
+  <h3>Stability & Control</h3>
+  <div class="gallery">
+    <figure>
+      <img src="images/sae25_longitudinal.png" alt="Longitudinal stability plots">
+      <figcaption>Longitudinal analysis (XFLR5) — Cm trends and phugoid/short-period modes evaluated.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_lateral.png" alt="Lateral stability plots">
+      <figcaption>Lateral analysis — Dutch roll, roll subsidence examined; spiral mode slightly right-of-origin but acceptable for package.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_rootlocus.png" alt="Root locus of stability modes">
+      <figcaption>Root-locus plots show principal poles in stable region; static margin ≈ 12.9% (design target met). :contentReference[oaicite:9]{index=9}</figcaption>
+    </figure>
+  </div>
+  <ul class="section-list">
+    <li>Static margin = 12.9% (within recommended 10–30%).</li>
+    <li>Control surface sizing (ailerons, elevator, rudder) validated with XFLR5 & bench roll tests.</li>
+    <li>Tank slosh & CG shift analysis confirm stability across -10° → +15° AoA window. :contentReference[oaicite:10]{index=10}</li>
+  </ul>
+
+  <!-- TESTING -->
+  <h3>Testing & Validation</h3>
+  <div class="gallery">
+    <figure>
+      <img src="images/sae25_windtunnel.png" alt="Wind tunnel Cp vs chord">
+      <figcaption>Wind tunnel Cp vs chord — experimental data matches XFLR5/CfD trends at Re ≈ 2.4×10⁵. </figcaption>
+    </figure>
+    <figure>
+      <img src="images/sae25_wingloading.png" alt="Wing loading test">
+      <figcaption>Wing loading experiment — practical strength test confirms high structural margin.</figcaption>
+    </figure>
+  </div>
+  <ul class="section-list">
+    <li>Takeoff distance (calculated) ≈ 14.18 m — well within competition requirements; landing ≈ 16.34 m.</li>
+    <li>Full-body CFD (wing + fuselage + propwash) and mesh independence checks performed; residuals ≤ 1e-4 reported.</li>
+  </ul>
+
+  <!-- FINAL DRAWING -->
+  <h3>Final Drawing</h3>
+  <div class="wide-figure">
+    <img src="images/sae25_3view.png" alt="Final 3-view drawing and mass moments" style="width:100%;display:block;object-fit:cover">
+    <div style="padding:.7rem 1rem;background:#fff">
+      <p style="margin:0;font-size:.95rem;color:#333">Final 3-view drawing — mass moments, CG envelope and build reference (used for assembly & TI checks).</p>
+    </div>
+  </div>
+
+  <p class="small-meta" style="margin-top:1rem">Notes: Images & captions above reference figures, tables and test results recorded in the official SAE design report. For traceability, see the full design report (Team Arrow - 325). :contentReference[oaicite:13]{index=13}</p>
+</section>
+
 
   </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Rishith Vanaliya</p>
+  </footer>
+
 </main>
+
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = [
+    {wrapId: 'projectsDrop', toggleId: 'projectsToggle', menuId: 'projectsMenu'},
+    {wrapId: 'researchDrop', toggleId: 'researchToggle', menuId: 'researchMenu'}
+  ];
+
+  toggles.forEach(({wrapId, toggleId, menuId}) => {
+    const wrap = document.getElementById(wrapId);
+    const toggle = document.getElementById(toggleId);
+    const menu = document.getElementById(menuId);
+
+    if (!wrap || !toggle || !menu) return;
+
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const opening = !wrap.classList.contains('open');
+      document.querySelectorAll('.dropdown.open').forEach(d => {
+        if (d !== wrap) d.classList.remove('open');
+      });
+      wrap.classList.toggle('open', opening);
+      toggle.setAttribute('aria-expanded', String(opening));
+    });
+
+    toggle.addEventListener('auxclick', (e) => {
+      if (e.button === 1) window.open(toggle.href, '_blank');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
+        wrap.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
+  });
+});
+</script>
+
+<script src="universal-enhancements.js"></script>
 
 </body>
 </html>
