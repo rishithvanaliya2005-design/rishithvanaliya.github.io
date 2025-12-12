@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DDC 2023 — Drone Development Challenge — Detailed Report</title>
+  <title>DDC 2023 - Drone Design Challenge - Detailed Report</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Small inline helpers to avoid breaking if style.css isn't present */
@@ -43,8 +43,8 @@
       <li class="dropdown" id="researchDrop">
         <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu">Research ▾</a>
         <ul id="researchMenu" role="menu">
-          <li role="none"><a role="menuitem" href="pinn.html">PINN — Navier–Stokes</a></li>
-          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
+          <li role="none"><a role="menuitem" href="pinn.html">PINN - Navier–Stokes</a></li>
+          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN - RF Ablation (RFA)</a></li>
         </ul>
       </li>
 
@@ -64,30 +64,30 @@
 
 <main class="main">
   <section class="page">
-    <h2>DDC Micro — 2023</h2>
+    <h2>DDC Micro - 2023</h2>
 
-    <!-- MIT-style: Short, skimmable project header -->
+    <!-- MIT‑style: Short, skimmable project header -->
     <section class="project-header">
       <h3>Objective</h3>
       <ul>
-        <li>Design a lightweight, belly-landing fixed-wing UAV for DDC Micro Class.</li>
+        <li>Design a lightweight, belly‑landing fixed‑wing UAV for DDC Micro Class.</li>
         <li>Maximise payload fraction while ensuring structural robustness and stable flight.</li>
-        <li>Meet DDC rules for hand-launch, compact packaging, and short-duration mission profile.</li>
+        <li>Meet DDC rules for hand‑launch, compact packaging, and short‑duration mission profile.</li>
       </ul>
 
-      <h3>My Role — Design Engineer</h3>
+      <h3>My Role - Design Engineer</h3>
       <ul>
         <li>Airframe layout, wing geometry selection, and structural sizing.</li>
-        <li>Material selection and weight-build-up optimisation.</li>
-        <li>Topology-optimised wing structure and fuselage trade-off study.</li>
+        <li>Material selection and weight‑build‑up optimisation.</li>
+        <li>Topology‑optimised wing structure and fuselage trade‑off study.</li>
         <li>Contributed to aerodynamic decisions and stability validation using XFLR5.</li>
       </ul>
 
       <h3>Outcome</h3>
       <ul>
-        <li><strong>2nd Place Overall</strong> — DDC Micro 2023</li>
+        <li><strong>2nd Place Overall</strong> - DDC Micro 2023</li>
         <li><strong>Best Design Report Award</strong></li>
-        <li>Validated stable flight, high lift-to-drag performance, and robust belly-landing behaviour.</li>
+        <li>Validated stable flight, high lift‑to‑drag performance, and robust belly‑landing behaviour.</li>
       </ul>
     </section>
 
@@ -97,24 +97,24 @@
       <ul>
         <li>Cranked dihedral wing → passive roll stability with lower drag than conventional dihedral.</li>
         <li>Tapered planform → reduced tip stall tendency.</li>
-        <li>Semi-monocoque fuselage → strong, lightweight, easy to manufacture; foam belly for impact protection.</li>
+        <li>Semi‑monocoque fuselage → strong, lightweight, easy to manufacture; foam belly for impact protection.</li>
         <li>Structural optimisation → 40% weight reduction in wing ribs via topology optimisation.</li>
       </ul>
 
       <h3>Optimisation & Flight Performance</h3>
       <ul>
-        <li>CFD-based airfoil comparison → CH10 (root) + S1223 (mid) + AH79 (tip).</li>
+        <li>CFD‑based airfoil comparison → CH10 (root) + S1223 (mid) + AH79 (tip).</li>
         <li>CFD results: Lift ≈ 31 N, Drag ≈ 1.88 N → <strong>L/D ≈ 16.4</strong>.</li>
-        <li>Wind-tunnel CP measurement matched XFLR5 predictions.<span class="cite"> (See full report)</span></li>
-        <li>Wing-loading test: 1.9 kg load caused only ~4.5 mm deflection.</li>
+        <li>Wind‑tunnel CP measurement matched XFLR5 predictions.<span class="cite"> (See full report)</span></li>
+        <li>Wing‑loading test: 1.9 kg load caused only ~4.5 mm deflection.</li>
       </ul>
     </section>
 
     <h3>Key Points & Lessons Learned</h3>
     <ul class="key-points">
       <li>Cranked dihedral proved ideal for stability with minimal aerodynamic penalty.</li>
-      <li>Semi-monocoque fuselage with XPS belly increased impact resilience.</li>
-      <li>Rigid wing-mount design improved assembly speed and repeatability in field tests.</li>
+      <li>Semi‑monocoque fuselage with XPS belly increased impact resilience.</li>
+      <li>Rigid wing‑mount design improved assembly speed and repeatability in field tests.</li>
       <li>Topology optimisation offered major weight savings without compromising FOS.</li>
     </ul>
 
@@ -122,11 +122,11 @@
     <div class="gallery">
       <figure>
         <img src="images/ddc2023_uav.jpeg" alt="DDC 2023 UAV">
-        <figcaption>DDC 2023 — Flight-ready UAV</figcaption>
+        <figcaption>DDC 2023 - Flight‑ready UAV</figcaption>
       </figure>
       <figure>
         <img src="images/ddc2023_team.jpeg" alt="DDC 2023 Team">
-        <figcaption>Team Arrow — 2023</figcaption>
+        <figcaption>Team Arrow - 2023</figcaption>
       </figure>
       <figure>
         <video controls muted>
@@ -142,7 +142,7 @@
       <ul>
         <li>Wing area: 0.296 m²</li>
         <li>Aspect ratio: 6.4</li>
-        <li>Take-off weight: 2.74 kg</li>
+        <li>Take‑off weight: 2.74 kg</li>
         <li>Payload: 1.7 kg</li>
         <li>Wing configuration: Cranked dihedral, tapered</li>
         <li>Primary materials: Aeroply, balsa, XPS foam</li>
@@ -151,49 +151,120 @@
 
     <!-- Design Report Integration (kept short + pointwise) -->
     <section id="detailed-report" class="detailed-report">
-      <h3>Design Report — Condensed Summary</h3>
+      <h3>Design Report - Condensed Summary</h3>
 
       <h4>Aerodynamics</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc23_wing_cfd.png" alt="Wing CFD pressure contour (report p.14)">
+          <figcaption>Wing CFD pressure contour (Report p.14) - validates airfoil choices and pressure distribution.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc23_cp_plot.png" alt="Cp vs chord length plot (report p.14)">
+          <figcaption>Cp vs chord length (Report p.14) - shows favorable pressure distribution across the chord.</figcaption>
+        </figure>
+      </div>
       <ul>
         <li>Airfoil combination chosen through CFD: CH10 (root), S1223 (mid), AH79 (tip).</li>
         <li>Shoulder-mounted wing for better stability and protection during belly landings.</li>
-        <li>CFD validated pressure distribution and favourable Cp profile.</li>
+        <li>CFD validated pressure distribution and favorable Cp profile (see figures above).</li>
       </ul>
 
       <h4>Structures</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc23_topopt.png" alt="Topology optimisation (report p.12)">
+          <figcaption>Topology optimisation result (Report p.12) - ~40% mass reduction in wing ribs.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc23_wing_cad.png" alt="Wing CAD with shear webs (report p.12)">
+          <figcaption>Wing CAD showing dual shear webs at 25% & 60% MAC (Report p.12).</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc23_fea.png" alt="FEA stress and deformation (report p.13)">
+          <figcaption>FEA results - max von Mises ≈ 21 MPa; max deflection ≈ 9.2 mm; FOS ≈ 1.8 (Report p.13).</figcaption>
+        </figure>
+      </div>
       <ul>
-        <li>Wing: Balsa + aeroply ribs, dual shear webs at 25% & 60% MAC.</li>
-        <li>Topology optimisation → ~104 g weight reduction (40%).</li>
-        <li>FEA: Max stress ≈ 21 MPa, FOS ≈ 1.8.</li>
+        <li>Wing: balsa + aeroply ribs, dual shear webs; shear web placement tuned for load paths.</li>
+        <li>Topology optimisation reduced mass by ~104 g while preserving strength.</li>
       </ul>
 
       <h4>Fuselage</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc23_fuselage_cmp.png" alt="Fuselage shape comparison (report p.20)">
+          <figcaption>CFD comparison of fuselage shapes (Report p.20) - square semi-monocoque chosen for packaging and lower effective drag.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc23_fuselage_cfd.png" alt="Fuselage velocity/pressure contour (report p.19)">
+          <figcaption>Fuselage velocity contour (Report p.19) used to refine fineness ratio and minimize separation.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc23_explicit_dyn.png" alt="Explicit dynamic landing simulation (report p.21)">
+          <figcaption>Explicit dynamic simulation of belly-landing (Report p.21) - checks transient structural response.</figcaption>
+        </figure>
+      </div>
       <ul>
-        <li>Square semi-monocoque selected after drag comparison with circular & airfoil-shaped fuselages.</li>
-        <li>CFD: Square fuselage had lowest drag (≈0.49 N) while easing internal packaging.</li>
-        <li>Explicit dynamic simulations verified belly-landing safety.</li>
+        <li>Square semi-monocoque selected for its ease of packaging and belly-landing resilience.</li>
+        <li>CFD and explicit-dynamic FEA informed shape and reinforcement placement.</li>
       </ul>
 
       <h4>Stability</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc23_longitudinal.png" alt="Longitudinal stability plot (report p.23)">
+          <figcaption>Longitudinal stability analysis (Report p.23) - short-period and phugoid behaviour examined in XFLR5.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc23_lateral.png" alt="Lateral stability plots (report p.24)">
+          <figcaption>Lateral stability plots (Report p.24) - roll, Dutch roll and spiral modes studied.</figcaption>
+        </figure>
+      </div>
       <ul>
-        <li>Static margin ≈ 13.9% (within 5–20% recommended range).</li>
-        <li>Longitudinal modes (short-period & phugoid) stable.</li>
-        <li>Lateral modes mostly stable; spiral mode slightly unstable but acceptable.</li>
+        <li>Static margin ≈ 13.9% (within recommended 5-20%).</li>
+        <li>Longitudinal and most lateral modes stable; spiral mode slightly unstable but acceptable per report.</li>
+      </ul>
+
+      <h4>Testing & Validation</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc23_windtunnel.png" alt="Wind tunnel setup (report p.15)">
+          <figcaption>Wind tunnel pressure measurement setup (Report p.15) - used to validate Cp and flow separation predictions.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc23_wing_load.png" alt="Wing load test (report p.15)">
+          <figcaption>Wing loading test - 1.9 kg applied with ~4.5 mm free-end deflection (Report p.15).</figcaption>
+        </figure>
+        <figure>
+          <img src="images/ddc23_stall_test.png" alt="Stall visualization (report p.16)">
+          <figcaption>Stall testing using tufts and GoPro (Report p.16) - verified stall progression and tip behaviour.</figcaption>
+        </figure>
+      </div>
+      <ul>
+        <li>Wind-tunnel and tuft tests confirmed CFD predictions and stall characteristics.</li>
+        <li>Thrust bench verified propulsion sizing and current draw (see Propulsion).</li>
       </ul>
 
       <h4>Propulsion</h4>
+      <div class="fig-grid">
+        <figure>
+          <img src="images/ddc23_thrustbench.png" alt="Thrust bench (report p.27)">
+          <figcaption>Thrust bench setup used to measure propulsive performance (Report p.27).</figcaption>
+        </figure>
+      </div>
       <ul>
-        <li>Motor: T-Motor AS2317 1400KV.</li>
-        <li>Propeller: 10.25 × 6 inch; thrust ≈ 1.8 kg required → validated on thrust bench.</li>
-        <li>Battery: 3S 1500 mAh Li-Po → 2–3 minutes endurance.</li>
+        <li>Motor: T-Motor AS2317 1400KV; Propeller: 10.25 x 6 inch; Battery: 3S 1500 mAh Li-Po.</li>
+        <li>Performance validated with bench tests and dynamic thrust tables in the report.</li>
       </ul>
 
-      <h4>Final Performance</h4>
-      <ul>
-        <li>Lift-to-drag ratio ≈ 16.4.</li>
-        <li>Stable stall behaviour validated through smoke and tuft testing.</li>
-        <li>Hand-launch and belly-landing achieved repeatedly.</li>
-      </ul>
+      <h4>Final Drawing & Appendices</h4>
+      <figure>
+        <img src="images/ddc23_3view.png" alt="3-view drawing (report p.30)">
+        <figcaption>Final 3-view drawing and mass moments (Report p.30) - useful for manufacturing and CG verification.</figcaption>
+      </figure>
+
+      <p class="note">Upload the images listed above using the filenames shown in the image src attributes. If you prefer different filenames, upload and tell me which file corresponds to each figure and I will update the srcs accordingly.</p>
     </section>
 
   </section>
@@ -228,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('autofillBtn').addEventListener('click', () => {
     const sample = `EXECUTIVE SUMMARY:\nThe DDC 2023 vehicle was designed to...\n\nAERODYNAMICS:\nWing uses cranked dihedral with spanwise washout...\n\nSTRUCTURE:\nSemi-monocoque fuselage using aeroply...\n\nTESTS:\nEmpty weight: 1.12 kg\nMTOW: 1.6 kg\nEndurance: 28 min`;
     autofillFromText(sample);
-    alert('Auto-filled sample content — replace with the actual report by uploading or pasting the real text.');
+    alert('Auto-filled sample content - replace with the actual report by uploading or pasting the real text.');
   });
 
   function autofillFromText(text){
