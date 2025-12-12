@@ -3,68 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DDC 2024 - Drone Design Challenge - Detailed Report</title>
+  <title>DDC 2023 - Drone Design Challenge - Detailed Report</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Small inline helpers (matches DDC23 page) */
+    /* Small inline helpers to avoid breaking if style.css isn't present */
     .report-actions {display:flex;gap:0.5rem;align-items:center;margin:0.5rem 0}
     .placeholder{background:rgba(0,0,0,0.03);padding:0.75rem;border-radius:6px;border:1px dashed rgba(0,0,0,0.06)}
     .two-col{display:grid;grid-template-columns:1fr 320px;gap:1rem}
     .spec-table{width:100%;border-collapse:collapse}
     .spec-table th,.spec-table td{padding:0.4rem;border-bottom:1px solid #eee;text-align:left}
     .gallery img, .gallery video{max-width:100%;height:auto;border-radius:6px}
-    body{font-family:system-ui,Segoe UI,Roboto,Arial;background:#fff;color:#111;margin:0}
-    .sidebar{width:260px;position:fixed;left:0;top:0;bottom:0;background:#0b1220;color:#fff;padding:1rem}
-    .main{margin-left:260px;padding:2rem}
-    h2,h3,h4{margin:.35rem 0}
-    .lead{margin-bottom:1rem}
-    ul{margin:0.25rem 0 1rem 1.1rem}
-    .fig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem;margin:0.5rem 0}
-    figure{margin:0}
-    img,video{width:100%;height:auto;border-radius:6px;display:block}
-    .note{font-size:0.95rem;color:#333}
-    .cite{font-size:0.9rem;color:#666}
   </style>
 </head>
 <body>
 <aside class="sidebar" aria-label="Main navigation">
-  <div class="brand" style="display:flex;gap:0.6rem;align-items:center;margin-bottom:1rem">
-    <div class="logo" style="width:48px;height:48px;border-radius:8px;background:#fff;color:#0b1220;display:flex;align-items:center;justify-content:center;font-weight:700">RV</div>
+  <div class="brand">
+    <div class="logo">RV</div>
     <div>
-      <h1 style="font-size:1.05rem;margin:0">Rishith Vanaliya</h1>
-      <p style="margin:0;font-size:0.9rem">B.Tech Mechanical · Minor: Data Science</p>
+      <h1>Rishith Vanaliya</h1>
+      <p>B.Tech Mechanical · Minor: Data Science</p>
     </div>
   </div>
 
   <nav>
-    <ul style="list-style:none;padding:0;margin:0">
-      <li style="margin:0.35rem 0"><a href="index.html" style="color:inherit;text-decoration:none">Home</a></li>
+    <ul>
+      <li><a href="index.html">Home</a></li>
 
-      <li class="dropdown open" id="projectsDrop" style="margin:0.35rem 0">
-        <a href="projects.html" id="projectsToggle" aria-expanded="true" aria-controls="projectsMenu" style="color:inherit;text-decoration:none">Projects ▾</a>
-        <ul id="projectsMenu" role="menu" style="margin:0.25rem 0 0 0;padding-left:0;list-style:none">
-          <li role="none"><a role="menuitem" href="ddc.html" style="color:inherit;text-decoration:none">DDC (23,24,25)</a></li>
-          <li role="none"><a role="menuitem" href="saeaerodesign.html" style="color:inherit;text-decoration:none">SAE Aero Design</a></li>
-          <li role="none"><a role="menuitem" href="automated_cfd.html" style="color:inherit;text-decoration:none">Automated CFD Platform</a></li>
-          <li role="none"><a role="menuitem" href="gearbox.html" style="color:inherit;text-decoration:none">Design of Gearbox</a></li>
-          <li role="none"><a role="menuitem" href="technoxian.html" style="color:inherit;text-decoration:none">Technoxian</a></li>
+      <li class="dropdown open" id="projectsDrop">
+        <a href="projects.html" id="projectsToggle" aria-expanded="true" aria-controls="projectsMenu">Projects ▾</a>
+        <ul id="projectsMenu" role="menu">
+          <li role="none"><a role="menuitem" href="ddc.html">DDC (23,24,25)</a></li>
+          <li role="none"><a role="menuitem" href="saeaerodesign.html">SAE Aero Design</a></li>
+          <li role="none"><a role="menuitem" href="automated_cfd.html">Automated CFD Platform</a></li>
+          <li role="none"><a role="menuitem" href="gearbox.html">Design of Gearbox</a></li>
+          <li role="none"><a role="menuitem" href="technoxian.html">Technoxian</a></li>
         </ul>
       </li>
 
-      <li class="dropdown" id="researchDrop" style="margin:0.35rem 0">
-        <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu" style="color:inherit;text-decoration:none">Research ▾</a>
-        <ul id="researchMenu" role="menu" style="margin:0.25rem 0 0 0;padding-left:0;list-style:none">
-          <li role="none"><a role="menuitem" href="pinn.html" style="color:inherit;text-decoration:none">PINN - Navier–Stokes</a></li>
-          <li role="none"><a role="menuitem" href="pinn_rfa.html" style="color:inherit;text-decoration:none">PINN - RF Ablation (RFA)</a></li>
+      <li class="dropdown" id="researchDrop">
+        <a href="pinn.html" id="researchToggle" aria-expanded="false" aria-controls="researchMenu">Research ▾</a>
+        <ul id="researchMenu" role="menu">
+          <li role="none"><a role="menuitem" href="pinn.html">PINN - Navier–Stokes</a></li>
+          <li role="none"><a role="menuitem" href="pinn_rfa.html">PINN - RF Ablation (RFA)</a></li>
         </ul>
       </li>
 
-      <li style="margin:0.35rem 0"><a href="contact.html" style="color:inherit;text-decoration:none">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
 
-      <li class="nav-section" style="margin-top:1rem;font-size:0.85rem;color:rgba(255,255,255,0.9)">Quick</li>
-      <li style="margin:0.2rem 0"><a href="Resume1%20(2).pdf" target="_blank" style="color:inherit;text-decoration:none">Resume (PDF)</a></li>
-      <li style="margin:0.2rem 0"><a href="#" target="_blank" style="color:inherit;text-decoration:none">GitHub</a></li>
-      <li style="margin:0.2rem 0"><a href="#" target="_blank" style="color:inherit;text-decoration:none">LinkedIn</a></li>
+      <li class="nav-section">Quick</li>
+      <li><a href="Resume1%20(2).pdf" target="_blank">Resume (PDF)</a></li>
+      <li><a href="#" target="_blank">GitHub</a></li>
+      <li><a href="#" target="_blank">LinkedIn</a></li>
     </ul>
   </nav>
 
