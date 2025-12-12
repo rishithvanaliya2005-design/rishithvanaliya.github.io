@@ -5,8 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rishith Vanaliya — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="universal-enhancements.css" />
+  <style>
+    /* Make home page avatar bigger */
+    .header-card img.avatar {
+      width: 140px;
+      height: 140px;
+    }
+  </style>
 </head>
 <body>
+
 <aside class="sidebar" aria-label="Main navigation">
   <div class="brand">
     <div class="logo">RV</div>
@@ -18,7 +27,7 @@
 
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
 
       <li class="dropdown" id="projectsDrop">
         <a href="projects.html" id="projectsToggle" aria-expanded="false" aria-controls="projectsMenu">Projects ▾</a>
@@ -41,74 +50,85 @@
 
       <li><a href="contact.html">Contact</a></li>
 
-      <li class="nav-section">Quick</li>
+      <li class="nav-section">Quick Links</li>
       <li><a href="Resume1%20(2).pdf" target="_blank">Resume (PDF)</a></li>
-      <li><a href="#" target="_blank">GitHub</a></li>
-      <li><a href="#" target="_blank">LinkedIn</a></li>
+     <li><a href="https://github.com/rishithvanaliya2005-design" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/rishith-vanaliya-238b2625a" target="_blank">LinkedIn</a></li>
     </ul>
   </nav>
 
-  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.72);padding:0 0.2rem">
+  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.5);text-align:center;">
     © 2025 · Rishith
   </div>
 </aside>
 
-  <main class="main">
-<div class="header-card">
-  <img class="avatar" src="images/rishith.png" alt="Rishith Vanaliya">
-  <div class="intro">
-    <h1>Rishith Kirankumar Vanaliya</h1>
-    <p>B.Tech Mechanical Engineering — Nirma University. Focus: UAV design, CFD & ML.</p>
-    <p style="color:var(--muted);margin-top:0.6rem">
-      Team Captain, Team Arrow — SAE Aero Design West 2025. Research on Physics-Informed Neural Networks (PINNs). Seeking MS / opportunities in aerospace, simulation, or ML for fluids.
-    </p>
+<main class="main">
 
-    <div class="quick-links" style="margin-top:0.7rem">
-      <a href="saeaerodesign.html">SAE Aero Design</a>
-      <a href="ddc.html">DDC</a>
-      <a href="pinn.html">PINN</a>
+  <!-- Hero Section -->
+  <div class="header-card">
+    <img class="avatar" src="images/rishith.png" alt="Rishith Vanaliya">
+    <div class="intro">
+      <h1>Rishith Kirankumar Vanaliya</h1>
+      <p>B.Tech Mechanical Engineering — Nirma University</p>
+      <p style="margin-top:0.5rem;">
+        Focus: UAV design, CFD & ML. Team Captain, Team Arrow — SAE Aero Design West 2025. 
+        Research on Physics-Informed Neural Networks (PINNs). Seeking MS opportunities in 
+        aerospace, simulation, or ML for fluids.
+      </p>
+
+      <div class="quick-links">
+        <a href="saeaerodesign.html">SAE Aero Design</a>
+        <a href="ddc.html">DDC</a>
+        <a href="pinn.html">PINN Research</a>
+      </div>
     </div>
   </div>
-</div>
 
-<section class="page">
-  <h2>Highlights</h2>
-  <ul>
-    <li>Design lead & team captain for UAV competitions (SAE ADW 2025 — Micro Class).</li>
-    <li>Worked on Fourier-based PINNs and PhysicsNeMo implementations for fluid flows.</li>
-    <li>Experience with experimental flight testing, CAD, composite structures, and control tuning.</li>
-  </ul>
+  <!-- Content Section -->
+  <section class="page">
+    <h2>Highlights</h2>
+    <ul>
+      <li>Design lead & team captain for UAV competitions (SAE ADW 2025 — Micro Class).</li>
+      <li>Worked on Fourier-based PINNs and PhysicsNeMo implementations for fluid flows.</li>
+      <li>Experience with experimental flight testing, CAD, composite structures, and control tuning.</li>
+    </ul>
 
-  <h3 style="margin-top:1rem">Recent media</h3>
-  <div class="gallery">
-    <figure>
-      <img src="images/aero_uav.jpeg" alt="Aero UAV">
-      <figcaption>SAE Aero Design UAV — micro class</figcaption>
-    </figure>
+    <h3>Recent Media</h3>
+    <div class="gallery">
+      <figure>
+        <img src="images/aero_uav.jpeg" alt="SAE Aero Design UAV">
+        <figcaption>SAE Aero Design UAV — Micro Class</figcaption>
+      </figure>
 
-    <figure>
-      <img src="images/ddc2024_uav.jpeg" alt="DDC UAV">
-      <figcaption>DDC Micro 2024</figcaption>
-    </figure>
+      <figure>
+        <img src="images/ddc2024_uav.jpeg" alt="DDC 2024 UAV">
+        <figcaption>DDC Micro 2024</figcaption>
+      </figure>
 
-    <figure>
-      <video controls muted>
-        <source src="videos/aero_flight.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <figcaption>Flight highlights</figcaption>
-    </figure>
+      <figure>
+        <video controls muted>
+          <source src="videos/aero_flight.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>Flight Highlights</figcaption>
+      </figure>
 
-    <figure>
-      <img src="images/velc.png" alt="PINN">
-      <figcaption>PINN: lid-driven cavity</figcaption>
-    </figure>
-  </div>
-</section>
+      <figure>
+        <img src="images/velc.png" alt="PINN Visualization">
+        <figcaption>PINN: Lid-Driven Cavity</figcaption>
+      </figure>
+    </div>
+  </section>
 
-<div class="site-footer">Resume: <a href="Resume1%20(2).pdf" target="_blank">PDF</a></div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Rishith Vanaliya · 
+    <a href="Resume1%20(2).pdf" target="_blank">View Resume</a></p>
+  </footer>
 
-  </main>
+</main>
+
+<!-- Dropdown Script -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = [
@@ -123,11 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!wrap || !toggle || !menu) return;
 
-    // open/close on header click only
     toggle.addEventListener('click', (e) => {
-      e.preventDefault(); // header controls dropdown, not navigation
+      e.preventDefault();
       const opening = !wrap.classList.contains('open');
-      // close any other open dropdowns
       document.querySelectorAll('.dropdown.open').forEach(d => {
         if (d !== wrap) d.classList.remove('open');
       });
@@ -135,12 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', String(opening));
     });
 
-    // Allow middle-click on header to open page in new tab
     toggle.addEventListener('auxclick', (e) => {
       if (e.button === 1) window.open(toggle.href, '_blank');
     });
 
-    // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
       if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
         wrap.classList.remove('open');
@@ -148,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Keyboard: toggle with Enter/Space when focused
     toggle.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -158,6 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
+<!-- Universal Enhancements -->
+<script src="universal-enhancements.js"></script>
 
 </body>
 </html>
