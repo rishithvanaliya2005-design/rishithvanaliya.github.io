@@ -295,32 +295,11 @@ a:hover .external-icon {
    PRINT STYLES
    ============================================ */
 
-.print-btn {
-  background: transparent;
-  border: 1.5px solid var(--border, #e2e8f0);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: 500;
-  color: var(--text-primary, #0f172a);
-  cursor: pointer;
-  font-size: 0.9375rem;
-  transition: all 0.2s ease;
-}
-
-.print-btn:hover {
-  background: var(--accent, #0ea5e9);
-  border-color: var(--accent, #0ea5e9);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 @media print {
   .scroll-top-btn,
   .reading-progress,
   .lightbox,
   .copy-code-btn,
-  .print-btn,
   .sidebar nav,
   .external-icon {
     display: none !important;
