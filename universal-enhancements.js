@@ -239,30 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================
-  // 10. PRINT BUTTON
-  // ============================================
-  
-  const printBtn = document.createElement('button');
-  printBtn.className = 'print-btn';
-  printBtn.innerHTML = '🖨️ Print';
-  printBtn.setAttribute('aria-label', 'Print page');
-  printBtn.addEventListener('click', () => window.print());
-  
-  // Add to quick links if they exist
-  const quickLinks = document.querySelector('.quick-links');
-  if (quickLinks) {
-    const printLink = document.createElement('a');
-    printLink.href = '#';
-    printLink.textContent = '🖨️ Print';
-    printLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.print();
-    });
-    quickLinks.appendChild(printLink);
-  }
-
-  // ============================================
-  // 11. SMOOTH ANCHOR LINKS
+  // 10. SMOOTH ANCHOR LINKS
   // ============================================
   
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -279,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================
-  // 12. DROPDOWN AUTO-OPEN ON CURRENT PAGE
+  // 11. DROPDOWN AUTO-OPEN ON CURRENT PAGE
   // ============================================
   
   document.querySelectorAll('.dropdown ul a.active').forEach(link => {
@@ -291,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================
-  // 13. PERFORMANCE: Preload hover images
+  // 12. PERFORMANCE: Preload hover images
   // ============================================
   
   document.querySelectorAll('a[href$=".html"]').forEach(link => {
