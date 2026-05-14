@@ -1,50 +1,41 @@
-/* universal-enhancements.css — Styles for enhanced features */
+/* universal-enhancements.css — Dark editorial theme enhancements */
 
-/* ============================================
-   LIGHTBOX ENHANCEMENTS
-   ============================================ */
-
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
 .lightbox {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.95);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.97);
   z-index: 9999;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .lightbox.active {
   display: flex;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.25s ease;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 .lightbox-content {
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
-  animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: zoomIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes zoomIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.94); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
 }
 
 .lightbox img,
@@ -52,136 +43,126 @@
   max-width: 100%;
   max-height: 90vh;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
 }
 
 .lightbox-close {
   position: absolute;
   top: -3.5rem;
   right: 0;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  font-size: 2rem;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
-  font-family: Arial, sans-serif;
+  transition: all 0.25s ease;
+  font-family: 'DM Sans', Arial, sans-serif;
   line-height: 1;
 }
 
 .lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(90deg) scale(1.1);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  transform: none;
 }
 
-/* Navigation arrows */
+/* Nav arrows */
 .lightbox-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  font-size: 3rem;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 2px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  font-family: Arial, sans-serif;
+  transition: all 0.25s ease;
+  font-family: 'DM Sans', Arial, sans-serif;
   line-height: 1;
 }
 
 .lightbox-nav:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-50%) scale(1.1);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  transform: translateY(-50%);
 }
 
-.lightbox-prev {
-  left: -4rem;
-}
-
-.lightbox-next {
-  right: -4rem;
-}
+.lightbox-prev { left: -4rem; }
+.lightbox-next { right: -4rem; }
 
 .lightbox-caption {
   position: absolute;
-  bottom: -3.5rem;
-  left: 0;
-  right: 0;
-  color: white;
+  bottom: -3rem;
+  left: 0; right: 0;
+  color: rgba(255,255,255,0.45);
   text-align: center;
-  font-size: 1rem;
-  padding: 0.75rem 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
+  font-size: 0.8125rem;
+  padding: 0.5rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.05em;
 }
 
 .lightbox-counter {
   position: absolute;
-  top: -3.5rem;
+  top: -3rem;
   left: 0;
-  color: white;
-  font-size: 0.875rem;
-  padding: 0.5rem 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
-  font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.75rem;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.1em;
+  font-weight: 400;
 }
 
-/* Gallery hover effect */
+/* Gallery hover overlay */
 .gallery figure {
   position: relative;
   cursor: pointer;
 }
 
 .gallery figure::before {
-  content: '🔍 Click to expand';
+  content: 'expand';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(14, 165, 233, 0.95);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.9375rem;
-  font-weight: 600;
+  background: rgba(200, 169, 110, 0.9);
+  color: #0a0a0a;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: 'DM Sans', sans-serif;
   opacity: 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   pointer-events: none;
   z-index: 10;
-  backdrop-filter: blur(10px);
 }
 
 .gallery figure:hover::before {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: translate(-50%, -50%);
 }
 
 .gallery figure::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -191,30 +172,29 @@
   opacity: 1;
 }
 
-/* ============================================
-   SCROLL TO TOP BUTTON
-   ============================================ */
-
+/* ============================================================
+   SCROLL TO TOP
+   ============================================================ */
 .scroll-top-btn {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 48px;
-  height: 48px;
-  background: var(--accent, #0ea5e9);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  color: var(--text-muted, #5a5652);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 2px;
+  font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   opacity: 0;
-  transform: translateY(100px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(20px);
+  transition: all 0.3s ease;
   z-index: 100;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .scroll-top-btn.visible {
@@ -223,87 +203,184 @@
 }
 
 .scroll-top-btn:hover {
-  background: var(--accent-hover, #0284c7);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--text-primary, #f0ece4);
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+  box-shadow: none;
 }
 
-/* ============================================
+/* ============================================================
    READING PROGRESS BAR
-   ============================================ */
-
+   ============================================================ */
 .reading-progress {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent, #0ea5e9), var(--accent-hover, #0284c7));
+  height: 1px;
+  background: var(--accent, #c8a96e);
   z-index: 9998;
-  transition: width 0.1s ease;
-  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+  transition: width 0.1s linear;
+  box-shadow: none;
 }
 
-/* ============================================
-   CODE BLOCK ENHANCEMENTS
-   ============================================ */
-
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
 .code-block-wrapper {
   position: relative;
   margin: 1.5rem 0;
 }
 
+pre, code {
+  background: var(--bg-surface, #1a1a1a);
+  border: 1px solid var(--border, rgba(255,255,255,0.07));
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #9a958f);
+}
+
+pre {
+  padding: 1.5rem;
+  overflow-x: auto;
+  line-height: 1.7;
+}
+
+code {
+  padding: 0.15em 0.4em;
+  font-size: 0.875em;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
 .copy-code-btn {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: rgba(14, 165, 233, 0.9);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.8125rem;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  color: var(--text-muted, #5a5652);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  font-size: 0.6875rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   z-index: 10;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .copy-code-btn:hover {
-  background: rgba(14, 165, 233, 1);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: var(--text-primary, #f0ece4);
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.04);
+  transform: none;
+  box-shadow: none;
 }
 
-/* ============================================
+/* ============================================================
    EXTERNAL LINK ICON
-   ============================================ */
-
+   ============================================================ */
 .external-icon {
   display: inline-block;
-  font-size: 0.75em;
-  margin-left: 0.25rem;
-  opacity: 0.7;
+  font-size: 0.7em;
+  margin-left: 0.2rem;
+  opacity: 0.4;
   transition: opacity 0.2s ease;
 }
 
 a:hover .external-icon {
-  opacity: 1;
+  opacity: 0.8;
 }
 
-/* ============================================
-   PRINT STYLES
-   ============================================ */
+/* ============================================================
+   NOTE / KEY-POINTS BLOCKS (used in project pages)
+   ============================================================ */
+.note {
+  background: rgba(200, 169, 110, 0.06);
+  border-left: 2px solid var(--accent, #c8a96e);
+  padding: 1rem 1.25rem;
+  border-radius: 0;
+  margin: 1.5rem 0;
+  font-size: 0.9375rem;
+  color: var(--text-secondary, #9a958f);
+}
 
+.key-points {
+  background: transparent;
+  border-left: 1px solid var(--border, rgba(255,255,255,0.07));
+  padding: 1rem 0 1rem 2rem;
+  margin: 1.5rem 0;
+}
+
+.key-points li {
+  margin: 0.875rem 0;
+  color: var(--text-secondary, #9a958f);
+  font-weight: 300;
+}
+
+/* Fig-grid used in project pages */
+.fig-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.fig-grid figure {
+  margin: 0;
+  background: var(--bg-surface, #1a1a1a);
+  border: 1px solid var(--border, rgba(255,255,255,0.07));
+  border-radius: 2px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.fig-grid figure:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent, #c8a96e);
+  box-shadow: none;
+}
+
+.fig-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 1px;
+  display: block;
+  filter: grayscale(8%);
+  transition: filter 0.3s ease;
+}
+
+.fig-grid figure:hover img {
+  filter: grayscale(0%);
+}
+
+.fig-grid figcaption {
+  font-size: 0.8rem;
+  color: var(--text-muted, #5a5652);
+  padding-top: 0.625rem;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
 @media print {
   .scroll-top-btn,
   .reading-progress,
   .lightbox,
   .copy-code-btn,
   .sidebar nav,
-  .external-icon {
-    display: none !important;
-  }
+  .external-icon { display: none !important; }
 
   .sidebar {
     position: relative;
@@ -311,105 +388,68 @@ a:hover .external-icon {
     box-shadow: none;
   }
 
-  .main {
-    margin-left: 0;
-  }
+  .main { margin-left: 0; }
 
   body {
     background: white;
+    color: black;
   }
 }
 
-/* ============================================
-   RESPONSIVE ENHANCEMENTS
-   ============================================ */
-
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width: 768px) {
-  .lightbox {
-    padding: 1rem;
-  }
+  .lightbox { padding: 1rem; }
 
   .lightbox-close {
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 44px;
-    height: 44px;
-    font-size: 1.75rem;
+    top: 0.5rem; right: 0.5rem;
+    width: 36px; height: 36px;
+    font-size: 1rem;
   }
 
   .lightbox-nav {
-    width: 48px;
-    height: 48px;
-    font-size: 2rem;
+    width: 40px; height: 40px;
+    font-size: 1.25rem;
   }
 
-  .lightbox-prev {
-    left: 0.5rem;
-  }
-
-  .lightbox-next {
-    right: 0.5rem;
-  }
+  .lightbox-prev { left: 0.25rem; }
+  .lightbox-next { right: 0.25rem; }
 
   .lightbox-caption {
     position: relative;
     bottom: 0;
-    margin-top: 1rem;
-    font-size: 0.875rem;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
   }
 
   .lightbox-counter {
-    top: 0.5rem;
-    left: 0.5rem;
-  }
-
-  .gallery figure::before {
-    font-size: 0.8125rem;
-    padding: 0.5rem 1rem;
+    top: 0.5rem; left: 0.5rem;
   }
 
   .scroll-top-btn {
-    bottom: 1rem;
-    right: 1rem;
-    width: 44px;
-    height: 44px;
+    bottom: 1rem; right: 1rem;
+  }
+
+  .fig-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* ============================================
-   ACCESSIBILITY ENHANCEMENTS
-   ============================================ */
-
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
-  .lightbox {
-    background: rgba(0, 0, 0, 1);
-  }
-
+  .lightbox { background: rgba(0,0,0,1); }
   .lightbox-nav,
-  .lightbox-close {
-    border-width: 3px;
-  }
-}
-
-/* Dark mode support (future-proofing) */
-@media (prefers-color-scheme: dark) {
-  .code-block-wrapper pre {
-    background: #1e293b;
-    color: #e2e8f0;
-  }
+  .lightbox-close { border-width: 2px; }
 }

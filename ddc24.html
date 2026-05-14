@@ -1,138 +1,131 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DDC 2024 — Drone Design Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>DDC 2024   Drone Design Challenge</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="universal-enhancements.css" />
-  <style>
-    .fig-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-    .fig-grid figure {
-      margin: 0;
-      background: var(--bg-primary, #fff);
-      border: 1px solid var(--border, #e2e8f0);
-      border-radius: 8px;
-      padding: 0.75rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .fig-grid figure:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-    .fig-grid img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      display: block;
-    }
-    .fig-grid figcaption {
-      font-size: 0.875rem;
-      color: var(--text-secondary, #475569);
-      padding-top: 0.75rem;
-      line-height: 1.5;
-    }
-    .note {
-      background: #fef3c7;
-      border-left: 4px solid #f59e0b;
-      padding: 1rem 1.25rem;
-      border-radius: 6px;
-      margin: 1.5rem 0;
-      font-size: 0.9375rem;
-    }
-    .key-points {
-      background: var(--bg-secondary, #f8f9fa);
-      padding: 1.5rem 2rem 1.5rem 3rem;
-      border-left: 4px solid var(--accent, #0ea5e9);
-      border-radius: 8px;
-      margin: 1.5rem 0;
-    }
-    .key-points li {
-      margin: 0.75rem 0;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-    .gallery figure {
-      margin: 0;
-      background: var(--bg-primary, #fff);
-      border: 1px solid var(--border, #e2e8f0);
-      border-radius: 8px;
-      padding: 0.75rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .gallery figure:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-    .gallery img, .gallery video {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      display: block;
-    }
-    .gallery figcaption {
-      font-size: 0.875rem;
-      color: var(--text-secondary, #475569);
-      padding-top: 0.75rem;
-      line-height: 1.5;
-    }
-  </style>
 </head>
 <body>
 
 <aside class="sidebar" aria-label="Main navigation">
-  <div class="brand">
+  <a href="index.html" class="brand">
     <div class="logo">RV</div>
     <div>
       <h1>Rishith Vanaliya</h1>
       <p>B.Tech Mechanical · Minor: Data Science</p>
     </div>
-  </div>
+  </a>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
+<nav>
+  <ul>
 
-      <li class="dropdown open" id="projectsDrop">
-        <a href="projects.html" id="projectsToggle" aria-expanded="true">Projects ▾</a>
-        <ul id="projectsMenu" role="menu">
-          <li><a href="ddc.html">DDC (23,24,25)</a></li>
-          <li><a href="saeaerodesign.html">SAE Aero Design</a></li>
-          <li><a href="automated_cfd.html">Automated CFD Platform</a></li>
-          <li><a href="gearbox.html">Design of Gearbox</a></li>
-          <li><a href="technoxian.html">Technoxian</a></li>
-        </ul>
-      </li>
+    <!-- HOME -->
+    <li>
+      <a href="index.html">Home</a>
+    </li>
 
-      <li class="dropdown" id="researchDrop">
-        <a href="pinn.html" id="researchToggle" aria-expanded="false">Research ▾</a>
-        <ul id="researchMenu" role="menu">
-          <li><a href="pinn.html">PINN — Navier–Stokes</a></li>
-          <li><a href="pinn_rfa.html">PINN — RF Ablation (RFA)</a></li>
-        </ul>
-      </li>
+    <!-- PROJECTS -->
+    <li class="dropdown">
 
-      <li><a href="contact.html">Contact</a></li>
+      <a href="#">
+        Projects <span class="dropdown-arrow">▾</span>
+      </a>
 
-      <li class="nav-section">Quick Links</li>
-      <li><a href="Resume1%20(2).pdf" target="_blank">Resume (PDF)</a></li>
-      <li><a href="https://www.linkedin.com/in/rishith-vanaliya-238b2625a" target="_blank">LinkedIn</a></li>
-    </ul>
-  </nav>
+      <ul class="dropdown-menu">
 
-  <div style="margin-top:auto;font-size:0.85rem;color:rgba(255,255,255,0.5);text-align:center;">
-    © 2025 · Rishith
+        <li>
+          <a href="sae_aero_design.html">SAE Aero Design</a>
+        </li>
+
+        <!-- DDC NESTED -->
+        <li class="dropdown-submenu">
+
+          <a href="ddc.html">
+            DDC <span class="submenu-arrow">▸</span>
+          </a>
+
+          <ul class="submenu">
+
+            <li>
+              <a href="ddc23.html">DDC 2023</a>
+            </li>
+
+            <li>
+              <a href="ddc24.html">DDC 2024</a>
+            </li>
+
+            <li>
+              <a href="ddc25.html">DDC 2025</a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <a href="automated_cfd.html">
+            Automated CFD Workflow
+          </a>
+        </li>
+
+        <li>
+          <a href="technoxian.html">Technoxian</a>
+        </li>
+
+        <li>
+          <a href="gearbox.html">Gearbox Design</a>
+        </li>
+
+      </ul>
+    </li>
+
+    <!-- RESEARCH -->
+    <li class="dropdown">
+
+      <a href="#">
+        Research <span class="dropdown-arrow">▾</span>
+      </a>
+
+      <ul class="dropdown-menu">
+
+        <li>
+          <a href="pinn.html">
+            PINN for FSI Applications
+          </a>
+        </li>
+
+        <li>
+          <a href="pinn_rfa.html">
+            PINN-RFA
+          </a>
+        </li>
+
+        <li>
+          <a href="pinn_iitb.html">
+            IIT Bombay CFD Research
+          </a>
+        </li>
+
+      </ul>
+    </li>
+
+    <!-- CONTACT -->
+    <li>
+      <a href="index.html#contact">Contact</a>
+    </li>
+
+  </ul>
+</nav>
+
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+      <span class="toggle-icon icon-moon" aria-hidden="true">&#x1F319;</span>
+      <span class="toggle-track"><span class="toggle-thumb"></span></span>
+      <span class="toggle-icon icon-sun"  aria-hidden="true">&#x2600;&#xFE0F;</span>
+    </button>
+    <a href="Resume1 (2).pdf" target="_blank" class="nav-cta">Resume &#x2197;</a>
   </div>
 </aside>
 
@@ -141,7 +134,7 @@
   <!-- Hero Section -->
   <div class="header-card">
     <div class="intro">
-      <h1>DDC Micro — 2024</h1>
+      <h1>DDC Micro   2024</h1>
       <p>2nd Place Overall · Best Technical Presentation</p>
     </div>
   </div>
@@ -158,7 +151,7 @@
       <li>Meet DDC rules for hand-launch and compact packaging.</li>
     </ul>
 
-    <h3>My Role — Design Lead</h3>
+    <h3>My Role   Design Lead</h3>
     <ul>
       <li>Fuselage design, structural reinforcement, and manufacturing guidance.</li>
       <li>Topology optimisation for ribs and mounting plates, FEA validation and test planning.</li>
@@ -167,7 +160,7 @@
 
     <h3>Outcome</h3>
     <ul>
-      <li><strong>2nd Place Overall</strong> — DDC Micro 2024</li>
+      <li><strong>2nd Place Overall</strong>   DDC Micro 2024</li>
       <li><strong>Best Technical Presentation</strong></li>
       <li>Payload fraction: <strong>0.635</strong>; Empty weight: <strong>0.772 kg</strong>; practical thrust measured: <strong>15.07 N</strong>.</li>
     </ul>
@@ -208,7 +201,7 @@
     <div class="gallery">
       <figure>
         <img src="images/ddc2024_uav.jpeg" alt="DDC 2024 UAV">
-        <figcaption>DDC 2024 — Flight-ready vehicle</figcaption>
+        <figcaption>DDC 2024   Flight-ready vehicle</figcaption>
       </figure>
       
       <figure>
@@ -229,23 +222,23 @@
     <div class="gallery">
       <figure>
         <img src="images/ddc24_wing_cfd.png" alt="Wing CFD pressure contour">
-        <figcaption>Wing CFD pressure contour — validates S1223 (120%) choice and pressure distribution.</figcaption>
+        <figcaption>Wing CFD pressure contour   validates S1223 (120%) choice and pressure distribution.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_cp_plot.png" alt="Cp vs chord length plot">
-        <figcaption>Cp vs chord — wind-tunnel vs CFD comparison.</figcaption>
+        <figcaption>Cp vs chord   wind-tunnel vs CFD comparison.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_wing_fea.png" alt="Wing FEA stress and deformation">
-        <figcaption>Wing FEA — von Mises stress & deflection under 30 N (ANSYS static results).</figcaption>
+        <figcaption>Wing FEA   von Mises stress & deflection under 30 N (ANSYS static results).</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_topopt.png" alt="Topology optimisation">
-        <figcaption>Topology optimisation result — ~20% mass reduction in ribs and plates.</figcaption>
+        <figcaption>Topology optimisation result   ~20% mass reduction in ribs and plates.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_wing_skeleton.png" alt="Wing CAD with shear webs">
-        <figcaption>Wing skeleton — laser-cut ribs & aluminium rod spars; dual shear-web concept applied.</figcaption>
+        <figcaption>Wing skeleton   laser-cut ribs & aluminium rod spars; dual shear-web concept applied.</figcaption>
       </figure>
     </div>
     <ul>
@@ -258,11 +251,11 @@
 <div class="gallery">
   <figure>
     <img src="images/ddc22_fullbody.png" alt="Full body pressure contours">
-    <figcaption>Localised pressure contours — shows pressure distribution across the UAV considering the effects of propwash.</figcaption>
+    <figcaption>Localised pressure contours   shows pressure distribution across the UAV considering the effects of propwash.</figcaption>
   </figure>
   <figure>
     <img src="images/ddc24_fullbody2.png" alt="Full body velocity streamlines">
-    <figcaption>Velocity streamlines visualization — illustrating wingtip vortex formation and wake structure.</figcaption>
+    <figcaption>Velocity streamlines visualization   illustrating wingtip vortex formation and wake structure.</figcaption>
   </figure>
 </div>
 <ul>
@@ -273,19 +266,19 @@
     <div class="gallery">
       <figure>
         <img src="images/ddc24_fuselage_optimization.png" alt="Fuselage Structural Optimization">
-        <figcaption>Fuselage structural optimization — improving strength and weight through testing and validation.</figcaption>
+        <figcaption>Fuselage structural optimization   improving strength and weight through testing and validation.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_fuselage_FEA.png" alt="Fuselage FEA">
-        <figcaption>Fuselage FEA — validate strength of optimized UAV structure.</figcaption>
+        <figcaption>Fuselage FEA   validate strength of optimized UAV structure.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_fuselage_cfd.png" alt="Fuselage velocity/pressure contour">
-        <figcaption>Fuselage CFD — velocity/pressure contours used to refine fineness ratio and minimize separation.</figcaption>
+        <figcaption>Fuselage CFD   velocity/pressure contours used to refine fineness ratio and minimize separation.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_explicit_dyn.png" alt="Explicit dynamic landing simulation">
-        <figcaption>Explicit dynamic simulation — belly-landing transient response & reinforcement validation.</figcaption>
+        <figcaption>Explicit dynamic simulation   belly-landing transient response & reinforcement validation.</figcaption>
       </figure>
     </div>
     <ul>
@@ -297,15 +290,15 @@
     <div class="gallery">
       <figure>
         <img src="images/ddc24_stability.png" alt="Stability plots">
-        <figcaption>Stability plots — XFLR5 root-locus and mode analysis for longitudinal and lateral modes.</figcaption>
+        <figcaption>Stability plots   XFLR5 root-locus and mode analysis for longitudinal and lateral modes.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_Lateral.png" alt="Lateral stability">
-        <figcaption>Stability plots — XFLR5 root-locus and mode analysis for lateral modes.</figcaption>
+        <figcaption>Stability plots   XFLR5 root-locus and mode analysis for lateral modes.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_longitudnal.png" alt="Longitudinal stability">
-        <figcaption>Stability plots — XFLR5 root-locus and mode analysis for longitudinal modes.</figcaption>
+        <figcaption>Stability plots   XFLR5 root-locus and mode analysis for longitudinal modes.</figcaption>
       </figure>
     </div>
     <ul>
@@ -317,15 +310,15 @@
     <div class="gallery">
       <figure>
         <img src="images/ddc24_wingloading.png" alt="Wing loading test">
-        <figcaption>Wing loading test — distributing load across the wing span to measure deflection under flight load.</figcaption>
+        <figcaption>Wing loading test   distributing load across the wing span to measure deflection under flight load.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_thrustbench.png" alt="Thrust bench">
-        <figcaption>Thrust bench — measured thrust and efficiency curves used to confirm motor/prop choice.</figcaption>
+        <figcaption>Thrust bench   measured thrust and efficiency curves used to confirm motor/prop choice.</figcaption>
       </figure>
       <figure>
         <img src="images/ddc24_thrustbench_th.png" alt="Thrust vs throttle">
-        <figcaption>Thrust & efficiency vs throttle — comparison of theoretically calculated thrust vs practically obtained thrust.</figcaption>
+        <figcaption>Thrust & efficiency vs throttle   comparison of theoretically calculated thrust vs practically obtained thrust.</figcaption>
       </figure>
     </div>
     <ul>
@@ -344,51 +337,7 @@
 
 </main>
 
-<!-- Scripts -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggles = [
-    {wrapId: 'projectsDrop', toggleId: 'projectsToggle', menuId: 'projectsMenu'},
-    {wrapId: 'researchDrop', toggleId: 'researchToggle', menuId: 'researchMenu'}
-  ];
 
-  toggles.forEach(({wrapId, toggleId, menuId}) => {
-    const wrap = document.getElementById(wrapId);
-    const toggle = document.getElementById(toggleId);
-    const menu = document.getElementById(menuId);
-
-    if (!wrap || !toggle || !menu) return;
-
-    toggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      const opening = !wrap.classList.contains('open');
-      document.querySelectorAll('.dropdown.open').forEach(d => {
-        if (d !== wrap) d.classList.remove('open');
-      });
-      wrap.classList.toggle('open', opening);
-      toggle.setAttribute('aria-expanded', String(opening));
-    });
-
-    toggle.addEventListener('auxclick', (e) => {
-      if (e.button === 1) window.open(toggle.href, '_blank');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!wrap.contains(e.target) && wrap.classList.contains('open')) {
-        wrap.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    toggle.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle.click();
-      }
-    });
-  });
-});
-</script>
 
 <script src="universal-enhancements.js"></script>
 
