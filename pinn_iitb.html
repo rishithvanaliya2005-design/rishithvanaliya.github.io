@@ -1,41 +1,480 @@
-<section class="page">
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <h2>CFD Lab · IIT Bombay</h2>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <div class="prof-section">
+  <title>IIT Bombay CFD Research</title>
 
-    <div class="prof-image">
-      <img src="images/atul_sharma.jpg"
-           alt="Prof. Atul Sharma">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<aside class="sidebar" aria-label="Main navigation">
+
+  <a href="index.html" class="brand">
+    <div class="logo">RV</div>
+
+    <div>
+      <h1>Rishith Vanaliya</h1>
+      <p>B.Tech Mechanical · Minor: Data Science</p>
+    </div>
+  </a>
+
+<nav>
+  <ul>
+
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+
+    <!-- PROJECTS -->
+    <li class="dropdown">
+
+      <a href="#">
+        Projects <span class="dropdown-arrow">▾</span>
+      </a>
+
+      <ul class="dropdown-menu">
+
+        <li>
+          <a href="sae_aero_design.html">SAE Aero Design</a>
+        </li>
+
+        <li class="dropdown-submenu">
+
+          <a href="ddc.html">
+            DDC <span class="submenu-arrow">▸</span>
+          </a>
+
+          <ul class="submenu">
+
+            <li>
+              <a href="ddc23.html">DDC 2023</a>
+            </li>
+
+            <li>
+              <a href="ddc24.html">DDC 2024</a>
+            </li>
+
+            <li>
+              <a href="ddc25.html">DDC 2025</a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <a href="automated_cfd.html">
+            Automated CFD Workflow
+          </a>
+        </li>
+
+        <li>
+          <a href="technoxian.html">Technoxian</a>
+        </li>
+
+        <li>
+          <a href="gearbox.html">Gearbox Design</a>
+        </li>
+
+      </ul>
+    </li>
+
+    <!-- RESEARCH -->
+    <li class="dropdown">
+
+      <a href="#" class="active">
+        Research <span class="dropdown-arrow">▾</span>
+      </a>
+
+      <ul class="dropdown-menu">
+
+        <li>
+          <a href="pinn.html">
+            PINN for FSI Applications
+          </a>
+        </li>
+
+        <li>
+          <a href="pinn_rfa.html">
+            PINN-RFA
+          </a>
+        </li>
+
+        <li>
+          <a href="pinn_iitb.html" class="active">
+            IIT Bombay CFD Research
+          </a>
+        </li>
+
+      </ul>
+    </li>
+
+    <li>
+      <a href="index.html#contact">Contact</a>
+    </li>
+
+  </ul>
+</nav>
+
+  <div class="nav-right">
+
+    <button class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle light/dark mode">
+
+      <span class="toggle-icon icon-moon">🌙</span>
+
+      <span class="toggle-track">
+        <span class="toggle-thumb"></span>
+      </span>
+
+      <span class="toggle-icon icon-sun">☀️</span>
+
+    </button>
+
+    <a href="Resume1 (2).pdf"
+       target="_blank"
+       class="nav-cta">
+       Resume ↗
+    </a>
+
+  </div>
+
+</aside>
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="main">
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+<!-- =======================================================
+     HERO
+======================================================== -->
+
+<div class="hero-image">
+  <img src="images/iitb-campus.jpg" alt="IIT Bombay Campus">
+</div>
+
+<div class="header-card">
+
+  <div class="intro">
+
+    <div class="page-tag">
+      Research Internship · IIT Bombay
     </div>
 
-    <div class="prof-content">
+    <h1>
+      Multiphase Flow Modeling using
+      Physics-Informed Neural Networks
+    </h1>
 
-      <p>
-        This work was carried out at the
-        <strong>Computational Fluid Dynamics (CFD) Lab,
-        IIT Bombay</strong> under the guidance of
-        <strong>Prof. Atul Sharma</strong>.
-      </p>
+    <p>
+      Research internship at the CFD Lab, IIT Bombay under
+      Prof. Atul Sharma focused on level-set PINN formulations
+      for interface evolution and multiphase flow problems.
+    </p>
 
-      <p>
-        The lab works on a broad range of problems in
-        multiphase flow physics, interface-capturing methods,
-        heat transfer, and advanced computational fluid dynamics.
-        The internship combined rigorous physical modeling with
-        research-oriented scientific computing workflows.
-      </p>
+    <div class="quick-links">
 
-      <p>
-        Under Prof. Sharma’s guidance, I worked on
-        level-set PINN formulations for passive bubble transport,
-        static bubble dynamics, and bubble rise simulations,
-        while comparing AD, ND, and CAN differentiation strategies
-        for interface evolution problems.
-      </p>
+      <a href="#overview">Overview</a>
+      <a href="#research">Research Work</a>
+      <a href="#methods">Methods</a>
+      <a href="#gallery">Gallery</a>
 
     </div>
 
   </div>
 
-</section>
+</div>
+
+  <!-- =======================================================
+       OVERVIEW
+  ======================================================== -->
+
+  <section class="page" id="overview">
+
+    <h2>Research Overview</h2>
+
+    <p>
+      This work was carried out during my research internship at the
+      <strong>Computational Fluid Dynamics (CFD) Lab, IIT Bombay</strong>
+      under the guidance of
+      <strong>Prof. Atul Sharma</strong>.
+      The research focused on extending
+      <strong>Physics-Informed Neural Networks (PINNs)</strong>
+      toward challenging multiphase flow problems involving moving
+      interfaces, density discontinuities, and bubble dynamics.
+    </p>
+
+    <p>
+      Traditional computational fluid dynamics methods provide highly
+      accurate solutions for multiphase systems, but often require
+      fine meshes, interface reconstruction techniques, and significant
+      computational resources.
+      This work explored whether physics-informed learning approaches
+      could reproduce interface evolution and fluid dynamics behavior
+      while reducing dependence on expensive mesh-based formulations.
+    </p>
+
+    <p>
+      The research emphasized
+      <strong>level-set-based PINN formulations</strong>,
+      where governing physics and interface evolution equations were
+      embedded directly into the neural network optimization process.
+      The objective was not only to reproduce benchmark solutions,
+      but also to investigate the stability and robustness of
+      different differentiation strategies within PINNs.
+    </p>
+
+  </section>
+
+  <!-- =======================================================
+       LAB + PROFESSOR
+  ======================================================== -->
+
+  <section class="page">
+
+    <h2>CFD Lab · IIT Bombay</h2>
+
+    <p>
+      The CFD Lab at IIT Bombay works on a broad range of problems in
+      computational fluid mechanics, multiphase flow physics,
+      heat transfer, and high-fidelity numerical modeling.
+      The lab combines classical numerical methods with modern
+      computational approaches for solving challenging transport and
+      interface dynamics problems.
+    </p>
+
+    <p>
+      During the internship, I worked under
+      <strong>Prof. Atul Sharma</strong>,
+      whose research spans multiphase flow modeling,
+      interface-capturing methods,
+      boiling and bubble dynamics,
+      and advanced CFD methodologies.
+      The internship provided exposure to both rigorous physical modeling
+      and research-oriented scientific computing workflows.
+    </p>
+
+  </section>
+
+  <!-- =======================================================
+       RESEARCH WORK
+  ======================================================== -->
+
+  <section class="page" id="research">
+
+    <h2>Research Work</h2>
+
+    <h3>Passive Bubble Transport</h3>
+
+    <p>
+      One part of the work focused on passive bubble transport problems,
+      where the objective was to accurately evolve interfaces under
+      prescribed velocity fields using level-set formulations.
+      These studies served as controlled benchmarks for evaluating
+      the ability of PINNs to capture interface advection without
+      introducing excessive numerical diffusion.
+    </p>
+
+    <p>
+      Different differentiation strategies were investigated to study
+      their influence on interface sharpness, convergence stability,
+      and long-time evolution behavior.
+    </p>
+
+    <h3>Static Bubble Dynamics</h3>
+
+    <p>
+      The research also investigated static bubble problems involving
+      surface tension and curvature-driven effects.
+      These cases are particularly sensitive to numerical instability
+      because small curvature errors can generate non-physical pressure
+      oscillations near the interface.
+    </p>
+
+    <p>
+      PINN-based formulations were evaluated for their ability to
+      preserve interface smoothness and maintain physically consistent
+      pressure distributions across the phase boundary.
+    </p>
+
+    <h3>Bubble Rise Simulations</h3>
+
+    <p>
+      A major component of the internship involved bubble rise problems,
+      where buoyancy-driven interface motion introduces strong coupling
+      between velocity, pressure, and interface evolution.
+      These simulations are significantly more complex because the
+      interface dynamically deforms while interacting with the surrounding
+      fluid field.
+    </p>
+
+    <p>
+      The work investigated whether PINNs could reliably capture
+      bubble deformation, rise velocity, and transient interface behavior
+      without relying on conventional mesh-based interface tracking
+      techniques.
+    </p>
+
+  </section>
+
+  <!-- =======================================================
+       METHODS
+  ======================================================== -->
+
+  <section class="page" id="methods">
+
+    <h2>Methods and Formulations</h2>
+
+    <h3>Level-Set PINN Framework</h3>
+
+    <p>
+      The interface was represented using a level-set formulation,
+      where the signed distance function evolves according to governing
+      transport equations.
+      Physics constraints were embedded directly into the neural network
+      loss function, enabling simultaneous learning of flow fields and
+      interface dynamics.
+    </p>
+
+    <h3>Differentiation Strategies</h3>
+
+    <p>
+      A central focus of the internship was comparing different
+      differentiation approaches used within PINNs:
+    </p>
+
+    <ul class="key-points">
+
+      <li>
+        <strong>Automatic Differentiation (AD)</strong> —
+        standard PINN differentiation using exact computational graphs.
+      </li>
+
+      <li>
+        <strong>Numerical Differentiation (ND)</strong> —
+        finite-difference-based derivative approximations integrated
+        within the learning framework.
+      </li>
+
+      <li>
+        <strong>Coupled Automatic-Numerical (CAN)</strong> —
+        hybrid differentiation strategy combining AD and ND to improve
+        interface stability and gradient behavior.
+      </li>
+
+    </ul>
+
+    <p>
+      These approaches were evaluated based on convergence behavior,
+      stability, interface preservation, and accuracy across different
+      multiphase benchmark problems.
+    </p>
+
+  </section>
+
+  <!-- =======================================================
+       LEARNINGS
+  ======================================================== -->
+
+  <section class="page">
+
+    <h2>Key Takeaways</h2>
+
+    <ul class="key-points">
+
+      <li>
+        Developed practical experience with level-set formulations
+        for multiphase systems.
+      </li>
+
+      <li>
+        Investigated limitations of PINNs in highly nonlinear
+        interface evolution problems.
+      </li>
+
+      <li>
+        Explored the tradeoff between physical consistency,
+        stability, and computational cost in mesh-free solvers.
+      </li>
+
+      <li>
+        Worked extensively with scientific computing workflows,
+        large-scale training pipelines, and CFD-oriented validation.
+      </li>
+
+      <li>
+        Gained exposure to research methodology,
+        numerical benchmarking,
+        and multiphase flow physics in an academic research environment.
+      </li>
+
+    </ul>
+
+  </section>
+
+  <!-- =======================================================
+       GALLERY
+  ======================================================== -->
+
+  <section class="page" id="gallery">
+
+    <h2>Gallery</h2>
+
+    <div class="gallery">
+
+      <figure>
+        <img src="images/iitb_1.png" alt="Bubble Interface Evolution">
+        <figcaption>
+          Interface evolution predicted using level-set PINN formulations.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/iitb_2.png" alt="Bubble Rise Simulation">
+        <figcaption>
+          Bubble rise dynamics and transient deformation behavior.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/iitb_3.png" alt="PINN Training">
+        <figcaption>
+          Comparison of differentiation strategies for interface evolution.
+        </figcaption>
+      </figure>
+
+    </div>
+
+  </section>
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer class="site-footer">
+    <p>Rishith Vanaliya</p>
+  </footer>
+
+</main>
+
+<script src="universal-enhancements.js"></script>
+
+</body>
+</html>
