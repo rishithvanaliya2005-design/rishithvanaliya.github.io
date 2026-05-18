@@ -262,29 +262,30 @@ body:has(a:hover) #cursor-dot, body:has(button:hover) #cursor-dot { width:10px; 
 /* =========================================
    HERO IMAGE
 ========================================= */
+/* =========================================
+   HERO IMAGE
+========================================= */
 
 .hero-image {
   width: 100%;
-  height: 48vh;
-  min-height: 320px;
-
+  height: 280px;   /* fixed clean height */
   overflow: hidden;
   position: relative;
 
-  background: #0c0c0e;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
 
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center 35%;
 
   filter:
-    brightness(0.68)
+    brightness(0.72)
     contrast(1.05);
 }
-
 /* =========================================
    PROFESSOR SECTION
 ========================================= */
